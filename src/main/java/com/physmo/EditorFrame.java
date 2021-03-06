@@ -164,6 +164,12 @@ public class EditorFrame {
         if (keyStroke.getKeyType() == KeyType.PageDown) {
             testViewport.getCursor().moveDown(10);
         }
+        if (keyStroke.getKeyType() == KeyType.End) {
+            testViewport.getCursor().jumpToEndOfLine();
+        }
+        if (keyStroke.getKeyType() == KeyType.Home) {
+            testViewport.getCursor().jumpToStartOfLine();
+        }
     }
 
     public void initTestViewport(TextGraphics tg) {

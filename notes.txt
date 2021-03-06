@@ -1,9 +1,8 @@
 
 
 TASKS
-
-[ ] prevent cursor moving to location with no character
-[ ] cursor x memory
+[*] prevent cursor moving to location with no character
+[*] cursor x memory
 [ ] horizontal scrolling
 [ ] Detect screen size change
 [ ] load file from command line
