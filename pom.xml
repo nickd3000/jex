@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.physmo</groupId>
-    <artifactId>texteditor</artifactId>
+    <artifactId>jex</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>texteditor</name>
+    <name>jex</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

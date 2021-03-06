@@ -13,8 +13,17 @@ public class Viewport extends Panel {
     public Viewport() {
     }
 
-    public Cursor getCurser() {
+    public Cursor getCursor() {
         return cursor;
+    }
+
+    public Point getCursorPositionForDisplay() {
+
+        Point combinedPosition = getCombinedPosition();
+        Point cpos = new Point();
+        cpos.x = combinedPosition.x+cursor.x;
+        cpos.y = combinedPosition.y-scrollOffset+ cursor.y;
+        return cpos;
     }
 
     public void setTextBuffer(TextBuffer textBuffer) {
@@ -22,9 +31,27 @@ public class Viewport extends Panel {
         cursor = new Cursor(textBuffer);
     }
 
+    // if cursor goes off screen scroll to show it.
+    public void scrollToCursor() {
+        int scrollPad=5;
+//        if (cursor.y>scrollOffset+height-scrollPad) {
+//            scrollOffset = cursor.y-height+scrollPad;
+//        };
+        if (scrollOffset < cursor.y-height+scrollPad) {
+            scrollOffset = cursor.y-height+scrollPad;
+        }
+        if (scrollOffset > cursor.y-scrollPad) {
+            scrollOffset = cursor.y-scrollPad;
+            if (scrollOffset<0) scrollOffset=0;
+        }
+    }
+
     @Override
     void draw(TextGraphics tg) {
         if (textBuffer == null) return;
+
+        // hack
+        scrollToCursor();
 
         ColorRepo.setNormalTextColor(tg);
         Point panelPos = getCombinedPosition();
@@ -36,7 +63,7 @@ public class Viewport extends Panel {
         String currentLine = "";
         for (int i = 0; i < height; i++) {
             if (i < lineCount) {
-                currentLine = textBuffer.getLine(i);
+                currentLine = textBuffer.getLine(i+scrollOffset);
             } else {
                 currentLine = ".";
             }

@@ -1,8 +1,7 @@
 package com.physmo;
 
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 
 public class InfoBar extends Panel {
     EditorFrame editorFrame;
@@ -18,7 +17,7 @@ public class InfoBar extends Panel {
 
         Viewport viewport = editorFrame.testViewport;
 
-        Cursor curser = viewport.getCurser();
+        Cursor curser = viewport.getCursor();
 
         int y = curser.y;
         int x = curser.x;
@@ -27,7 +26,11 @@ public class InfoBar extends Panel {
 
         Point pos = getCombinedPosition();
 
-        tg.putString(pos.x, pos.y, strCoords);
+        tg.putString(pos.x+1, pos.y, strCoords);
+
+        // node info
+        int nodeCount = ((PieceTableTextBuffer)editorFrame.textBuffer).getNodes().size();
+        tg.putString(pos.x+20, pos.y, "nodes:"+nodeCount);
     }
 
     public void drawBackground(TextGraphics tg) {

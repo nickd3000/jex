@@ -30,11 +30,12 @@ public class Cursor {
             y++;
         }
     }
-    public void moveUp() {
-        y--;
+    public void moveUp(int v) {
+        y-=v;
+        if (y<0) y=0;
     }
-    public void moveDown() {
-        y++;
+    public void moveDown(int v) {
+        y+=v;
     }
 
     public void jumpToEndOfLine() {

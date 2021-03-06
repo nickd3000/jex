@@ -5,8 +5,6 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import com.physmo.buffers.TextBuffer;
-import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 
 import java.io.IOException;
 
@@ -21,13 +19,6 @@ public class App {
     TextGraphics tg;
     EditorFrame editorFrame;
 
-    public static void main(String[] args) {
-
-        App app = new App();
-        app.start();
-
-    }
-
     public App() {
         try {
             initLanterna();
@@ -36,8 +27,22 @@ public class App {
         }
     }
 
-    public void start() {
-        editorFrame = new EditorFrame(terminal, screen, tg);
+    public static void main(String[] args) {
+
+        String startingFileName = null;
+        if (args.length > 0) {
+            startingFileName = args[0];
+        }
+
+
+        App app = new App();
+        app.start(startingFileName);
+
+    }
+
+    public void start(String initialFileName) {
+        editorFrame = new EditorFrame(terminal, screen, tg, initialFileName);
+
         try {
             editorFrame.run();
         } catch (IOException e) {

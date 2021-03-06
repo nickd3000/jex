@@ -1,14 +1,23 @@
 
 
 TASKS
+
+[ ] prevent cursor moving to location with no character
+[ ] cursor x memory
+[ ] horizontal scrolling
 [ ] Detect screen size change
-[ ] viewport scrolling
 [ ] load file from command line
 [ ] scroll bar
 [ ] line numbers
+[ ] word caching - don't add a node for each letter
+
+DONE
+[*] viewport scrolling
+[*] page up and down
+[*] load file from command line
+[*] add to github
 [*] create maven project
 [*] get jar built with lanterna libraries included
-[ ] add to github
 [/] create simple wrapper around lanterna - no point?
 
 

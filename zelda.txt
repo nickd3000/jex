@@ -1,0 +1,2985 @@
+  __________   T   H   E      L   E   G   E   N   D     O   F
+ /\         \    _________  ____       _________   _________
+ \ \_____    \  /\    ____\/\   \     /\    __  \ /\    ___ \
+  \/_____/   /  \ \   \___/\ \   \    \ \  \   \  \ \   \  \ \
+        /   /    \ \   \___ \ \   \    \ \  \   \  \ \   \__\ \
+       /   /_____ \ \    __\ \ \   \    \ \  \   \  \ \   ___  \
+      /\         \ \ \   \_/__\ \   \____\ \  \__/  /\ \  \_/\  \
+      \ \_________\ \ \_______\\ \________\ \______/  \ \__\\ \__\
+       \/_________/  \/_______/ \/________/\/_____/    \/__/ \/__/
+                  -= A   L I N K   T O   T H E   P A S T =-
+
+,----------------------------------------------------------------------.
+|           FAQ/Walkthrough  || Version 1.13 || June 18, 2004          |
+|----------------------------------------------------------------------|
+|          by Michael Gonzalez (Coffee) <mpgonzalez@gmail.com>         |
+|                  http://www.geocities.com/coffeefaqs                 |
+'----------------------------------------------------------------------'
+
+Contents:
+   1) Introduction
+   2) Story
+   3) Controls
+   4) Walkthrough
+   5) Bosses
+   6) Heart Piece Locations
+   7) Items
+   8) Secrets
+   9) Credits & Info
+
+
+Version 1.13 (06/18/2004)
+- Changed email address (Gmail!)
+
+Version 1.12 (03/13/2003)
+- Removed game credits to avoid controversy :P
+
+Version 1.11 (11/25/2002)
+- Formatting changes
+- Updated website URL
+
+Version 1.1 (11/17/2002)
+- Added game credits
+
+Version 1.0 (03/30/2001)
+- Ladies and gentlemen, the FAQ is done
+
+Version 0.9 (03/23/2001)
+- Walkthrough *almost* complete
+- Heart Pieces are complete
+- Expect another update very very soon!
+
+Version 0.6 (12/31/2000):
+- Walkthrough is done up to the Turtle Rock dungeon.
+
+
+,----------------------------------------------------------------------.
+| 1) INTRODUCTION                                                      |
+'----------------------------------------------------------------------'
+
+
+              - The Legend of Zelda: A Link to the Past -
+
+What a game. This game was released way back in 1992 and I still find
+myself coming back to it almost 10 years later. Can you think of any
+other game that does that to you? Not many. Not many people will argue
+with me when I say that The Legend of Zelda: A Link to the Past is still
+one of the greatest games of all time.
+
+I always say that Nintendo takes special pride in the Zelda series.
+Every single Zelda game that Nintendo churns out is a finely tuned
+gaming masterpiece. No matter what the system, no matter what the
+limitations, it comes out as an amazing game. Nintendo has brought the
+Zelda magic to 8-bit, 16-bit, 64-bit, and even portable systems. If you
+ask me, I say that this one is the best.
+
+The level design is the best of any game I've ever played, the graphics
+are clean and colorful, the music is dramatic and memorable, and the
+challenge is just right. It's perfect in almost every area, and it all
+comes together to produce a pinnacle of all video gaming.
+
+
+,----------------------------------------------------------------------.
+| 2) STORY                                                             |
+'----------------------------------------------------------------------'
+
+
+[This is the excellent story taken directly from the instruction
+booklet.  To see the full manual, check out www.world-of-nintendo.com.
+For the full story of the legend of Zelda, check out The Zelda
+Headquarters (http://www.zhq.com).]
+
+
+To set the stage for this adventure of the legendary Hero of Hyrule, it
+will be informative to delve into the Triforce myth, an ancient epic
+about the creation of the world that is still believed in the land of
+Hyrule. Every culture has such myths and theories about the creation of
+their worlds, and it can be beneficial and entertaining to examine them
+in detail, for they often affect the present day social structure. The
+legends say the mythical gods of Hyrule had as their chosen people the
+Hylia. These ancient people left scrolls that are the primary source of
+the legends.
+
+
+                      -= THE CREATION OF HYRULE =-
+
+
+According to the Hylian scrolls, the mythical gods descended from a
+distant nebula to the world and created order and life. The God of Power
+dyed the mountains red with fire and created land. The God of Wisdom
+created science and wizardry and brought order to nature. And the God of
+Courage, through justice and vigor, created life - the animals that
+crawl the land and the birds that soar in the sky. After the gods had
+finsihed their work, they left the world, but not before creating a
+symbol of their strength, a golden triangle known as the Triforce. A
+small but powerful portion of the essence of the gods was held in this
+mighty artifact, which was to guide the intelligent life on the world of
+Hyrule.
+
+Although it was an inanimate object, the Triforce had the power to
+bestow three titles which gave the person who received them great
+powers: "The Forger of Strength", "The Keeper of Knowledge", and "The
+Juror of Courage". From its hiding place in the so-called Golden Land
+where the Gods placed it, the Triforce beckoned people from the outside
+world to seek it in the hope that someone worthy of these titles would
+find it. With their magic infused blood, the Hylian people were endowed
+with psychic powers and skill in wizardry. It was also said that their
+long, pointed ears enabled them to hear special messages from the gods,
+so they were heldin high esteem by many people in Hyrule. Their
+descendants settled in various parts of the world and passed on their
+knowledge and magical lore to all people. But in its passing, the lore
+was often distorted or lost altogether.
+
+
+                      -= GATES TO THE HOLY LAND =-
+
+
+In Hyrule, there are many Hylian buildings which are mentioned
+repeatedly in the legends. These buildings, which now lie in ruin, pale
+shadows of their former splendor, are closely tied to the Triforce. Some
+were even said to house the Triforce...
+
+If it were only a symbol of the gods, the Triforce would be coveted by
+many. But a verse from the Book of Mudora (a collection of Hylian
+legends and lore) made the Triforce even more desirable:
+
+                      In a realm beyond sight,
+                      The Sky shines gold, not blue.
+                      There, the Triorce's might
+                      Makes mortal dreams come true.
+
+Many aggressively searched for the wish-granting Triforce, but no one,
+not even the Hylian sages, was sure of its location; the knowledge had
+been lost over time. Some said the Triforce lay under the desert, others
+said it was in the cemetary in the shadow of Death Mountain, but no one
+ever found it. That yearning for the Triforce soon turned to lust for
+power, which in turn led to the spilling of blood. Soon the only motive
+left among those searching for the Triforce was pure greed.
+
+One day, quite by accident, a gate to the Golden Land of the Triforce
+was opened by a gang of thieves skilled in the black arts. This land was
+like no other. In the gathering twilight, the Triforce shone from its
+resting place high above the world. In a long running battle, the leader
+of the thieves fought his way past his followers in a lust for the
+Golden Power. After vanquishing his own followers, the leader stood
+triumphant over the Triforce and grasped it with his blood-stained
+hands. He heard a whispered voice: "If thou has a strong desire or
+dream, wish for it..." And in reply, the roaring laughter of the brigand
+leader echoed across time and space and even reached the far-off land of
+Hyrule. The name of this king of thieves is Ganondorf Dragmire, but he
+is known by his alias, Mandrag Ganon, which means Ganon of the Enchanted
+Thieves.
+
+
+                       -= THE IMPRISONING WAR =-
+
+
+I do not know what Ganon wished for from the Triforce. However, in time
+evil power begain to flow from the Golden Land and greedy men were drawn
+there to become members of Ganon's army. Black clouds permanently
+darkened the sky, and many disasters beset Hyrule. The lord of Hyrule
+sent for the Seven Wise Men and the Knights Of Hyrule, and ordered them
+to seal the enterance to the Golden Land.
+
+The Triforce, being an inanimate object, cannot judge between good and
+evil. Therefore, it could not know that Ganon's wishes were evil; it
+merely granted them. Suspecting that Ganon's power was based on the
+Triforce's magic, the people of Hyrule forged a sword resistant to
+magic which could repulse even powers granted by the Triforce. This
+mighty weapon became known as the blade of evil's bane, or the Master
+Sword. It was so powerful that only one who was pure of heart and strong
+of body could wield it. As the Seven Wise Men searched for a valient
+person to take up the Master Sword, Ganon's evil army swarmed from the
+tainted Golden Land into Hyrule and attacked the castle. The wise men
+and the Knights Of Hyrule combined forces to wage war on this evil
+horde.
+
+The Knights took the full brunt of the fierce attack, and although they
+fought courageously many a brave soul was lost that day, However, their
+lives were not lost in vain, for they bought precious time for the Seven
+Wise Men to magically seal ganon in the Golden land. All of Hyrule
+rejoiced at the victory that upheld peace and order over Ganon's evil
+and chaos. This war, which had claimed many lives, became known as the
+Imprisoning War in stories told in later centuries.
+
+
+                     -= THE COMING OF THE WIZARD =-
+
+
+Many centuries have passed since the Imprisoning War. The land of Hyrule
+healed its wounds and the people lived in peace for a long time.
+Memories of the vicious Imprisoning War faded over the generations...
+
+So it is no surprise that no one was prepared for the new disasters that
+have recently struck Hyrule. Pestilence and drought, uncontrollable even
+by magic, revaged the land. The king of Hyrule, after counsel with his
+sages, ordered an investigation of the Imprisoned Dark World (as the
+Golden land had come to be known) but the wise men's seal was apparently
+intact. he offered rewards for anyone who could find the source of these
+troubles. In answer to these summons a stranger named Agahnim came and
+quelled the disasters with a previously unseen form of magic. As a
+reward, the king gave him a new position as chief advisor and heir to
+the Seven. Masses proclaimed him their hero. Peace had returned to
+Hyrule... or had it?
+
+Of late, rumors have traveled their whispering path with alarming
+frequency. Rumors saying Agahnim now rules the country with his magic...
+Rumors of strange magical experiments in the castle tower at night...
+The people of Hyrule were gripped by dread.
+
+
+                             -= PROLOGUE =-
+
+
+One night, a girl's voice awakens you from your sleep.
+
+She telepathically pleads.
+
+You jump out of bed not knowing whether the voice was part of a dream or
+reality. Upon leaving your bed, you find your uncle, who should be fast
+asleep at this time, preparing to go out, girded for battle.
+
+"I'll be back by moring," he says as he departs. "Don't leave the
+house."
+
+You watch him leave with the family sword in hand and shield on arm.
+This night is like no other... Who is Zelda? Where had your uncle gone
+and for what reason?
+
+And so, on an ill-fated night, a new chapter in the legend of Hyrule's
+hero begins- a new chapter in The Legend of Zelda!
+
+
+,----------------------------------------------------------------------.
+| 3) CONTROLS                                                          |
+'----------------------------------------------------------------------'
+
+
+Control Pad - With the Control Pad you can move your character in eight
+directions including up and down stairs. It's also used for moving the
+cursor in menus.
+
+A button - A multi-purpose button. It's used for picking up objects,
+running (when you get the Pegasus Boots), talking to people, swimming
+(when you get the flippers), reading signs, grasping, and opening
+chests.
+
+B button - Using the sword. Press and hold the button to charge the
+sword, then release for a spin attack. It's also used to confirm
+choices on the menu screens.
+
+Y button - After you assign a weapon to this button at the sub-menu
+screen, press Y to use it.
+
+X button - Press to view the overworld map. If you're in a dungeon,
+you'll view a dungeon map.
+
+Start - Press to switch to the Sub Screen. You can then select items to
+be used with the Y Button or check the status of your equipment.
+
+Select - The select Button lets you end the game and save data.
+
+
+,----------------------------------------------------------------------.
+| 4) WALKTHROUGH                                                       |
+'----------------------------------------------------------------------'
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<< RESCUE THE PRINCESS >>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                           -- LINK'S HOUSE --
+
+
+"Help me. Please help me. I am a prisoner in the dungeon of the castle.
+My name is Zelda. The wizard, Agahnim, has done something to the other
+missing girls. Now only I remain. Agahnim has seized control of the
+castle and is now trying to open the seven wise men's seal. I am in the
+dungeon of the castle. Please help me."
+
+Yes, your first task of the game is to save the princess. It's ironic, I
+know. After you wake up, your uncle departs with the sword and tells you
+not to leave the house. Yeah right. Take the lamp from the treasure
+chest and go out.
+
+Guards are restricting your area to a little space in front of the
+castle. Go north from your home and cross the bridge to the castle.
+There's a guard blocking the main entrance, so follow the stone path to
+his right and go around the side of the castle until the path comes to a
+dead end. Toss aside the bush (with the A button) and drop into the
+hole.
+
+
+                           -- HYRULE CASTLE --
+
+
+You're now in the basement of Hyrule Castle. There's your uncle! Talk to
+him and he'll give you your basic sword and shield. Apparently, he dies
+at this point (I'm assuming that he died, since you can't talk to him
+anymore, but you'll strangely see him again at the ending). Go onward
+to the next room. Go collect a blue rupee from the chest at the right,
+and get some magic power from under the pots (you'll need this magic for
+the lamp). Go south and out the door.
+
+You're back outside! Cut away a few bushes and enter the castle through
+the main entrance, killing any guards you meet along the way.
+
+Now this is royalty! The whole castle is swarming with guards, so always
+be prepared. Enter the door at the right side. Continue following the
+red carpet until you reach some stairs leading down with some statues at
+the sides. Go down there into the Hyrule Castle dungeons.
+
+Murder the guard in the room and collect the key that pops out of him.
+Open the chest to get a map of the castle. You can press X at anytime to
+see it. You your key to open the locked door and continue. This is a
+rather fun room. I like hitting the guards with the sword so that they
+fall into the bottomless pit. Bwa ha ha! Ahem -- continue through this
+straight-forward room and go through the door at the rop left.
+
+Kill the lone guard in this room to open up the doors. Head to the room
+at the right. Open the chest and you'll recieve the boomerang, one of my
+favorite items. It stuns enemies and returns to you without using up any
+magic. Try it out on this guard! Defeat him to get a small key, then
+return to the previous room. Use the key to go north through the locked
+door. Then keep going until you reach the large room of B3.
+
+Defeat the green solder. To defeat this semi-boss with the ball and
+chain, I suggest throwing pots at him. It's much quicker and safer that
+way. When he's defeated, get the big key and use it to open up Zelda's
+cell. Talk to her. When she's done bitching, she'll follow you back up
+to the first floor. Don't forget to get the rupees from that chest.
+
+Make the journey all the way back to the first floor. You'll know that
+it's the first floor when everything looks rich and royal again. Go
+around to the large room you were in when you first entered the castle.
+>From there, go up the stairs and north to the throne room. Go to the
+back of this room and Zelda will give you instructions to help push from
+the left. Get to the left side and push it to the right to reveal a
+secret passageway! Get in there.
+
+This is apparently the sewer system. And it's pretty dark. You can't see
+more than a few feet in front of you. If you really want the whole room
+to be lit up, use your lamp on the torch things in the rooms. Even that
+light will go out in a few seconds. Beware of rats and go down the
+stairs at the top right.
+
+Snakes! Get past them and go even deeper down the stairs. The door here
+is locked. Get the key from the chest at the right, then continue
+north through the door.
+
+After you get through the sewers, you'll be very close to the sanctuary.
+Be careful! Keep going, the door is at the north side of this room. In
+the next room, the door is locked...and the key is in one of the rats.
+Yeech. Defeat the rats until you find the one with the key, then
+continue through the door.
+
+Ahh...a fully lit room feels so refreshing after those dark sewers you
+just went through. But this is no time to relax. Push aside the blocks
+at the north side and continue up the stairs. Keep going until you get
+to the room with two switches. There's no real need to defeat any rats.
+The correct switch to pull is the one at the RIGHT. Walk up to it, hold
+a, then pull back to open the door. Don't pull the switch at the right
+unless you want it to rain snakes. Go through this final door and you
+will finally be in the sancuary.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE FIRST PENDANT >>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                             -- SANCTUARY --
+
+
+Zelda and the sage will tell you a lot of stuff about what's going on
+and what you should be doing next. The sage tells you to go to Kakariko
+Village to meet the elder there. Before you do that, open the treasure
+chest to get a whole heart container, bringing your total capacity up to
+4 hearts. Now get out of the sanctuary.
+
+Hey, it stopped raining. Follow the first path south, then head west.
+Remember that you can always look at the map (press X) to check your
+position whenever you get lost. Right now you're going to the village
+at the west side. Follow the dirt path until you get there.
+
+
+                          -- KAKARIKO VILLAGE --
+
+
+There are a lot of things for you to do in Kakariko Village. I'll just
+discuss the important ones...
+
+Get a bottle:
+At the south side of the village there's a long vertically aligned
+house. This is some kind of bar. There's a back entrance to this house,
+even if you can't see it. Go in there through the back door. Toss aside
+the pot and open the treasure chest...there's a bottle inside! This will
+be useful for storing all kinds of neat stuff.
+
+Get another bottle:
+In the village there's a merchant sitting on the floor selling a wide
+variety of goods. Well, actually, all he sells is bottles...and he only
+has one for the low low price of 100 rupees. If you have the money, get
+it from him! If not, just come back later.
+
+Get the bug catching net:
+In the center of the village, there's a house with a blue roof and
+bushes growing beside it. Inside, there's a sick boy in bed. If you have
+a bottle, and only if you have a bottle, he will give you his bug
+catching net. This is useful for catching bugs or faries.
+
+Go to the elder's house:
+At the top of the village there's a long house with a red roof and two
+doors. Enter the door at the right. This lady here isn't the elder,
+although she is very old. This must be his wife. She tells you a bunch
+of stuff, but nothing useful at all. There's another boy in the village
+that watches over the chickens. He knows where the elder is, and he'll
+even mark his location on your map...
+
+Okay, that's all the important stuff in the village. Now it's time to go
+meet Sahasrahla.
+
+
+                    -- GOING TO THE EASTERN PALACE --
+
+
+Exit Kakariko Village from the south. Continue going south, then follow
+the dirt path going east. Continue going east...past your house...then
+go north across the bridge. Immediately follow the dirt path going east,
+then go up to enter the maze-like ruins surrounding the Eastern Palace.
+
+You should probably talk to Sahasrahla first. Make your way through
+these maze-like ruins to find his house (it should be marked with an 'X'
+on your map if you talked to that boy). After talking with him, you can
+bomb the wall at the back to find a secret room with a lot of rupees.
+Leave his house.
+
+Now go on to the Eastern Palace. It's at the north-east corner of these
+ruins. It should be easy enough for you to get to by yourself (meaning
+I'm too lazy to give you directions). Those statue guys that come to
+life, although they just seem to bounce off of your sword, can be
+defeated if you hit them enough. They can also be stunned by the
+boomerang. Now it's time to enter the first dungeon...
+
+
+                        -- THE EASTERN PALACE --
+
+
+First, pick up the pot in front of you, revealing a switch. Step on that
+switch to open the door. Go ahead to the next room. Defeat these pitiful
+enemies and step on the tile that sticks out to open the doors.
+Proceed...
+
+There are cannonballs coming out from the other side of the room.
+Occasionally, a hugecannon ball comes out. You need to go through that
+corridor moving left and right to avoid that cannonballs. When the big
+cannonball comes at you, hide in the little spaces at the sides. When
+you get to the end, you can take the path at the left to get to a chest
+and pots with LOADS of rupees! Then go back and exit the room through
+the north exit.
+
+Take the left path when you get to a fork. Toss aside the pots, hit the
+raised tile to open the door, and continue to the next room. Defeat the
+skeleton guys (a.k.a. Stalfos) if you want to, then go right on ahead to
+the next room.
+
+Ack! Stalfos popping out of the ground! You need to kill all four of
+them to open up the doors again. I find it more convenient to throw pots
+at them. A single pot is all it takes to send them to the afterlife. Go
+north to the next room.
+
+The chest here holds the compass, absolutely worthless if you're using
+this FAQ. In the next room, you can use the triangle tile to contact
+Shahasrahla. Go on to the big open room. You can't open that chest
+unless you have the big key, which you do not, so just go on to the next
+room.
+
+Soon you'll get to a circular shaped dark room. Those red bubble things
+are chasing you around, so don't waste time. You need to hit the switch
+to open the door at the right, then go in. One of the pots at the right
+holds a small key. Get it, and return to the previous room. Go around
+and use the key to go through the locked door at the left.
+
+Continue until you get to a room with red bubbly things spinning around
+a pot. You need to defeat every enemy in this room (besides the bubbly
+things). Defeat the two Tangela-like enemies, the two stalfos, and the
+cyclops. To defeat the cyclops, you need to wake him up and hit him in
+the eye. It takes a lot of hits, but he'll die eventually. Now that the
+red bubbly things are away from the pot, lift it to reveal the switch.
+Step on the switch to make a chest appear. Then open the chest to
+finally get the big key. Use it on the locked door at the top of the
+room.
+
+Push the block and continue up, then go right to be back in the big open
+room. Now that you have the big key, open up the big chest to find...
+the Bow! Stalfos will drop from the sky and the heads will chase you.
+Quickly go up through the big door at the north side.
+
+Another dark room! Defeat the "Tangelas" to get them out of your way.
+One of the cyclopses has a small key. Defeat them and get that key. Use
+it to enter the door at the top-left.
+
+Throw away the bottom-left pot to reveal a switch, then step on it to
+open the door. Continue to the next room. Try out your bow and arrows on
+these cyclopses. It only takes a single arrow to the eye to take him
+out. Hit the switch at the bottom, then proceed...
+
+Ahh! Cannonballs everywhere! Be careful and hit the upper-left switch,
+then go on. Kill both of the stalfos and the red cyclops (you need two
+arrows for him).
+
+Kill all six "tangelas" and the two red cyclopses. Perhaps it would be
+easier and safer if you brought them down and seperated them before
+attacking. If you need supplies, check the pots all around the room.
+
+If you're all set, go to the next room for the boss: ARMOS KNIGHTS. See
+the boss section for all the juicy erotic details about defeating them.
+After the battle, get the heart containter and the pendant of courage.
+Two pendants remain! You are transported out of the Eastern Palace...
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE SECOND PENDANT >>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                     -- GETTING THE PEGASUS BOOTS --
+
+
+Before anything else, you should return to Shahasrahla's house. (note:
+now you can kill the Armos statues with a single arrow). Now that you
+have the pendant of courage, he will give you the very useful pegasus
+boots (hold A for a short while to use them). He also tells you more
+about "the legend". Now it's time to get to book of Mudora.
+
+
+                    -- GETTING THE BOOK OF MUDORA --
+
+
+Get out of the Eastern Ruins and go all the way back to Kakariko Village
+(I'm sure you remember the way). In the area a little bit south of the
+village, there's a house with a book above the door. This is the
+library. Go inside...
+
+See that green book on top of the shelf? That's the Book of Mudora...and
+you can't reach it! It's wierd how such a simple problem like this can
+become so hard to solve in the game. Ram into the shelf with your newly
+aquired Pegasus Boots and it wll drop to the floor. Yahoo! Now you have
+all the items you need to get through the Desert Palace.
+
+
+                    -- GOING TO THE DESERT PALACE --
+
+
+Now it's time to go to the second dungeon. Go to your house (you know
+where your own home is, don't you?), then go straight south from there
+to a swampy grassy place. From there, head west until you get to the
+desert (you'll know it's the desert because there's sand, duh).
+
+Go through the desert and avoid the enemies (or fight them if you want,
+I don't care either way). Keep going until you reach a big dark-green
+platform that is the entrance to the desert palace. It's found on your
+map. There's an ancient Hylian inscription on the stone slab in the
+middle. You can't read it normally, so you need to use the book of
+Mudora to translate. "To open the way to go forward, make a wish here,
+and it will be granted". Link makes his wish and miraculously, the stone
+heads move around, uncovering the entrance. Go right ahead to enter your
+second dungeon, the Desert Palace...
+
+
+                         -- THE DESERT PALACE --
+
+
+Go up until you get to a laser-eye statue. This statue has an eye that
+goes around it, and a laser shoots out of the eye when it's facing you.
+Be careful around him...a hit from that laser takes away an entire
+heart! Toss aside the pots at the left and continue through the north
+door.
+
+Be careful around these enemies, defeat them if you want. Throw away the
+pot at the top center to reveal a switch, then step on the switch to
+make a chest appear, then open the chest for the map. Go back down to
+the large room.
+
+Go the the upper left corner of this room, then go through the north
+door. Be careful with the laser-eye statue! To get that key on the
+torch, ram into it with the pegasus boots. Collect the key and return to
+the previous room.
+
+Go around to the left side of this large room and use your small key to
+enter the locked door. In this room, kill all the enemies (except for
+Mr. Laser-Eye) to open the door. Get the compass from the chest, then
+continue on to the next room. It can be a little tricky to get past
+those cannonballs shooting across the room, so be careful about that.
+Open the chest to recieve...the big key! Go back down (past those damn
+cannonballs again) until you're back at the large room.
+
+Go around to the upper-left corner of the large room, then enter the
+door at the left. Another laser-eye statue! Lift up the pot at the upper
+left of the statue to reveal a switch, then step on it to open the
+doors. Go to the next room. Open the big chest to recieve the power
+glove. This useful item allows you to pick up stones and other heavy
+stuff. Return to the large room.
+
+Go down to the bottom-left corner of the large room, then go left to the
+next room. If you push the third block from the left, you can open the
+door and go north to a room full of fairies! I suggest filling up your
+bottles with them (catch them with the bug-catching net). If you're done
+with them, go south to the outside...
+
+You can continue going south along the ledge to get an easy piece of
+heart. Then go north, to a cave surrounded by stones. Now that you have
+the power glove, you can pick up these stones and uncover the entrance
+to that cave! Go inside...
+
+This is the second part of the Desert Palace dungeon. Push the center
+block of the right group of blocks to open the door and continue.
+
+Magical tiles come out of the floor and start attacking you! Protect
+yourself from them by hitting them with the sword or just by getting out
+of their way. Lift the pot in the bottom-left corner to get a small key,
+and use it to open the north locked door.
+
+Keep going. Once again, defeat all the enemies in the room to open the
+door. The next room is infested with those laser-eye statues. Be very
+careful around here. There's a key hidded under one of the pots. Find it
+and use it to open the locked door at the north side.
+
+Here's another room with those crazy flying tiles. The key is hidden in
+the upper-right pot. Use it to go on to the next room. Now defeat this
+red cyclops with two arrows to his eye. A dead end? Nope. Use your lamp
+to light the four torches in this room. The whole wall moves aside to
+reveal a big door.
+
+Go through this door to face the boss: LANMOLAS. As usual, the details
+about them are in the boss section. When you're all done playing with
+them, pick up the heart container and the pendant of power. Only one
+pendant remains! You are transported out of the Desert Palace...
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE THIRD PENDANT >>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                      -- GETTING THE MAGIC POWDER --
+
+
+I think right now would be an appropriate time to get the magic powder.
+The magic powder is a completely optional item that can come in handy
+very often in your adventure. If you already got the magic powder, you
+can skip this part.
+
+Go to the Lost Woods north of Kakariko Village. Look around the forest
+until you get to a mushroom squirming around. You can find it right in
+the center of the forest. Pick it up.
+
+Now exit the forest. Head east on the dirt path, passing the Sancuary,
+and cross the wooden bridge. Go north and follow the path until you get
+to a little hut with a witch standing by the entrance. This witch wants
+your mushroom. Give it to her by using it on her like an item. "Come
+back to the shop later for something good".
+
+Follow the path back one screen, then immediately come back and enter
+the which's hut. There's your magic powder. Pick it up! This is useful
+for making the red bubbly enemies turn into fairies, and for doubling
+you magic capacity later in the game.
+
+Your next task is to get the flippers.
+
+
+                        -- GETTING THE FLIPPERS --
+
+
+Go to the north-east part of Hyrule until you reach the Witch's Magic
+Shop. Pass that and you'll find a huge rock blocking your way. No
+problem...you have the power glove, remember? Pick it up with the A
+button and toss it aside. When you get to a bunch of green rocks
+blocking the path, dash into them with the pegasus boots.
+
+Keep going on the path until you reach the water area. Then go north to
+reach the Zora's Waterfall area. This place is infested with little
+Zoras that shoot fireballs at you. Be careful. Since you don't have the
+flippers yet, you can only stay on shallow water.
+
+When you reach a fork in the path, go north. When you get to another
+fork, take the lowest route. Continue until you reach a big waterfall.
+*rumbling sound*. Introducing......King Zora! Tell him you want the
+flippers. This capitalist bastard isn't letting them go for free. You'll
+need to pay a whopping 500 RUPEES! That's a lot of money, but you'll
+need to pay up. These flippers allow you to swim in deep water.
+
+Before you leave this place, look around for the piece of heart.
+
+
+                       -- GETTING SOME UPGRADES --
+
+
+Now keep going south until you reach the land. But first, go to the
+small waterfall at the top-left. You can go inside it to find a cave!
+
+When you get close to the pool of water you'll be asked if you want to
+throw something in. Say yes, and throw in the boomerang. A fairie
+appears! When she asks if you were the one who threw in the boomerang,
+answer yes. Because you're an honest person, she'll give back an even
+better one. The red boomerang can reach all the way across the screen!
+
+Next, throw in your shield. Do the same process and the fairie will give
+you the red shield. This one can protect you from fireballs.
+
+
+                    -- GOING TO THE TOWER OF HERA --
+
+
+Now it's time to head for the third dungeon of the Light World: The
+Tower of Hera. From Kakariko Village, head north-east around the edge of
+the Lost Woods. After you pass a V-shaped group of trees, there's a sign
+that reads "Do not enter Death Mountain without the King's permission!".
+Toss aside the large green stone there and enter Death Mountain.
+
+Ack! It's dark again! Drop down the ledge and go right until you meet a
+lost old man. He's going to go with you up Death Mountain. Go right to
+the next room. Make your way through this room and listen to what the
+old man's has to say.
+
+When you get outside, go right until you reach a little cave. You'll
+leave the old man here...and he gives you the magic mirror! If you ever
+need to refill your hearts, come here and talk to the old man to have
+your energy restored. You also get the option to start here when you
+turn on the SNES.
+
+Continue going right, then up the ladder. When you get to a cave, ignore
+it and go left. Take note of the next cave you get to. Whenever you need
+to go back down the mountain, you go through this cave. Now go up this
+tall ladder.
+
+Go right, past the cave, until you get to a wierd looking warp. There
+are a few warps like this hidden all around Hyrule. Entering them brings
+you into the Dark World. The Dark World is a sort of parallel universe
+to the normal world. This world is ruled by Ganon and infested with
+powerful monsters. To go back to the regular world (a.k.a. Light World),
+use the magic mirror that the old man gave you. But you cannot use it to
+go to the Dark World...you must use the warps to enter the Dark World.
+
+So enter that warp. Since you do not have the Moon Pearl, which allows
+you to retain your regular form in the Dark World, you have turned into
+some kind of rabbit. When you are in the Dark World, you change into
+what is truly reflected in your heart and mind. Apparently Link is a
+rabbit at heart.
+
+Go left and stand in the Light colored floor where Spectacle Rock used
+to be. Use the magic mirror there to go to the Light World, and you
+should be standing on top of that rock. Collect the piece of heart and
+drop down at the other side.
+
+Now go right a little bit and climb the steps to enter the Tower of
+Hera...
+
+
+                         -- THE TOWER OF HERA --
+
+
+Here's the 411 on those crystal orb thingys: All around this dungeon
+(and many other future dungeons), there are crystal orbs. When you hit
+them with the sword or boomerang, the blue and orange barrier blocks
+will rise and fall. The orb also changes color to show which blocks are
+lowered.
+
+Okay, so hit the orb to make the blue blocks fall. Then go down the
+stairs at your left. Defeat the enemies here if you want. Hit the orb,
+get the small key, and hit the orb again to raise the orange blocks. Go
+back upstairs.
+
+Hit the orb to lower the orange blocks, then go north. Open this chest
+to get the map. Go downstairs through the locked door at the top-left.
+
+Here's more of those flying tiles. Guard yourslef from their attacks
+until they're all done. Hit the crystal orb to lower the blue blocks,
+then continue to the next room. Hit the orb (lowering the orange blocks)
+and go south to the next room. Defeat the stalfos here if you want, then
+light all four torches with your lamp. Open the chest that appears to
+recieve the big key. Go north, hit the orb, go west, hit the orb, and
+return to the second floor.
+
+Now go upstairs again to the third floor. These enemies are a little
+tricky to beat. You'll bounch off of them when you try hitting them with
+the sword. Be careful not to fall into the holes (you will return to the
+first floor if you do). It takes three hits to kill them. Defeat them
+all in this room to open the doors, then continue to the next room.
+
+Notice that star symbol on the ground? When you step on it, the holes on
+the floor change position. Make your way through this room and through
+the big door at the top. Also make your way through the next room,
+hitting the star symbols whenever necessary. Continue upstairs to the
+fourth floor.
+
+Open the small chest in the center of this room to get the compass. Go
+up the stairs at the top-left to go to the fifth floor.
+
+Now hit the star symbol beside the turning fireball thingy so that a 2x2
+hole appears in the middle near the top of the room. Drop into this hole
+*from the north* so that you will fall to the fourth floor...right in
+front of the big chest! Open it to recieve this dungeon's treasure: The
+Moon Pearl. Hit the star and go back up to the fifth floor.
+
+Now go up the stairs at the top-right of this room to face the boss:
+MOLDORM. Check the boss section for details, blah blah...you know the
+routine. When you're done sending him to the afterlife, get the heart
+container and the pendant of wisdom. You have all three pendants! You
+are transported out of the Tower of Hera...
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<< BATTLE WITH AGAHNIM >>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                     -- GETTING THE MASTER SWORD --
+
+
+Go south and drop off the ledge, then go left. Climb down the tall
+ladder and enter the cave right beside it. Go through this simplistic,
+linear cave until you reach the outside again. Drop off the ledge to the
+grass.
+
+Go north, passing the two lumberjacks, and east to enter the Lost Woods.
+Go in the general direction of north west. There are a lot of fake,
+imitation Master Swords in the woods. But don't be fooled, there's only
+one true Master Sword.
+
+At the north-west corner of the woods, you'll come to a peaceful
+clearing with animals and birds. There's the Master Sword. At this
+point, I traditionally read the ancient Hylian inscription with the Book
+of Mudora. "The Hero's triumph on cataclysm's eve wins three symbols of
+virtue. The Master Sword he will then retrieve, keeping the knight's
+line true". Stand behind the sword and pull it out.
+
+Shahasrahla contacts you telepathically. After chatting with him, let's
+go leave this forest. But as you leave, another message comes. This time
+from Princess Zelda. She's being kidnapped! Get to the Sanctuary
+immediately! (you know how to get there, don't make me spell it out for
+you)
+
+At the Sanctuary, you find Zelda gone and the Sage lying on the floor.
+Seems like you came a second too late. The soldiers came and took Zelda
+to the castle. Now you'll need to go back to the castle, where our
+adventure began. This time, you can go in through the front door...
+
+
+                           -- HYRULE CASTLE --
+
+
+Upon entering Hyrule Castle through the main entrance, go through the
+door at the left side. Then go up the stairs and out the door to the
+outside roof of the castle. Go right a little bit to find some kind of
+magical barrier protecting the door. Your mighty new Master Sword can
+get rid of this thing in a single blow. Let's proceed...
+
+Take note that a beam of energy comes out of your sword when you have
+full hearts. That's why it's especially useful to have full life and a
+constant storage of fairies in your bottles.
+
+Go straight through the first room. In the next room, defeat the two
+guards to open the doors, then continue. Now defeat the two guards to
+make a chest appear. Open it for a small key, then use it to open the
+locked door and go on to the third floor.
+
+I hate dark places. Go through this room through the door at the left.
+The next room is a maze. You should light the torches with your lamp to
+get a better view of things. Look around for the chest with the small
+key, then use it to get through the locked door at the bottom-right
+corner. Annahilate these guards and go up the stairs to the fourth
+floor.
+
+Still dark. Defeat these two guards (if you want). It's help ful to stun
+one of them with the boomerang so you'll be free to fight the other one.
+Get through the next room, careful not to fall into the pit. Kill the
+guards in the next room to find a small key, then use it on the locked
+door to go upstairs to the fifth floor.
+
+Light at last...how refreshing! Defeat everyone in this room to open up
+the doors, then continue. Repeat the process for the next room. The
+guard in the center of the next room holds a small key. Defeat him to
+get it, then use it to proceed to the next room. You can just ignore all
+three guards here and go upstairs to the sixth floor.
+
+Move aside the statue and go ahead. Everything is really linear from
+here on. In the next room, carefully walk over the narrow strips of land
+and go upstairs to the seventh and final floor...
+
+In the next room, you finally meet the man you have heard so much about,
+Agahnim...and the princess! "Behold! The last moment of Princess Zelda!"
+He makes Zelda disappear, then goes behind the curtains. Ha! What a dumb
+place to hide! Cut down the curtains and follow him.
+
+Now it's time to fight. I consider him to be a boss, so go check out the
+boss section for details on defeating him. After he is defeated, he will
+use his last ounce of energy to draw you into the Dark World...
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE FIRST CRYSTAL >>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+Shaharsala contacts you telepathically and tells you where you are and
+what you should be doing here. As he mentioned, this is the Dark World,
+the same place you were when you went into that warp on Death Mountain.
+You can use the magic mirror at any time to return to the Light World.
+
+Your goal in the Dark World is to rescue the 7 maidens who are trapped
+in 7 crystals that are hidden in 7 dungeons. The first one is the Palace
+of Darkness, and it's marked on your map. That's where you should go
+first.
+
+
+                  -- GOING TO THE PALACE OF DARKNESS --
+
+
+Drop down from the pyramid and go east. Continue until you get to the
+place where the Eastern Palace ruins used to be in the Light World. Now,
+the place is filled with bushes and plants that form a huge maze.
+
+Upon entering this area, go right and follow the dirt path until you
+come to a big arrow pointing at the bushes. Go inside them and come out
+at the other side. You can just barely make out where you are when you
+are under the bushes.
+
+Continue on the path until you reach another entrance into the bushes.
+Do NOT go inside there. Instead, continue left through those bushes. Go
+up and right again. Enter the large mass of bushes, make your way
+through them and emerge at the right side. If you went the right way,
+you'll have a monkey following you! This is a rupee-loving monkey, so
+give him 10 rupees to follow you.
+
+Keep going until you reach the Eastern Palace at the northeast corner of
+this area. The entrance is closed, but Kiki will open it for you for the
+low low price of only 100 rupees. You really don't have any other
+choice, so pay up and get in...
+
+
+                        -- PALACE OF DARKNESS --
+
+
+A word of warning before you begin: The dungeons you faced in the Light
+World are nothing in comparison to what lies ahead in the Dark World
+dungeons. If you found the previous dungeons difficult, prepare to be
+overwhelmed.
+
+Upon entering the dungeon, take the left path. Step on that raised tile
+to open the door, then proceed to go north, then continue downstairs to
+the basement. Be careful to avoid the fireballs here! Lift the pot
+(actually, a skull) at the bottom left corner, then step on the switch
+under it to make the chest appear. Open the chest for a small key.
+Return upstairs. Raise the upper left skull to reveal a switch, then
+step on it to open the door. Go south to the room where you began.
+
+Now take the right path. Step on the switch to open the door, then go on
+to the next room. Go straight through this room to go downstairs to the
+basement. Enter the orange warp and you'll be transported to another
+part of the dungeon. Dash into the south wall of this room to collapse
+it, then go inside. Be careful around these jellyfish-like monsters,
+they can shock you. Dash into the wall at the end and continue to the
+next room.
+
+These enemies can be a huge pain in the ass to defeat. They mimic your
+every move. Easily defeat the two green ones with a single arrow to
+each. The red guy is much harder, he shoots fire at you if you face him
+directly. So what you need to do is shoot at the space *beside* him,
+then quickly move to the side a bit so that the arrow hits him. The door
+opens when they're all defeated. Proceed to the next room.
+
+Make your way over the moving floor, and be careful not to get hit by
+the spikes or jellyfish. Go upstairs at the end.
+
+Open the chest for the map. Bomb open the crack in the left wall, then
+go inside and open the chest for a small key. Return to the previous
+room. You can bomb open the crack in the right wall, then go inside for
+a few fairies. Now backtrack your steps all the way to the entrance room
+of the dungeon.
+
+This time, go north through the middle door. Use one of your keys to
+continue north through this locked door. Avoid the jellyfish and the
+turtle-like enemies. Take the left path until you get to a section of
+the floor that is cracked. Use a bomb to destroy it, then fall inside.
+Use your last key to enter the locked door and go upstairs. And inside
+this chest is...the big key!
+
+Drop off the ledge to the right. Pick up the skull at your left and step
+on the switch beneath it to make a chest appear. At this point, four
+stalfos guys drop from the sky and their heads attack you. Skillfully
+avoid them and open the chest for a small key. Now go in the orange
+warp.
+
+You're here again. Go upstairs and take the center path again to get
+back to where you were before. This time, take the right path. Push one
+of the blocks into the pit and continue north to the next room. Open the
+chest here for a small key. Now go to the arrow tile on the floor and
+drop down to the next lower floor. Go up the stairs, left, then up
+through the locked door.
+
+You need to be quick here. Toss aside a pot and dash through the room
+before the floor crumbles beneath your feet. When you reach the other
+side, go left through the locked door.
+
+This room is a maze...and it's dark too. There are no torches to light,
+so you'll need to rely on the weak light in front of you. Kill those
+fire breathing enemies to get them out of your way. There's a chest in
+the top-left corner with some bombs. Go to the chest in the bottom-right
+corner to get a small key. Make your way to the east wall where you'll
+find a crack. Use a bomb to open the crack, then go inside. Open this
+huge chest to find a tiny hammer inside. Now return to the maze room,
+get through it and exit through the regular door.
+
+Now go through the right door. Open the chest to get the compass. Now go
+down one of the stairs (they both lead to the same room). Rupees
+galore! There's a total of 180 rupees here. One of the chests at the
+bottom of the room has a small key, and the other has a single pathetic
+arrow. Be sure to pick up the key, then go back upstairs. Go south
+through the locked door.
+
+To get past those spikes easily, lift the left skull and pass at the
+left side. Open this chest for 5 rupees. Push the statue right and
+continue south.
+
+Now you are back in this room. Use the arrow tile to drop down to the
+platform with all these bouncy enemies. Defeat all these enemies by
+pushing them into the holes at the side (just to get them out of your
+way). Go south and you should be able to see a crystal orb across the
+pit. Hit it with the boomerang to lower the blue barrier blocks. Now go
+to the next room at the right.
+
+Hit the crystal orb. Go to the upper right corner of this room and get
+rid of all the pots. The switch to open the door is under the pot at the
+very corner, but it won't stay down! You need something heavy to hold it
+down...so push the upper right stone statue so that it stays on top of
+the switch to keep it down and hold the door open. Then go upstairs and
+through the door.
+
+It's another group of these annoying bitches. Defeat them just like you
+defeated the other group, then go on.
+
+Be careful to avoid the moving spike, and go to the right side of the
+room where you'll find a green cyclops statue. There's something
+suspicious about it... Shoot and arrow into it's eye to make the wall at
+the right move further, revealing a stairway! Go downstairs...
+
+Bash these "Digletts" into the ground with your new Magic Hammer. You
+can kill the turtle-like monsters by flipping them over with the hammer,
+then slashing away with the sword. Stand at the left side of the lowered
+orange barriers, then hit the crystal orb with the boomerang. Open the
+locked door and go left to the next room.
+
+Get rid of this turtle and continue. Ack! A whole army of turtles! I
+suggest lighting the torches so you can see better. These guys can be
+really though to defeat. When they are all gone, go to the next room.
+Push aside the upper-right block so you can enter the orange warp. Make
+your way on this path, defeating any evil turtles you come by.
+
+If you're ready, go through the big door to face this dungeon's boss:
+KING HELMASAUR. Details are found in the boss section, as usual. After
+defeating him, pick up the heart container and get your first crystal.
+There are 6 more crystals to go. May the way of the hero lead to the
+Triforce!
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE SECOND CRYSTAL >>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+Now that you have the Magic Hammer, you can explore almost all of the
+Dark World. Now would be the perfect time to get the flute...
+
+
+                         -- GETTING THE FLUTE --
+
+
+There is an area on the land at the north-west of Lake Hylia where you
+find nine purple pegs sticking out of the ground. Bash them into the
+ground with the hammer so you can pass through.
+
+Continue going left on the dirt path...past your house (which is now a
+bomb shop, by the way)...until you get to the center of a grove of trees
+where there used to be a boy playing the flute in the Light World. Now
+there's just a wierd armadillo guy. This is actually the flute boy. He
+wants you to find the flute for him. Talk to him and get the shovel. Use
+the magic mirror to go the light world.
+
+He said he buried it with some flower seeds. By now those seeds have
+grown into flowers. Use the shovel to dig into the flowers at the upper
+left corner. After you find the flute, get it and go back to the Dark
+World.
+
+Talk to the armadillo man again. Since he can't play it anymore, you can
+keep it. Play it in front of him one last time and he will turn into a
+tree.
+
+Use the Magic Mirror to go to the Light World, then go to Kakariko
+Village. The flute boy's father is asleep in the bar, you can play the
+flute to him if you want to. Go to the chicken statue at the center of
+the village. Play the flute in front of it. Behold, the rooster is free!
+It looks more like a duck actually. Now you can play the flute anywhere
+in the Light World and this duck can transport you to any of 8 points on
+the map.
+
+
+                     -- GOING TO THE SWAMP PALACE --
+
+
+Return to the Dark World. Go to the Dark World's equivalent of the
+"Swampy Marsh Place" (the swamp area south of the bomb shop). Go to the
+structure at the south of this area, then use the magic mirror to go to
+the Light World.
+
+Enter the structure. Push the blocks aside and proceed to the next room.
+Pull the switch at the right to open the gates and release the water.
+Now go back outside.
+
+Enter the sparkling transporter, then enter the structure again. Welcome
+to the second dungeon of the Dark World: The Swamp Palace.
+
+
+                          -- THE SWAMP PALACE --
+
+
+If you did everything correctly, the canals should be filled up with
+water. If they're dry, see the steps that I gave in the paragraphs
+above.
+
+Hop into the water, swim left a little, and climb up to dry land. Get
+past the spike thingy and defeat the three enemies in the water to make
+a chest appear. Open it for a small key. Use it to get past the locked
+door.
+
+Now downstairs, go to the little strip of dry land at the left. Bomb the
+cracked wall and go inside. Open the chest to get this dungeon's map!
+Return to the previous room. While you avoid the fireballs from the
+statue, lift the pots (skulls) until you find a small key under one of
+them. Then go through the locked door at the bottom-left.
+
+Make your way past these monsters and go down the stairs. Head straight
+forward to the next room, then lift the skull-pot to find a small key.
+Return to the previous room, go up the OTHER stairs, and through the
+locked door. Bash the Digletts with the magic hammer, then push the
+switch from the right side. This releases the water and fills up the
+canal! Go to the south room, hop into the water, and climb up at the
+left. Continue to the next room.
+
+Climb down the stairs and go down to the south room. Go right and follow
+the path around. Be careful to avoid those orange monsters...you lose
+TWO hearts for touching them. Ouch! Push the block right to make a chest
+appear, then open it for the compass. Return north to the large room.
+
+Climb the stairs at the south-west corner and go through the door. Deja
+vu? No, this is a completely different room. Climb downstairs and head
+forward to the next room, then lift the skull-pot for a small key.
+Backtrack to the large room.
+
+This time, climb the stairs at the north-west corner and enter the
+locked door. Hit the crystal orb from over the wall and push the switch
+to release the water. Now hit the orb AGAIN to raise the blue blocks. Go
+east to the large room.
+
+Climb the south-west stairs once again and enter the door. Hop into the
+water, swim left a little, then climb onto dry land. Go through this
+door. Climb down the stairs. Now you need to push aside these blocks so
+you can pass through. First push the bottom block left, then push the
+center block up. Now proceed up the stairs to the first floor.
+
+Push aside the block. Be careful, there's a lot of enemies in this room!
+At the RIGHT side of the room, push away the block and drop into the
+hole. Go to the room at your right, then open the chest to recieve...the
+Big Key!
+
+Go to the previous room and drop off the ledge. Make your way south, up
+the stairs, then go east until you reach the large room with the Big
+Chest in the center. Now that you have the Big Key, you can open that
+chest and get one of the coolest items in the game: the Hookshot. This
+item can grapple onto things and pull you towards it.
+
+>From the center platform with the big chest, you can see a platform at
+the right with a skull on it. Use the hookshot to get onto that
+platform, then lift the skull at the right to get a small key. Return to
+the center platform. Now use the hookshot to get to the north platform
+(from behind the chest). Enter the locked door.
+
+Go left and lift the pot at the north-west corner. This switch holds the
+door open, but you need something to hold it down for you. Push the
+statue onto the switch to hold the door open. But DON'T go in that
+door... instead, go around to the right side and enter the left door
+there.
+
+Go through this corridor and downstairs. Push the switch. This opens
+the drain and *empties* the water from the canal. Climb down the stairs
+and into the door. Then go north to a room with lots of waterfalls.
+
+Push the third block from the left to make a chest appear, then open it
+to find...20 rupees. Blech. Go to the right side and enter the second
+waterfall from the right. There's a passageway behind it. Continue
+upstairs...until you get to a room with a big pool or water.
+
+Immediately jump in the water, swim right and go to the place with the
+skull. Lift it up to get a small key. By now an enemy or two is waiting
+for you to return to the water. Try to avoid it, if possible. You can
+blow up the cracked wall and enter a secret room where you'll find
+hearts and other goodies under skull-pots.
+
+If you're all set, enter the locked door and continue to the next room
+where you will face this dungeon's boss: ARRGHUS. Head for the Boss
+Section of this FAQ for details. After you've defeated him, get the
+heart container and the second crystal. There are 5 more crystals to go.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<<< THE THIRD CRYSTAL >>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                     -- GOING TO THE SKULL DUNGEON --
+
+
+Let's just go straight to the next dungeon, shall we? But to get to the
+next dungeon, you'll need to pass through the Light World. Use the Magic
+Mirror to go to the Light World, then use the flute to go to Kakariko
+Village (map point #3). Now go into the Lost Woods through the north-
+west corner of the village. When you enter the Lost Woods, immediately
+go right and south out of the Woods. You should come to an area blocked
+off by a fence. Use your hammer to smash the pegs into the ground. Then
+pick up the rock to reveal a transporter! Enter the Dark World...
+
+Go north into the Dark World version of the Lost Woods. Follow the path
+right. When you reach the 3 skulls CONTINUE going right. Then go north
+and fall into the hole to enter the 3rd dungeon of the Dark World: The
+Skull Dungeon.
+
+
+                         -- THE SKULL DUNGEON --
+
+
+[NOTE: In many places of the dungeon, a hand will drop down from the
+ceiling and try to grab you. If you get caught, the hand will bring you
+back to the place where you entered the dungeon. This can really be a
+pain in the ass, so try extra hard to avoid that hand!]
+
+>From the place where you land, go south. Toss away the three skull-pots
+and open the chest to recieve a small key. Now head for the upper-right
+corner of the room and go straight through the locked door. Get rid of
+the hardhat beetle by pushing him with your sword into one of the pits.
+Step on the star symbol to rearrange the pits, then open the chest to
+get the dungeon map. Go into the door at the left, then go south to the
+outside.
+
+Just north of where you come out, there's a 3x3 square of bushes. Cut
+them down and drop into the hole in the center.
+
+You'll land in the center of a circle of pots. Toss them away (and kill
+that Helmasaur too). Step on the star symbol once to rearrange the pits.
+Blow open the crack on the left wall with a bomb. Go inside. Just pull
+the switch here and...kablam! The entire south wall blows up! Go south
+to reach the big chest (can't open it yet, you don't have the big key).
+Use the hookshot over the pits to reach the other side. Then go outside
+once again.
+
+Go through the two tunnels of bones at the north-west, then enter the
+skull at the end to get back inside the Skull Dungeon.
+
+Defeat the two electric jellyfish and the two mummies (and watch out for
+the falling hand!). Lift the pot in the center to reveal a switch. This
+needs something heavy to hold it down. You can move the statue at the
+right. Push it down a bit, then left, then PULL it back until it's on
+top of the switch. Then proceed to the next room. Annahilate this small
+army of enemies, then open the chest to get the Big Key! Return to the
+previous room and go back outside.
+
+Go through the two tunnels of bones again. Cut down the 3x3 block of
+bushes and drop into the hole in the center (again).
+
+Hit the star symbol only once, then go left through the hole you blew
+open in the wall. Go south until you reach the big chest. Now that you
+have the big key, open it and recieve this dungeon's treasure: the
+Fire Rod. Once again, use the hookshot to cross the pit. Go outside.
+
+Go through the two tunnels of bones yet again (this is the last time, I
+promise). Enter the skull.
+
+This time, go through the door at the left. Continue straight through
+this room to the next one. Lift the pot at the upper-left corner to find
+a small key. Then go outside.
+
+Go through the *left* tunnel of bones and you'll get to some kind of
+skull of a monster. Whip out your fire rod and burn away its big nose to
+reveal an entrance (it took me forever to figure that one out). This is
+another section of the Skull Dungeon. Go inside...
+
+Go down the steps at the left. There are paths and wall hidden under the
+upper path, so it'll be confusing to get through this place. Make your
+way north and enter the door at the upper-left wall. Make your way south
+through this room, avoiding the enemies as much as possible, and enter
+the door at the bottom. Open the chest for a small key. Now backtrack
+through the previous room and go back through the maze until you get to
+the entrance. Go north on the upper path and through the locked door at
+the end.
+
+Here's detailed instructions on how to get through this room: Step
+forward on the star symbol. Lift the pots, then go forward and step on
+the stars at the center of the room. Now step on the star at the bottom
+left corner. Go around (breaking the pots when necessary) and step on
+the stars to the upper-right of the center stars. Next, hit the star at
+the upper-right. And finally, you can exit the room.
+
+First, kill ALL of the mummies in the room. Also destroy the two skull
+pots. To open the door, you need to light the four torches, and the only
+way to do that is with the fire rod. So light all four torches, starting
+from to bottom and working your way up. Then leave the room before one
+of the lights goes out.
+
+The next room may seem to be a dead end, but cut down the vines at the
+north wall and you'll find a hidden door. In the next room, defeat the
+enemies and you'll find a small key in the mummy. Open the locked door
+and proceed to the next room.
+
+Lift one of the pots and carefully slip by the spike trap. Then drop
+into the hole and you'll fall right in front of this dungeon's boss:
+MOTHULA. Go down to the boss section of this FAQ for details. After
+you've defeated him, get the heart container and the third crystal.
+There are 4 more crystals to go.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<<< THE FOURTH CRYSTAL >>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+Before you actually go for the 4th crystal, there's a few items you
+should get. If you already have these items, just skip to the next
+section.
+
+
+                           -- GETTING ETHER --
+
+
+Use the Magic Mirror to transport to the Light World. Then use the flute
+and let the rooster bring you to map point #1 (Death Mountain). Climb
+all the way to the top of Death Mountain, just like you did when you
+were going to the Tower of Hera. Go to the left side of the Tower of
+Hera and cross that bridge to an island in the sky. Read the inscription
+on the stone tablet with the help of the Book of Mudora. You'll hold up
+the Master Sword and recieve the power of Ether.
+
+
+                           -- GETTING QUAKE --
+
+
+Return to the Dark World. Go as far north-east as possible until you
+reach the very north-east corner of the map (the place that used to be
+the entrace to the Zora's Waterfall area). There you'll find a sign that
+reads "Curses to anyone who throws something into my circle of stones".
+There's a circle of stones in the water to the left. Let curiousity get
+the best of you: Throw something into that circle. Some kind of catfish
+creature comes out and gives you the power of Quake.
+
+
+                           -- GETTING BOMBOS --
+
+
+Still in the Dark World, go to the area south of your house (*cough*...
+the Bomb Shop). The area where the 2nd Dark World dungeon is. From
+there, go left to where the entrace to the desert should be. Eventually,
+you'll reach a dead end and an area enclosed by stakes. Go inside that
+area and use the magic mirror. You should emerge in the Light World on
+top of a ledge. Go one screen to the left and read the tablet with the
+Book of Mudora. You'll hold up the Master Sword and recieve the power of
+Bombos.
+
+
+                        -- GETTING THE ICE ROD --
+
+
+Use the flute to warp to map location #5. From there, go north on the
+dirt path. Continue until you reach a grassy area and a cave. There is
+clearly a bombable wall to the left of that cave. Use a bomb on it and
+go inside. Go forward to the next room, then open the chest to get the
+ice rod.
+
+
+                     -- DOUBLING YOUR MAGIC POWER --
+
+
+Go to Kakariko Village in the Light World. Go to the Smithy Shop (the
+blacksmith shop, to the right of the Village). Go up the steps, right a
+little, and smash the peg down with the magic hammer. Now fall off the
+ledge and into the hole.
+
+Go north to the next room. Sprinkle some magic powder into the red
+stuff. This wakes up a bat. He will put a "curse" on you that supposedly
+cuts your magic power in half, but this is actually a good thing. Now it
+only takes half the energy as before when you use magic. It's just like
+doubling your magic meter in Zelda: OOT.
+
+
+                     -- GOING TO BLIND'S HIDEOUT --
+
+
+Use the flute to go to Kakariko Village (map point #3). Now go into the
+Lost Woods through the north-west corner of the village. When you enter
+the Lost Woods, immediately go right and south out of the Woods. Use
+your hammer to smash the pegs into the ground. Pick up the rock and
+enter the Dark World.
+
+Go south to the Village of Outcasts. In the place where the rooster
+statue was in the Light World, there is now a gargoyle statue. Stand in
+front of it and pull back on the pitchfork. It will vanish, revealing
+the entrance to Blind's Hideout. Before you enter, I suggest you fill up
+your bottles with the red/blue potion from the magic shop (or with
+fairies). You will need it.
+
+
+                          -- BLIND'S HIDEOUT --
+
+
+This is a confusing place, so I'll try to make my instructions as simple
+as possible. Drop off the ledge to the lower area. Go north a bit, then
+open the chest at the left to get the map. Then continue north to the
+next room. The chest you see there contains a single red rupee. Staying
+on the lower area, go around and go to the next room to the right. Then
+go straight to the next room to the south.
+
+Go up the steps to the upper area of the room. Make your way to the
+treasure chest and open it to get the dungeon's compass. From that
+point, drop down to the lower level and go to the next room to the left.
+Open this chest and you will find the big key.
+
+Go to the east room, then go to the north room. Now climb the steps to
+the upper area. Make your way to the north side of this room and go
+through the door that requires the big key.
+
+Go north through this room (defeating any Stalfos along the way). Lift
+the skull pot at the upper-right corner to get a small key. Then go back
+down and go left through the locked door to the next room. I try to
+avoid these enemies, a single touch from them costs you TWO hearts! Go
+straight through this room and on to the next.
+
+Defeat the cloud-like creatures in this room (just defeat the small part
+and the big one will disappear as well). You can sprinkle magic powder
+on the red-bubble enemy to turn it into a fairy! Go left to the next
+room. Make your way north over the conveyer belt (against the current),
+defeating the enemies along the way. In the next room, get the small key
+from under the skull pot. Hit the crystal orb, then carefully slip past
+the spike traps and go up the stairs.
+
+Lift the bottom-right skull to reveal a switch, then step on it to open
+the door. Continue on to the next room. Dash straight through this
+corridor and go through the door to the next room.
+
+The chest in the corner contains some bombs. Stand between the two
+wooden tables and face north. Place a bomb on the ground, pick it up
+(with the A button), and throw it forward. It should land on the cracks
+and blow open a hole in the floor, allowing light to shine down to the
+1st floor.
+
+Now backtrack all the way to the first floor. Go to the room with the
+long conveyer belt. From here, go to the room at the right (passing over
+the lowered blue block). Zip past this room and continue to the room at
+the right. In this room full of conveyer belts, make your way to the
+north side and go down the stairs to the basement.
+
+Defeat ALL the enemies in this room to open the door, then go inside. Go
+south in this room over the conveyer belts. Be extra careful not to fall
+off into the sides or touch the enemies (you can kill the jellyfish from
+afar with the hookshot). Go in the door at the right. Go straight right
+through this room and you'll reach some kind of prison. Walk right
+through all the locks (they don't require any keys) until you reach what
+*appears* to be the dungeon's maiden.
+
+Doesn't this seem suspicious to you? This girl will follow you from now
+on. Anyway, take the small key from the chest and backtrack to the room
+with the long conveyer. This time, go through the locked door at the
+left. Quickly whip out your hammer and smash one of the "digletts" into
+the floor, then open the big chest to get this dungeon's treasure:
+Titan's Mitt. Now quickly get out of the room before you get trapped in
+the center. From the long conveyer belt room, go through the door at the
+upper-right...then go up the stairs to floor B1.
+
+In the full-of-conveyer-belts room, lift the skull pot at the
+upper-right corner to reveal a switch. Then step on the switch to open
+the door at the right. Go inside.
+
+Go north to a seemingly empty room. There's light shining in the center
+because of the hole in the floor you blow open in the above level. Now
+let's think for a moment: This is Blind's Hideout, and you just picked
+up a mysterious girl from the basement. That girl is Blind the Thief.
+And do you remember what the person in the Light World said? "Blind
+HATES the light".
+
+Go forward so that the light shines on the girl. She transforms and
+reveals her true identity. It's this dungeon's boss: BLIND the THIEF.
+See the boss section of this FAQ for details. After you've defeated him,
+get the heart container and the fourth crystal. There are 3 more
+crystals to go.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE FIFTH CRYSTAL >>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                        -- UPGRADING THE SWORD --
+
+
+Go to the area a little bit south of the Village of Outcasts. You'll
+find a frog man trapped in a cage of heavy skulls. Now that you have the
+Titan's Mitt, you can lift those dark skulls and free the frog. This is
+actually the partner of the guy in the Smithy Shop! Talk to him to make
+him follow you. Use the Magic Mirror to warp to the Light World, then go
+to the Smithy Shop for a sweet reunion.
+
+Exit the house and enter again. Talk to one of them and ask him to
+temper your sword. At a price of only 10 rupees, they are being too
+kind. After giving them your sword, leave the house and go around
+Kakariko Village to pass the time. Then return and get your orange
+upgraded sword.
+
+
+                      -- GETTING THE 4TH BOTTLE --
+
+
+After getting the level 3 sword, return to the Smithy Shop in the Dark
+World. There's a purple chest in the ruins of that house, but you can
+never open it because there is no key. Just take it with you.
+
+This chest will continue to follow you unless you dash with the Pegasus
+Boots. Use the Magic Mirror to transport to the Light World, then go to
+the entrance to the desert where there's a person standing beside a
+sign. This guy will open the chest for you as long as you promise not
+to tell anyone. Inside the chest is your 4th and final bottle.
+
+
+                      -- GETTING THE MAGIC CAPE --
+
+
+Go to the graveyard in the Light World (it's just to the east of the
+Sanctuary). At the upper-right corner of the graveyard, you'll find a
+tombstone in an area enclosed by dark stones. Now that you have Titan's
+Mitt, you can lift those stones. Most tombstones can be moved simply by
+pushing, but not this one. You need to dash into it (pegasus boots) to
+reveal a secret stairway...
+
+At the end of the underground room there is a treasure chest with the
+magic cape inside. When you use the magic cape, you become invisible and
+invinsible...just watch your magic mater.
+
+
+                      -- GOING TO THE ICE PALACE --
+
+
+In the Light World, use the flute and let the rooster bring to to map
+point #8 (south of Lake Hylia). From there, jump into the lake and swim
+to the island in the center of the lake, where there's a cave. Lift the
+heavy stone in the center to reveal a transporter. Enter into the Dark
+World. Then simply go down the stairs to enter the Ice Palace.
+
+
+                            -- ICE PALACE --
+
+
+[NOTE: You'll be using magic quite a bit in this dungeon, so I suggest
+you have at least one bottle of the green potion. Here's a neat trick to
+do when you're low on magic: Freeze a monster with the ice rod, then
+smash him with the hammer...a magic jar comes out!]
+
+In the first room, the ice statue at the left comes to life an attacks
+you. Be very careful not to touch him because a single hit will cost you
+FOUR HEARTS! Magic flames will protects you in this icy dungeon: Use the
+fire rod to defeat him and open the door.
+
+The light blue tiles in this room are slippery to walk on. You'll be
+seeing more of them throughout this dungeon. Defeat the electric
+jellyfish to find the small key hidden in one of them. Then go down the
+stairs to B1. By the way, this dunegon goes all the way down to B7!
+
+Step on the tile at the bottom left and continue to the next room. In
+this cross-shaped room, push the block right and go to the south room.
+Quickly kill all the green ducks here with the magic of bombos (or you
+can kill them one by one if you want to conserve magic), then open the
+chest to get the dungeon compass. Return to the cross-shaped room.
+
+Push the block forward, step on the raised tile, and go on to the east
+room. More green ducks! Kill them if you want. Lift the lower skull pot
+to reveal a switch and step on it. Then go LEFT, back to the
+cross-shaped room.
+
+Step on the tile to open the doors. Push the block to the left, then go
+through the north door. Hit the crystal orb to lower the blue blocks.
+Now plant a bomb beside the crystal orb and go to the other side of the
+blue blocks before the bomb explodes. Use another bomb on the cracked
+floor to blow a hole in it. Then drop down to B2.
+
+There are two Stalfos that you need to defeat in this room. But the
+Stalfos can't be defeated with the sword alone. First, hit him with the
+sword to make him collapse to the floor. Then plant a bomb on him to
+finish him off. Defeat both of the Stalfos to open the door, then go to
+the next room.
+
+Carefully make your way through this room while avoiding the spikes. The
+conveyer belt changes direction every few seconds. Defeat the blue
+jellyfish to find a small key in one of them. Make sure the crystal orb
+is colored red, then go to the next room. Simply get around while
+avoiding the fire chain. The switch to open the door is hidded under the
+skull pot at the bottom left. Go down the stairs in the next room to
+reach B3.
+
+Again, defeat all the green ducks in the room to open the door (with the
+help of bombos, if you have magic to spare). When you enter the next
+room, DO NOT MOVE. The big spikey ball will NOT hit you if you stand in
+the doorway. As the spikey ball moves back, go forward and into the room
+at the left. Make your way around the fire chain and go down the stairs
+(it'll be hard to properly align yourself with the stairs due to the
+slippery floor).
+
+Now you're in B4. With the fire rod, defeat the two ice statues that
+come to life and a chest will appear. Inside you'll find some bombs. Now
+place a bomb in the cracked floor at the left to create a hole. Drop
+inside it and you will land right in front of the big chest. Too bad you
+don't have the big key though :P  Push aside the blocks and go right to
+the next room. Just ignore the ice man that comes at you and continue
+right to the next room.
+
+In this room with the slippery floor, lift a pot at the upper-left to
+find a small key. You might want to sprinkle magic powder on the red
+blubbly thing to turn it into a fairy. One of the pots here has a switch
+beneath it. Find the switch, open the door, and go south to the next
+room.
+
+Get past this room, careful not to slip off the sides of the land or hit
+the fire chain. In the room after that, lift the pot at the bottom-left
+corner to reveal a switch. Hit the switch to make a chest appear, then
+open it for a small key. Now go up the stairs and back to B4.
+
+Go through the locked door. Make your way through this large, dangerous
+room and go through the door at the upper-right. Use the hookshot to
+defeat the enemies and cross the wide gap in the next room. Carefully
+make your way through this room with the spikey balls, then go up the
+stairs to B3.
+
+You can cross the spikey floor in this room by using the magic cape.
+Don't forget to press Y again to take it off. You don't want to waste
+magic power! Lift the skull at the other side to reveal a switch, then
+step on it to make a chest appear. Cross the spikes again with the magic
+cape and open that chest for a small key. Cross the spikes yet again and
+go up the stairs.
+
+Hammer the digletts into the ground and lift the giant block. Collect
+the small key and smash the other digletts with the Magic Hammer. Hidden
+under one of those pots is a switch. Step on it to make a chest appear,
+and get the map from the chest (it's about time!). Stand in front of the
+stone statue and pull it's tongue. Yes, you heard correctly. Pull it's
+tongue to open the door. Go inside and go up the stairs to B1.
+
+Toss aside the pots and open the chest to recieve the big key. At last!
+Go back down the stairs. Pull the statue's tongue to open the door, then
+go inside. Go down the stairs again to B3. With the help of the magic
+cape, cross the spikes. Then go through the locked door. Slip past the
+spiked ball and go through the door at the left. Go down these
+fustrating stairs once again to B4.
+
+Place a bomb on the cracked floor at the left to blow a hole in it (just
+like before), then drop inside. You're in front of the big chest once
+again, but this time you can open it to get...the Blue Mail! This
+fashionable blue armor cuts the damage you take in half. Push aside the
+blocks and go right to the next room.
+
+Now go north through the door that requires the big key. Go straight
+through this room and through the locked door to B6. Go straight south
+through this room. In the next room, there's a switch under the pot that
+opens the door but it won't stay down. Go to the right room and hit the
+crystal orb. Then trace your steps all the way back upstairs (B5).
+
+Keep going until you reach the room with a hole in the center, then go
+right. Find the switch in this room then go south. Just keep going
+through the rooms until you reach the large room with a slippery floor.
+Lift the pot at the right to reveal a switch, step on the switch to open
+the door, then go through that door on your left. Fall into the hole.
+
+Go one room right and you'll be in the room with a hole in the center.
+Push one of the blocks into that hole, then drop inside yourself. Lift
+the skull pot to uncover the switch. Now push the block over that switch
+to hold it down. The door is finally held open! Go south to the next
+room.
+
+At the left side of this room, toss away the two skull pots. Pull the
+statue out of the way. Then bash the digletts into the ground (with the
+magic hammer, as usual). Finally, lift the giant block to uncover a
+hole.
+
+When you're ready, drop into the hole and you will face this dungeon's
+boss: KHOLDSTARE. Detals about this can be found in the boss section of
+this FAQ. When the battle is over, get the heart container and the fifth
+crystal. There are 2 more crystals to go.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<< THE SIXTH CRYSTAL >>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                       -- GOING TO MISERY MIRE --
+
+
+There are no more items or sub-quests in between the two dungeons, so
+let's just go on to the next dungeon. Use the Magic Miror to transport
+to the Light World, then play the flute and go to map point #6 (south-
+west of the desert). With the help of your mighty Titan's Mitt, lift the
+heavy stone at the right to reveal a transporter, then go into the Dark
+World.
+
+Now go north until you reach a structure where the entrance should be.
+There's a tile there with the symbol of Ether on it. Stand on that tile
+and use the magic of Ether there. The rainy weather stops and the
+entrance to Misery Mire arises. Go right ahead...
+
+
+                           -- MISERY MIRE --
+
+
+Go forward and use the hookshot to pull yourself over the pit. Then go
+downstairs to B1. Defeat all the enemies in this room while avoiding the
+lazer beams from the eye of the statue. The door opens when all the
+enemies are defeated...go inside.
+
+Climb down the steps and make your way through the room. Climb the steps
+at the upper-right and enter the door at the upper-right (not the locked
+one). Watch out for the fireballs that come out of the lamps here. Push
+the block to the side and enter the door that opens. Keep going forward
+on this straight path until you get to a treasure chest. Open it to get
+a small key. Now go back to the room with the block and two lamps.
+
+Time time, enter the door at the right. Lift the pot at the upper-left
+corner to get another small key. Now, with the help of the magic cape,
+lift the pot over the spikes to reveal a switch. Then open the chest
+that appears to get yet another small key. Go north through the locked
+door.
+
+Continue north through this room and follow the long path until you
+reach a large room with spikes. Go to the upper-left part of the room
+and hit the crystal orb (to turn it blue). Also lift the pot there and
+get the small key. Exit the room the same way you came in (through the
+east door). Continue backtracking until you reach the room with the
+spiked floor and stalfos.
+
+This time, go south through the locked door. Open the chest to get the
+dungeon map. Now go left through another locked door. Climb down the
+steps...then climb up the steps at the upper-left. Go along the path at
+the side of the room, then onto the wire grating floor. Lift the pot to
+reveal a switch, step on the switch, and open the chest for a small key.
+Now go through the locked door on the left wall.
+
+Kill the jellyfish enemy to get another small key, then go straight
+through another locked door. In the next room, the floor tiles will come
+to life and attack you, just like in some previous dungeons. You'll also
+need to avoid the fireballs. Light the four torches in this room with
+the fire rod, then go through the door that opens.
+
+Open the chest here to get the compass, then go TWO rooms south. You can
+defeat the enemies in the room if you want. The pot in the upper-right
+corner has a big magic jar under it. Go up the stairs.
+
+In this room, you need to move the blocks so that you can get to the
+torches. Move the top and bottom blocks sideways, and move the center
+block up or down. Then do the same thing in the room below. Now light
+ALL four torches in the two rooms. You can just use the regular lamp to
+light them. There will be a long rumbling sound. When the rumbling
+stops, go east to the next room. Fall right into the hole...
+
+And you land right in front of a chest! Open it to get the big key. Go
+left to the next room and walk into the transporter. Then go north
+through the door that requires the big key. Go into another transporter.
+
+Now go right to the next room (ignore that big door for now). Then go
+two rooms south. Drop down the ledge, climb up the steps, and go into
+the room at the right. Now QUICKLY go around to the path in the center
+before it collapses. Keep going along that path until you reach the big
+chest at the end. Open it to get this dungeon's treasure: The Cane of
+Somaria.
+
+Go left to the next room, then go two rooms north. Then go west into the
+room with the big door. Climb up the steps and enter that big door. Go
+forward along this straight path and go down the stairs.
+
+Darkness. Try to avoid the fireballs coming at you from every direction.
+Lift the pot at the left side to uncover a switch. This switch opens the
+door...but it doesn't stay down! Use your newly-aquired Cane of Somaria
+to create an orange block, then push it over the switch to hold it down.
+Go through the door at the bottom-left.
+
+There's nothing special in this room, just go left to the next room.
+Make your way to the upper part of this room where there's a ring of
+conveyer belts. Hit the crystal orb in the center by using the
+boomerang. It should be color red now. Go through the door at the bottom
+left.
+
+The orange blocks are lowered, but the blue blocks are raised! Use a
+bomb to blow up the crack in the north wall of the room. Go inside, hit
+the crystal orb, and come back down. Go left to the next room. Watch out
+for the enemies falling from the sky in this room. Hit the crystal orb
+at the top of the room, then go up the stairs.
+
+Light at last! Go left and north through the big door to finally meet
+the boss of Misery Mire: VITREOUS. Details, as usual, are found in the
+boss section of this FAQ. When you're done with him, get the heart
+container and the sixth crystal. There's only 1 more crystal left.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<< THE SEVENTH CRYSTAL >>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                 -- GETTING STUFF FROM THE FAT FAIRY --
+
+
+Go to the Bomb Shop in the Dark World (it's the building that used to be
+your house in the Light World). In addition to the regular blue bombs,
+there's also a special pink super bomb! Buy the super bomb for 100
+rupees. This bomb follows you behind you back until you press the A
+button or drop off a ledge.
+
+Go outside of the shop. Use the Magic Mirror to transport to the Light
+World. Now head for Hyrule Castle and use the teleporter at the gate to
+go back to the Dark World. Now you're in front of the big pyramid. Climb
+the steps up the pyramid. See the big crack in the wall? Set the bomb in
+front of that crack (press the A button) and get away. The bomb explodes
+after 3 seconds, blowing a big hole in the wall. Go inside.
+
+Step forward towards the fountain and you will be promted if you want to
+throw something in. This is just like that good fairy in the Light
+World! Throw in your bow and arrow...a fat fairy appears. Answer her
+question honestly and she'll give you something better: The Silver
+Arrows. These are stronger than regular arrows and you need them to
+defeat Ganon. Repeat that process with your sword to get the golden
+sword (lvl. 4).
+
+
+                    -- GETTING THE CANE OF BYRNA --
+
+
+Use the Magic Mirror to transport to the Light World, then use the flute
+and fly to map point #1 (on Death Mountain). Follow the path and make
+your way up the mountain, just like you did when going to the Tower of
+Hera. After you climb the tall ladder, go right and into the
+transporter.
+
+Upon arriving in the Dark World, go straight down from where the
+transporter was and drop of the ledge. You'll land on another small
+ledge. Go inside the cave.
+
+Smash the three digletts with your Magic Hammer. Now use the magic cape
+and follow the path of spikes. When you get to the end, open the chest
+to get the final item to complete your collection: The completely
+useless Cane of Byrna. That trip over the spikes probably cost you all
+your magic power. So use a green potion if you have one, and make the
+return trip. Then exit the cave.
+
+
+                      -- GOING TO TURTLE ROCK --
+
+
+Drop off the ledge and make your way back up to the top of the mountain.
+Use the Magic Mirror at the correct spot so that you'll emerge on top of
+the big rock. Drop off at the other side and go right...past the Tower
+of Hera...past the bridge...and keep going until you reach a large rock
+with three pegs on top of it. Hammer the pegs in this order:
+
+                                  2
+
+                               3     1
+
+To make the transporter appear, then go into the Dark World. THIS is
+Turtle Rock. There's a tile there with the symbol of Quake on it. Use
+Quake while standing on that tile. In a fantastic rumble, the turtle
+head transforms into a staircase! A staircase that leads you into the
+7th and final dungeon, known as Turtle Rock...
+
+
+                          -- TURTLE ROCK --
+
+
+Check the triangle at the left to recieve an important message from
+Shahasrahla. You will most likely need the magic potion in this
+dungeon... you will be using a lot of magic. I suggest that you have at
+least one bottle of the green or blue potion at all times.
+
+Toss aside the pots and stand in front of the little brown block with
+the question mark on it. Use the cane of Somaria on it to create a
+platform for you to ride on. There will be more stuff like this
+throughout the dungeon. Ride on the platform to the other side then go
+on to the next room.
+
+Use the cane again on the question mark to create another platform. Get
+on it and press right to start moving in that direction. The platform
+stops when it reaches the next question mark, so press up to continue,
+then get off at the next stop. Go right into the next room.
+
+There are in this room four torches, and you'll need to light all of
+them with the firerod to open the door. Use the cane to create another
+orange platform, then press down to start moving.
+
+    .------.            The numbers at the left stand for the torches.
+    ?    3 | 2
+    |  .---|---.        When you are between torch 4 and 1, use the
+    |  | 4 | 1 |        firerod to light up torch 1 at your right. Then
+    |  '---'   |        when you're between 3 and 2, light up torch
+    |          |        2 at your right. Then when you're above torch 3,
+    '----------.---.    shoot the firerod down to light up 3 and 4.
+               |   |
+               '---'
+
+The door will stay open only while the torches are lit, so hurry to that
+door and go north to the next room.
+
+Make your way through this room and avoid the spiky roller things by
+hiding at the sides. Open the chests at the end to get the dungeon map
+and a small key. Make your way back down to the previous room...then go
+left to the room before that.
+
+Create another platform and ride it up, then continue until you reach a
+locked door. Go through it and kill the enemy in the next room (be
+careful not to get hit by his bouncing body parts!). Collect the key and
+continue north.
+
+There are two chain chomps guarding the next room. Be very careful
+around these guys: Every hit from them costs you THREE hearts! Standing
+at the lower part of the room (south of the tan barrier), hit the
+boomerang to hit the crystal orb and lower the blue barrier. Now push
+one of the brown blocks to the side. This causes a chest to appear! Use
+the boomerang again on the crystal orb, then collect the small key from
+the chest. Use this to proceed through the locked door.
+
+If you're running low on hearts (and you probably are thanks to the
+chain chomps), you can sprinkle magic powder on the "red bubbly things"
+to turn them into faries. Go around to the lower-right corner of the
+room, up the stairs, and go into the tunnel. You'll automatically go
+through to the other side. In the next room, go into the *right* tunnel.
+Go into the next room.
+
+Avioding the red bubbly enemies, go down and hit the crystal orb to
+lower the blue barrier. Destroy the pokey (the brown bouncing enemy) to
+get a small key. There's an eye above the door that shoots laser beams
+at you if you look at it. Face left and hold your sword out. Now you can
+walk through the door without facing the eye!
+
+Go through the tunnel in the next room. Open the chest and you'll get
+the big key! Go down into the next tunnel and proceed to the next room.
+Go into another tunnel, then fall off the ledge. Go up the stairs at the
+bottom-right and go into that tunnel again. In the next room, go into
+the *left* tunnel this time. Defeat both of the pokeys to open the
+doors. Now head south...then left...
+
+Here you have FIVE laser eyes on the north wall! The 1st, 3rd, and 5th
+eyes will only shoot at you if you face then. The 2nd and 3rd eyes will
+shoot at you no matter what direction you're facing. Bomb the crack in
+the south wall and go inside.
+
+You're outside! Pass along the ledge and enter again at the right cave.
+
+Use the cane to create a bridge over the small gap, then open the big
+chest to get this dungeon's treasure: The Mirror Shield! Go through the
+north door into the next room. There, don't go left! Avoid the fireballs
+and head north through the locked door. Into the tunnel...and into the
+next room...
+
+Bomb the crack in the upper wall and go inside. This can be tricky: When
+the spiky roller is at the right side, go up and use the boomerang to
+hit the crystal orb, and quickly go left to safety. Open the chest for a
+small key. Use the boomerang again to hit the orb, then go north through
+the locked door
+
+
+    HHHHHHH
+    HHHHHHH               ,----------.
+    HHHHHHH               |          |              o
+       ?         ,------------o      ,----o----.    |
+       |         |            |      |         |    |
+  ,----o----o----|----o----o--|--o---o         o----o
+  |         |    |    |    |  |  |   |         |    |
+  o----o----|----o----|----|--'  |   |         |    |
+  |    |    |    |    |    |     |   |         |    |
+  |    |    o----|----'    o-----o---o----o----o    |
+  |    |    |    |         |              |    |    |
+  o----o    `----|----o----'              o----o----'
+  |    |         |    |       HHHHHHHH    |    |
+  |    |         |    |       HHHHHHHH    o----'
+  o----o         |    '----o  HHHHHHHH    o-------o
+  |    o----o----o            HHHHHHHH    |
+  |    |    |    |            HHHHHHHH    |
+  o----|----o----|---------.              |
+  |    |         |         |              |
+  |    `---------o    ,----o----o----o----o----o----.
+  |              |    |         |    |         |    |
+  |    ,---------|----o----o----o----o         |    |
+  |    |         |    |    |    |    |         |    |
+  `----|----o----o----|----o----o----o         o----o
+       |    |    |    |    |    |    |         |    |
+       o    `----o    '----|----'    '---------'    |
+                 |         |                        o
+                 '---------'
+
+Here's a map to hopefully get you through the next room. I really hope
+it helps, because it took a lot of effort for me to make! You need to
+first make your way to the center platform where there's a pot. You can
+use the magic cape and turn invisible to escape getting hurt by the
+flames. Lift the pot at the center and step on the switch to open the
+exit. Then make your way to the lower left platform and go through the
+door.
+
+Go through this room and into the door at the south end. In the next
+room, go down to the bottom and go left on the last path. Your new
+Mirror Sheild will protect you from the lasers! Open the chest to get
+small key. Getting back on the main path is trickier: Face south and
+press B to hold out your sword. Since the shield is held up at your
+side, you can get back to the main path walking in this position. You
+can do the same thing to get the other treasures, but there's really
+nothing worth getting :P  Go back up to the previous room, then use the
+key to go through the locked door.
+
+This maze room isn't very hard at all. Just use your common sence to get
+through to the top of the room. Remember that you can use the boomerang
+to hit the switch from the other side of the barriers. Go down the
+stairs at the north side of the room.
+
+Lift the pots to get some magic jars to fill up your magic meter. Use
+the cane to creat a platform, then ride it to the other side. Behind
+this door is the boss of the Turtle Rock dungeon. You might need a
+potion for life or magic during this battle. Ready? Proceed through the
+door and meet Turtle Rock's boss: TRINEXX. Details are in the boss
+section below. When you're all done, get your heart container and the
+crystal. By the way, YOU HAVE ALL SEVEN CRYSTALS! Hell yeah! But there's
+still one more major obstacle to tackle: Ganon's Tower.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<<<< GANON'S TOWER >>>>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+                     -- GOING TO GANON'S TOWER --
+
+
+After you are warped to the entrance of Turtle Rock, just take the path
+west until you reach the huge glowing tower. Stand in front of it. The
+seven maidens in the crystals use their power to break the barrier on
+the Tower of Ganon. The blinking stops, the stairs appear. The entrance
+to Ganon's Tower is wide open...
+
+
+                       -- THE TOWER OF GANON --
+
+
+Go forward, down the steps, and go down the staircase at the right. Open
+the treasure chests for some arrows and bombs (rather cheap things to
+put in treasure chests). Lift the pot at the bottom-left to reveal a
+switch this switch opens the door at the right, but it doesn't stay down.
+So use the Cane of Somaria and create an orange block to hold it down.
+Then go into the room at the right.
+
+Ouch, this room is evil. You'll need to avoid the flying tiles, the red
+bubbly thing, the flashy thing that transforms you into a pig, the
+fireballs, and the grabbing hand all at the same time! I suggest using
+magic powder to get rid of the red bubbly thing. It will be really hard
+to escape this room unharmed, but you should at least try :) Aslo be
+very careful to avoid the hand, becuase he'll bring you back to the
+entrance if he gets you. When the tiles are finished attacking you, the
+chest will appear. Get the small key from it and go on to the room at
+the right.
+
+Go right and push the left block downwards. Then kill all the enemies in
+the room: The mummies, the stalfos, and especially the two blue
+jellyfish near the bottom. Return to the top of the room. You need to
+use the fire rod and light all the torches to open the door at the south
+side of the room. Start from the top and work your way down to the
+bottom. When that's all done, go into the south room.
+
+Defeat all the enemies. Now you will need to throw a bomb onto the
+conveyer belt where it will be brought to the crystal orb and explode to
+lower the blue barrier. Do the same thing again, to lower the orange
+barrier (make sure you're on the left side of the blue barrier!).
+Continue to the next room.
+
+Open the upper-left chest to get the compass (and create a lot of holes
+in the ground...). The other chests just have a few rupees and arrows.
+Go into the warp portal.
+
+Go right over the conveyer belt and step on the star. Make sure you STOP
+when you get to the star or else you will fall into the hole! Step on
+the next star, then lift the pots at the top to find a small key. Then
+continue stepping on the stars and going right until you reach the next
+room.
+
+*Quickly* cross that narrow "bridge of danger" because soon it will
+start collapsing. The magic cape will protect for from all those dangers
+so you can easily make your way through. Go into the door at the left.
+
+Pull the statue downwards at the right side, then go around and step on
+the star. That creates a bridge over the gap, so you can cross it and go
+into the warp portal...
+
+Use the lamp to light the torch and make the invisible bridge visible.
+Cross it and go into the next room. There, go around to the north side
+of the room where there's a door. Go right a bit and you can see a torch
+at the other side of the gap. Light the torch with the firerod...and you
+can see the large invisible path! Quickly take that path to the door at
+the upper-right corner. If the torchlight goes out, use Ether to make
+path visible for a moment.
+
+In the next room, bomb the crack in the lower-right floor to create a
+hole. Then fall inside to meet this dungeon's first mini-boss: The Armos
+Statues. They're just the same as last time, but the floor is iced and
+slippery to give a little more challenge. If you have the silver arrows,
+they'll die with just one hit! After defeating them, go north.
+
+Open the chests to get some bombs...some arrows...and the big key! Go
+to the previous room, then go west, then upstairs. Push aside the right
+block then open the big chest to get the final item: The Red Mail. "This
+provides even more protection than the Blue Mail!". Go to the north
+room, then go back upstairs. [NOTE: You can continue exploring the rest
+of this floor if you want to find the map...but you probably won't need
+it if you're using this walkthrough :) ]
+
+Now go up through the center staircase to 3F. Get around to the left
+side of this room and push the upper block to open the door. In the next
+room, you need to use arrows to defeat the two red guys to open the
+door. You can use the statue to block the spikey thing while you defeat
+them.
+
+Same thing in the next room: Defeat the enemies to open the door. Be
+careful to avoid the lasers from the eyes on the statues. Keep going...
+until you pass through the big door.
+
+Go down the steps, past the two spike traps, then hit the crystal orb.
+Defeat the two cyclops monsters to get them out of your way. Lift the
+pots at the back to reveal a switch, then step on it to open the door.
+Get up there and go to the next room...
+
+Cross this strip of land while avoiding the cannonballs. It's tricky,
+but it can be done. When you reach the other side, go up the stairs to
+4F.
+
+A whole bunch of monsters! Defeat them all to open the door, then go on
+to the next room. Same consept there, defeat all the enemies (except the
+statue) to open the door). And for the NEXT THREE ROOMS, defeat all the
+enemies to open the doors. Don't keep still for too long do you can
+avoid the lasers from the statues.
+
+Eventually, you'll reach the room where you'll fight the second mini-
+boss, the lanmolas (remember them? from the desert palace?). They aren't
+very hard at all. I think it only takes two or three hits to defeat each
+one. This time you'll need to avoid the fireballs from the thing at the
+bottom-left. After you defeat them, go into the north room, then up the
+stairs to 5F.
+
+Use Ether to reveal the invisible path. If you use Ether while all the
+wizards are visible, you'll defeat them all and the door will open!
+Hitting two birds with one stone. In the next room, be careful to avoid
+the lasers coming from the eyes on the wall. In the room after that, use
+Ether again to defeat all the wizards and open the door.
+
+Dash across the path to get over it before it collapses. In the next
+room, throw away all the pots that are blocking the torches. You need to
+light all the torches (prefferably using the fire rod) to open the door
+at the bottom of the room. Go up the stairs in the next room to 6F.
+
+Now you need to light the four torches with the firerod to make the door
+open. You'll need to hurry up too because the floor will start
+disolving! First light the one at the lower-right, then the lower-left,
+then light the two upper torches. Proceed to the next room.
+
+Kill the enemies (preferably by throwing pots at them) to find a small
+key inside on of them. Us it to go to the next room. Now throw a bomb
+onto the conveyer belt so that it moves left and blows open a hole in
+the south wall. Carefully slip past the spiked traps and go on to the
+next room. Hit the crystal orbs to get to the center and open the chest
+for a small key. If you're low on energy, sprinkle magic powder on the
+red enemies to turn them into fairies.
+
+In the next room you'll have to face the third and final mini-boss of
+this dungeon: Moldorm. He's just the same as the Moldorm you faced in
+the Tower of Hera. Be careful not to fall into the pits, or else you'll
+have to make the journey back up here! After you defeat it, a chest
+appears on a south platform. Use the hookshot to pull yourself over
+there (it's just a red rupee in that chest). Go up the steps, push the
+blocks, and go into the door...
+
+This room is dangerous, use bombos to instantly kill all the enemies.
+Then make your way north and up the final staircase to the seventh, and
+final, floor.
+
+Follow the carpet. Behind this big door is the real boss of this
+dungeon. If you're prepared, go ahead and face the boss of Ganon's
+Tower: AGAHNIM. Yes, it's him again. See the boss section for details.
+After the battle, Agahnim's body falls to the ground, and out comes the
+evil king of darkness, Ganon.
+
+
+                         -- THE FINAL BATTLE --
+
+
+Ganon transforms into a bat and crashes into the pyramid at the center
+of the Dark World. You'll be brought there too, with the aid of the
+flute bird. To get ready for the fight with Ganon, I suggest you buy at
+least one bottle of green potion from the Magic Shop in the Light World
+(a bottle of red potion would be a great help too). You also need the
+silver arrows. Drop into the hole atop the pyramid to face the final
+boss: GANON. For the last time, check out the boss section for details.
+When Ganon is defeated, go to the light to meet the essence of the
+Triforce.
+
+And the game is done.
+
+                             ~  The End  ~
+
+
+,----------------------------------------------------------------------.
+| 5) BOSSES                                                            |
+'----------------------------------------------------------------------'
+
+
+Eastern Palace -- ARMOS KNIGHTS
+
+There are six Armos Knights for you to defeat. Apparently, they have no
+legs and are therefore forced to hop around. Their first movement
+pattern is hopping around in a circle (isn't that cute...). Just stay at
+the bottom right corner, face up, and fire arrows at them like mad. It
+only takes three arrows to kill one of them (and you can also use the
+sword when you rin out of arrows). Next, they will form a wall and come
+hopping towards you, followed by more hopping in a circle. Just fire
+arrows at them with every oppurtunity you get. The last Armos Knight
+standing will get tough and turn red. He'll bounce at your current
+position, so never stay in one place for long. Keep shooting arrows at
+him and he's gone in just three hits.
+
+
+Desert Palace -- LANMOLAS
+
+The Lanmolas are large worm-like monsters that pop out of the ground and
+go back inside. You can see where they will pop out because of the dark
+soil that appears. When a Lanmola pops out, stones fly out of that spot
+in 4 diagonal directions, so you should stay above, below, to the left,
+or to the right of it when it comes out. The only way to hurt them is by
+hitting them in the head with the sword. I find it effective to charge
+up the sword, then to do a spin attack when you're close to the
+Lanmola's head. Remember to stay clear of the rocks that come flying
+out! It takes a while, and eventually the Lanmola will die. The last one
+left is a little bit trickier...rocks fly out in all eight directions,
+so you'll need to be even more careful to avoid them.
+
+
+Tower of Hera - MOLDORM
+
+The Moldorm is a giant worm-like monster that moves around randomly.
+Since you are fighting on a platform like this one, you need to be
+careful not to fall off. If you do, you'll go down to the fifth floor
+and need to come back and start all over. Hit weak spot is the tail, so
+you should go for it with the sword. Try not to hit any other parts of
+his body, because you will bounce off and you might fall off the
+platform. After hitting him five times, he goes really crazy and moves
+around much faster than before. One more hit is all it takes to defeat
+him.
+
+
+Hyrule Castle - AGAHNIM
+
+Agahnim is the wizard that has been making the girls disappear. He
+attacks by throwing energy balls at you. After that, he warps to another
+position and does it again. The master sword doesn't hurt him directly--
+you need to hit the energy balls that come at you so that they bounce
+back to him! But be careful when he shoots a bunch of small blue balls
+at you, you just need to get out of their way. When Agahnim positions
+himself at the top-center of the screen, he's going to do a lightning
+attack so you better get out of his way! It takes around 6 or 7 hits to
+defeat him. (Note: Strangely, you can also use the bug catching net to
+deflect his attacks. Weird, eh?)
+
+
+Palace of Darkness - KING HELMASAUR
+
+King Helmasaur is just like the little Helmasaurs you see all over the
+dungeons. But this one is the king! In the first part of the battle, you
+need to break open the hard purple shell that's protecting him. Keep
+hitting it with the magic hammer. He moves forward and backward. Don't
+hit him when he's moving towards you or you'll get hurt. When his tail
+shakes around quickly, he's about to try whipping you, so get close to
+his face to avoid getting hurt. Occasionally, a fireball comes out of
+his mouth, splits into 3 pieces, and each of those pieces splits into
+four fireballs. Be careful to avoid that. It takes 17 hits to destroy
+his purple shell. After that, hit his face with the sword to hurt him.
+He moves around much faster now, and he's a lot harder to hit without
+getting hurt yourself. The attacks of fireballs and tail whips continue.
+After breaking his helmet, it takes about 9 hits to defeat him. I'm not
+sure exactly, I lost count :P
+
+
+Swamp Palace - ARRGHUS
+
+The Arrghus is a huge eyeball-jellyfish creature surrounded by small
+spongy balls. In the first part of the battle, you need to destroy the
+sponges. Stand at a distance from him and use the hookshot to pull one
+of the sponges to you. Then slash away with the sword to destroy it.
+Every few seconds, the sponges will form a wider circle and spin around
+fast. Be sure to keep your distance. After you've destroyed all 13
+sponges, it's time to destroy the Arrghus itself. Now that it's all
+alone, it leaps into the sky for a few seconds...then comes crashing
+down. It will try to land on you, so never stay in one place for more
+than a second. When it's bouncing around the room, hit it with the
+sword. Then it leaps into the air again and repeats the process. It
+takes 9 hits and he's completely defeated.
+
+
+Skull Dungeon - MOTHULA
+
+The Mothula is a big moth creature...but it's only half of the danger
+of the battle. You'll have so many obstacles and dangers around you that
+it's hard to concentrate. The room's floor is moving in random
+directions, the spike traps are constantly moving across the room, the
+Mothula shoots fire thingys at you, and you'll also need to avoid the
+Mothula itself. I pray that you have fairies in your bottles, you'll
+need them! At first you should attack the Mothula with the fire rod, but
+you're bound to run out of magic quickly. When you run out of magic
+power, just attack like crazy with the sword. The real challenge here is
+avoiding the hordes of traps all around you. The spikes shake a bit
+before they move, but I doubt you'll even notice it since you're
+concentrating on the boss itself. There's not much more advice I can
+give you. May the force be with you.
+
+
+Blind's Hideout - BLIND THE THIEF
+
+Blind look's like the devil wearing a big pillowcase. At the beginning
+of the battle, Blind moves around at the top of the screen, stopping
+every few seconds to shoot a laser beam out of his eyes (watch the
+direction he's facing). After a while he'll move to the bottom of the
+screen. Hit him in the head with the sword to hurt him...then he'll
+shoot lots of little red fireballs out of his head. After 3 hits, the
+head will detach and fly all around the room with fireballs coming out
+of his head. Another head will grow on the body and the battle
+continues. Repeat the process...eventually you'll have two heads
+floating around the room and fireballs flying everywhere. It's complete
+chaos. This is my strategy: Bring the red/blue potion and slash at him
+like crazy, ignoring the fireballs and any damage taken. Hopefully he
+will die before you do.
+
+
+Ice Palace - KHOLDSTARE
+
+Kholdstare is a some kind of puffy pink eyeball that's initially frozen
+in ice. During the entire battle with him, blocks of ice will fall from
+the ceiling and split into 4 pieces upon hitting the ground. First, you
+need to get Kholdstare out of the ice by shooting fire at him (with the
+Fire Rod) 8 times. Then he devides into 3 eyeballs and they move around
+the room in random directions. Just slash away with them with your
+sword. The ice blocks will continue to fall from the ceiling,
+complicating matters. This may seem like an easy fight, especially
+compared to the previous two boss battles...until you realize that every
+hit from the eyeballs costs you three whole hearts (and that would be
+six hearts if you're wearing the green armor)! Just keep hitting it with
+the sword until all three eyeballs are destroyed.
+
+
+Misery Mire - VITREOUS
+
+Vitreous is a slimy eyeball that's surrounded by a lot of smaller
+eyeballs. At the beginning of the battle, the eyeballs will come
+bouncing towards you. This is a piece of cake: Simply hit them with the
+sword as they come charging at you. It's like they're inviting you to
+kill them. But watch out when the large eyeball become's white, it's
+about to do a huge lightning attack. Just move to the side to avoid it.
+Also be careful not to get hit by the small eyeballs, a hit from them
+costs you three hearts. After all the little eyeballs are destroyed,
+it's time to battle the big eye. He's not much of a challenge either, as
+he just comes bouncing towards you like the small eyeballs. What a wimp!
+Take care of him just like you did with the smaller eyeballs: Use the
+sword. It takes 16 hits using the sword. It takes only 8 hits using the
+bow and arrows.
+
+
+Turtle Rock - TRINEXX
+
+Trinexx looks like a turtle with three heads. For the first part of the
+battle, you will be fighting the blue and red heads. The red head
+attacks with fire, and the blue head attacks with ice. Also, the floor
+turns to ice whenever the blue head attacks. You need to attack the red
+head with the ice rod to stun him, then slash like crazy with the sword.
+He will only stay stunned for a short while, so you will need to stun
+him again after a few seconds. Repeat that process until that head is
+defeated. Then do the same thing to the blue head, except use the fire
+rod instead of the ice rood. When both heads are dead, the whol creature
+will *seem* to be defeated...but stand back because it's still alive!
+Now the shell is gone and it looks like the Muldorm from Hera's Tower,
+except this guy's weak spot is his flashing segment in the middle. Be
+careful, he really comes after you! Keep attacking the middle segment
+until he's completely defeated.
+
+
+Ganon's Tower -- AGAHNIM
+
+Yeah, it's the same guy you battled in Hyrule Castle. But this battle is
+a bit different from the last one. At the very beginning, Agahnim will
+create two clones of himself. Keep your eye on the one in the center,
+that's the real one. All three Agahnims will be shooting energy balls
+at you, which you must deflect back to Agahnim (the real one). They'll
+also be shooting some blue balls that split up and hurt you. The real
+Agahnim flashes when the energy balls hit him, but the energy balls
+simply go through the clones. There's no way to damage the Agahnim
+clones, so don't waste your time trying. Fortunately, there's no
+lightning attack this time. After enough hits, Agahnim's body falls to
+the ground, and out comes Ganon.
+
+
+GANON
+
+This is it. The final boss. At the beginning, hit Ganon with the sword
+at every chance you get. He will throw his staff around and teleport all
+over the room. Just keep on hitting him while avoiding the flying staff.
+After 6 or 7 hits, he will start creating fire bats that will fly at
+you one by one. The bats only fly in a straight line, so just keep
+moving and they won't get you. Continue hitting Ganon at every chance
+you get. Soon he'll reach the next stage: He stomps on the ground and
+makes the tiles at the sides fall down. Now you'll have to worry about
+not falling in the pits. When all the sides are gone, the room will turn
+dark and Ganon is now invisible. Watch out for the chains of fire that
+he sends flying across the room. Use the fire rod and light the two
+torches at the bottom to make Ganon visible again. Hit him with the
+sword to stun him. While he's blue, shoot him with an arrow (by the way,
+you need the silver arrows to hurt him). It takes three silver arrows
+to finally defeat him.
+
+
+,----------------------------------------------------------------------.
+| 6) HEART PIECE LOCATIONS                                             |
+'----------------------------------------------------------------------'
+
+
+Pieces of Heart are scattered all around the Hyrule. There are 24 of
+them in all. 12 in the Light World, 12 in the Dark World. You don't have
+to get all of them. In fact, you can beat the game without getting any
+of them at all! After you get 4 pieces, you gain a whole heart
+container.
+
+
+1. KAKARIKO VILLAGE (Light World). Go to the north-west part of the
+village, just before the entrance to the Lost Woods. Drop off the cliff
+and into the hole. Get all the treasures and use a bomb on the upper
+wall (a crack is just barely visible). The treasure chest here holds a
+piece of heart.
+
+2. KAKARIKO VILLAGE (Light World). In the north part of the village, go
+in the house with a green leavy roof. Go downstairs and bomb the crack
+in the northern wall. Inside the chest in this next room is the coveted
+piece of heart.
+
+3. SOUTH OF THE VILLAGE (Light World). A little bit south of the
+village, there's a long house with a red roof. Inside, bomb the wall and
+continue to the next room, then go outside. The girl there says she'll
+give you something good if you reach the goal in under 15 seconds. Hurry
+up and go through the maze! Reach the guy in less than 15 seconds to
+recieve a piece of heart.
+
+4. LOST WOODS (Light World). In the eastern part of the lost woods,
+there's a very curious looking 3 x 3 block of bushes. Cut them up to
+reveal a hole in the center. Drop down there are collect your piece of
+heart.
+
+5. NEAR THE SANCTUARY (Light World). On a small cliff west of the
+Sanctuary, there's a bunch of light green rocks. Go there and dash into
+the rocks with the pegasus boots. Go down those stairs and open the
+chest for a piece of heart.
+
+6. SWAMPY GRASSY PLACE (Light World). South of your house is the "swampy
+grassy place", and there's a small structure there. Go inside. Push
+aside the blocks and go on to the next room. Pull the right switch to
+release the water, then go outside. There's the heart piece.
+
+7. DESERT (Light World). In the northeast part of the desert, go inside
+a cave. Follow the path until you get to a room with an old man. Use a
+bomb to blow open a crack at the south part of this room. Inside the
+chest is your precious piece of heart.
+
+8. DESERT (Light World). Exit the Desert Palace through the west exit,
+the continue going down and you'll find a piece of heart beside a
+vulture.
+
+9. ZORA'S WATERFALL (Light World). After meeting with King Zora, go
+straight south and fall down the water fall. Take the path of shallow
+water to the land where you'll find a piece of heart.
+
+10. DEATH MOUNTAIN (Light World). Climb Death Mountain to the very top.
+When you reach the cave to enter Spectacle Rock, do NOT enter it.
+Instead drop of the ledge so you can enter the cave below. Follow the
+path and you'll eventually get to a piece of heart.
+
+11. DEATH MOUNTAIN (Light World). Enter the warp at the top of Death
+Mountain. Go left a little bit and stand on the area where Spectacle
+Rock is in the Light World. Use that magic mirror there to go to the
+Light World, and you'll be standing on the rock with the heart piece.
+
+12. LUMBERJACK'S HOUSE (Light World). Northeast of Kakariko Village is a
+lumberjack's house. At the beginning of the game, you'll see the two
+lumberjacks cutting a tree. After you beat Agahnim the tree will be
+colored an odd shade of green. Dash into the tree and fall inside.
+Follow the path to the heart piece.
+
+13. PYRAMID OF POWER (Dark World). It can be clearly seen at the east
+side of the Pyramid of Power. Drop off of the ledge at the second floor
+to get to it.
+
+14. LAKE HYLIA (Dark World). In the Lake Hylia of the Light World, you
+can see a heart piece on an island with no way to get to it. Go to the
+exact same place in the Dark World and you'll find a patch of shallow
+water. Use the Magic Mirror there and you'll be on top of the island in
+the Light World! Collect your piece of heart.
+
+15. NEAR THE BOMB SHOP (Dark World). From the bomb shop, go south-east
+until you get to the area just south of the Flute Boy place. You should
+find a circle of bushes there. Stand in the center of those bushes and
+use the Magic Mirror. The piece of heart is in the cave.
+
+16. VILLAGE OF OUTCASTS (Dark World). Go to the building with a picture
+of a chest on it. In this place, you can pay 30 rupees and open two
+chests. One of those chests contains a piece of heart. The position
+seems to be random, so you'll just need to get lucky.
+
+17. CEMETERY (Dark World). Go to the cemetary, east of where the
+Sanctuary should be. Go up the steps on the back wall. On that platform,
+use the magic mirror. Enter the cave. Toss away the pots and bomb the
+wall at the back of the room. You'll find the heart piece in the next
+room.
+
+18. DIGGING GAME (Dark World). Go to the place south of the village
+where there was the "15 second race" game in the Light World. Now
+there's a digging game: For 80 rupeees, you get 30 seconds to dig for
+treasure in a field. If you play, you might dig up a piece of heart!
+(but it took me more than 10 minutes of digging before I found it)
+
+19. SMITHY SHOP (Dark World). Go to the place where the Smithy Shop
+(blacksmith) was in the Light World. You'll find a field with a lot of
+posts sticking out of the ground. Smash every one of them with the Magic
+Hammer. Go down the stairs that appear and get the heart piece.
+
+20. SWAMP OF EVIL (Dark World). There's another cave just to the left of
+the entrance to Misery Mire. Inside, push the blocks around to get to
+the chests. The one at the left holds a piece of heart.
+
+21. SWAMP OF EVIL (Dark World). Go to the upper-right corner of the
+Swamp of Evil (the area where Misrey Mire is). While standing on the dry
+land, use the magic mirror to transport to the Light World. Lift the big
+stone here and go down the stairs. Push the blocks around to get to the
+Piece of Heart.
+
+22. DEATH MOUNTAIN (Dark World). Go to the place that used to be the
+entrance to Death Mountain in the Light World. The sign outside reads
+"I'll give a piece of heart to whoever wears the cape". Go in the cave,
+then go upstairs. Use the hookshot to pull yourself over the gap. Then
+use the magic cape to go through the bumper. The heart piece awaits on
+the ledge outside.
+
+23. DEATH MOUNTAIN (Dark World). While you are going through the Turtle
+Rock dungeon, there's a point where you exit and reach a narrow ledge
+outside. Go to the right door and use the magic mirror to appear on a
+ledge in the Light World. Go in the cave. Defeat the enemies to open the
+door. Smash the 'digletts' into the ground. Open the chest in the next
+room for a piece of heart.
+
+24. DEATH MOUNTAIN (Dark World). A few screens to the east of Ganon's
+Tower, there's a cave with a big stone in front of it. Lift the stone
+to reveal a stairway, then go inside. Walk north to the end of the path.
+If you use Ether, you'll see an invisible path for a moment. Go across
+that path and into the door at the end. In the next room, go left...then
+go outside. Use the magic mirror to warp to the Light World, right
+beside a piece of heart.
+
+
+,----------------------------------------------------------------------.
+| 7) ITEMS                                                             |
+'----------------------------------------------------------------------'
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<<<< Y BUTTON ITEMS >>>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+BOW AND ARROWS:
+Ahh...an old favorite. You first find the Bow and Arrows in the Eastern
+Palace. It can be used to defeat enemies, and some enemies can only be
+defeated with the arrows. There is a limited number of arrows you can
+carry. You can increase this amount my throwing rupees into the fountain
+in the cave in Lake Hylia (Light World). Additionally, the regular
+arrows can be upgraded to silver arrows near the end of the game.
+
+BOOMERANG:
+You find the boomerang in the dungeons of Hyrule Castle at the beginning
+of the game. It's a nice weapon for attacking enemies (it only stuns
+them), and it can also be used for fetching items like rupees in hard to
+reach places. This can later be upgraded to the red boomerang, which
+stretches all the way across the screen!
+
+HOOKSHOT:
+You get this item in the 2nd dungeon of the Dark World. I like to keep
+this equipped when I'm not using other items. It's primary use it to
+grapple onto distant objects and pull yourself towards them...especially
+when you need to get across gaps. It's also a decent weapon for stunning
+enemies (just like the boomerang).
+
+BOMB:
+Bombs can be found all over Hyrule. In chests, enemies, stores, and
+bushes. Lay it down on the floor and it will blow up in a few seconds.
+It's especially useful for blowing holes in walls or floors. You can
+usually see a crack in the wall if it's explodable. It can also be used
+for attacking enemies, but it's pretty ineffective. You can increase the
+total number of bombs you can carry by throwing rupees into the fountain
+in the cave in Lake Hylia (Light World). Don't forget to stand back when
+the bomb explodes!
+
+MUSHROOM/MAGIC POWDER:
+You'll see a mushroom when you first go into the Lost Woods. There's
+nothing you can do with it right now. Bring it to the magic shop in the
+east. Give it to the witch there and she will brew up some magic powder
+for you. The magic powder doesn't run out as long as your magic meter
+isn't empty. Don't waste it. It can be used for a lot of wierd stuff.
+
+FIRE ROD:
+You find this weapon in the 3rd dungeon of the Dark World. It was a great
+weapon in Link's Awakening where it didn't use up any magic power. In
+this game, a bit of magic is used up with each use of the magic rod, so
+don't overuse it. It's used for lighting torches. I wouldn't waste it on
+enemies if I were you.
+
+ICE ROD:
+This item is found in a cave east of Lake Hylia (if I remember
+correctly). Like the fire rod, it uses up some magic power. It turns
+enemis to ice when you use it on them. Here's a neat trick: Freeze an
+enemy with the ice rod, then smash him with the hammer. You'll get a
+magic jar!
+
+BOMBOS:
+This is one of the three "magical medallions" in the game. When you use
+this one, the magic of the medallion sets off explosive forces around
+you that engulfs the enemies in flames. It uses up a LOT of your magic
+power, so I rarely use this for anything except for seeing the cool
+effects :)
+
+ETHER:
+This is the second magical medallion. You'll need this to open up the
+entrance to the swamp dungeon in the Dark World. When you use it, all
+the enemies on screen are turned to ice in a spectacular light show. Of
+course, such an amazing display of power doesn't come for free. That's
+right, it sucks away at your magic meter.
+
+QUAKE:
+The third of the magical megallions. It is used to damage all the 
+enemies on screen by seting off an momentus earthquake (duh, it's called
+"quake"). It's also required to open up the turtle rock dungeon. Does it
+use up your magic power? Hell yes.
+
+LAMP:
+This is the first item you should get in the game...it's in the chest in
+your house as soon as you begin! This will be very useful for lighting
+torches in dark rooms to light them up. Warning, it does use up a small
+bit of your magic power. The firerod also lights torches, but the lamp
+can do it with much less magic used.
+
+MAGIC HAMMER:
+This is quite a powerful weapon, but you need to be close to the enemy
+when you use it. It's mainly used for smashing pegs and those cute
+"digletts" in the palace of darkness. The turtle-like enemies must be
+flipped over with the hammer so you can attack their soft underbelly.
+
+SHOVEL/FLUTE:
+In the Dark World, go to the grove of trees west of your house and talk
+to the wierd-looking guy that now sits on the stump. Get the shovel from
+him and go back to the same grove of trees in the Light World. Dig in
+the top-left part where some flowers are to get the flute. Return to the
+Dark World and play it to him. Tada! He's a tree! Now play it in front
+of the weather vane in the village (Light World). Now you can use this
+bird to transport you to any of eight different locations (only in the
+Light World!).
+
+BUG-CATCHING NET:
+You get this from the sick boy in Kakariko Village. It can be used to
+catch bees and fairies and store them in your bottles. Curiously, it can
+also be used to deflect the energy balls in the battle with Agahnim.
+
+BOOK OF MUDORA:
+This book is on top of a high shelf in the library. Ram into the shelf
+with the pegasus boots to knock it down to the floor. This book is used
+to translate ancient Hylian writings so you can read them. Just use the
+book when you're standing in front of the sign.
+
+MAGIC BOTTLE:
+Bottles are used for storing things like bees, fairies, and magic
+potions. To drink a potion or use a fairy/bee, equip the bottle and
+press Y. I always keep the bottles full of the blue potion. Here's where
+to find the four magic bottles...
+    1 - In Kakariko Village (light world), buy it from a man for 100
+        rupees.
+    2 - In Kakariko Village (light world), enter the long house from
+        the back entrance and open the chest.
+    3 - Get it for free from a man living under a bridge south-east of
+        Hyrule Castle in the light world.
+    4 - Get the chest from the smithy shop in the Dark World, then go to
+        the desert in the Light World. Show it to the man beside the
+        sign and he'll open it for you.
+
+CANE OF SOMARIA:
+This is a red cane with the power to miraculously create blocks. Pretty
+useless for most of the game, except for a few dungeons at the end. You
+can use it to hold down a switch or to create platforms in the Turtle
+Rock dungeon. It uses a little magic power.
+
+CANE OF BYRNA:
+This cane is colored blue and it surrounds you with a shield of light
+when you use it. While this light is around you, you're invincible! This
+would be a great item if it didn't suck away your magic power so
+furiously. I don't think you need to use this item at all during the
+game.
+
+MAGIC CAPE:
+The magic cape makes Link invisible (but you can still see the shadow).
+In addition to being invisible, you are also unharmed from all enemy
+attacks...including spikes! It does use a lot of magic though.
+
+MAGIC MIRROR:
+This important item is used to transport from the Dark World to the
+Light World...which you be doing a lot of in this game. It does NOT
+bring you from the Light World to the Dark World. If you're in a dungeon
+you can use this to transport yourself back to the entrance.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<<<<<<< EQUIPMENT >>>>>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+SWORD:
+This is Link's weapon of choice. Use it with the B button. Hold B to
+charge up the sword then release to do a spin attack. There are 4
+different levels of sword. The first one comes from your uncle. The
+second one, the Master Sword, is from the Lost Woods after you get all
+three pendants. The third one, the Tempered Sword, is from the Smithys
+in the Dark World. The final one, the Golden Sword, comes from the fat
+fairy in the Dark World.
+
+SHIELD:
+The shield is equipped automatically and is also used automatically when
+something is about to hit you. The first sword is from your uncle. The
+second one (the Red Shield) is from the fairy behind the waterfall and
+can protect you from fireballs. The third one (the Mirror Shield) is
+found in Turtle Rock and can deflect lasers.
+
+CLOTHING:
+Your clothing serves as your armor. The better your clothing, the better
+your defence is. Link starts out with the standard green cloths, then
+he gets a stylish blue suit from the Ice Palace, and finally a lovely
+red costume from Ganon's Tower. The Blue Mail cuts damage by 25%, and
+the Red Mail cuts damage by 50%. So if you normally lose one heart from
+an enemy attack while wearing the Green Tunic, you will only lose a half
+heart with the Red Mail.
+
+PEGASUS BOOTS:
+The Pegasus Boots, aside from speeding up long walks, can be used to ram
+down some cracks walls. It's also great for attacking enemies and
+shaking rupees out of trees. Sahasrahla gives it to you after you show
+him the pendant of courage.
+
+POWER GLOVE:
+The power glove is used to pick up big rocks and other heavy objects.
+The first one is found in the desert palace. There's also a stronger
+version of the power glove called "Titan's Mitt". It can be found in the
+Blind's Hideout dungeon.
+
+FLIPPERS:
+The flippers allow you to swim in deep water. Get them from Zora at
+Zora's Waterfall. It's a bargain at only 500 rupees! This is one of the
+few times you'll actually use those rupees anyway, so go ahead and fork
+it over to him.
+
+MOON PEARL:
+The Moon Pearl is an extremely important item. It prevents you from
+turning into a rabbit when you go to the Dark World. Weird, I know. What
+will those crazy Japanese think of next? As a bunny, you cannot use your
+sword or any items at all besides the magic mirror. The Moon Pearl is
+found in the Tower of Hera.
+
+
+        wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <<<<<<<<<<<<<<<<<<<<<<< OTHER ITEMS >>>>>>>>>>>>>>>>>>>>>
+        mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
+
+RUPEES:
+This is the currency of Hyrule. It's used to buy things at every store.
+You can get rupees by defeating enemies, looking in grasses and pots,
+or winning in mini-games. You'll rarely use them in the game, besides
+the 500 rupees for the flippers. Different colored rupees have different
+values...
+                               green rupee = 1
+                               blue rupee  = 5
+                               red rupee   = 20
+
+MAGIC JARS:
+These things sometimes come out of enemies when you defeat them, and can
+also be found in jars. A smal jar restores a small bit of your magic,
+and a big one fills up the whole meter. Here's a neat trick: Freeze an
+enemy with the ice rod, then smash him with a hammer. A magic jar comes
+out!
+
+HEARTS:
+This is the measure of Link's energy. When you run out, you're dead.
+Extra hearts can be found in pots, bushes, and enemies when you defeat
+them. Link loses hearts when he's hurt by an enemy.
+
+PIECES OF HEART:
+These things can be found all over Hyrule in secret places, some more
+secret than others. After collecting 4 pieces of heart, Link gains a
+whole extra heart container. There are 24 heart pieces in all in the
+game.
+
+HEART CONTAINERS:
+A heart container increases Link's maximum capacity of hearts. Just like
+in other RPG's when the HP increases as you gain more levels. Four
+pieces of heart equal one heart container. Whole heart containers come
+out of major bosses when they're defeated.
+
+COMPASS:
+This item is used together with the map in dungeons. When you have the
+compass, the map shows your location and the location of the dungeon
+boss. There's a compass in every dungeon.
+
+MAP:
+There's also a map in every dungeon. When you have it, press the X
+button to look at it. It shows the different rooms of the dungeon (on
+all floors) and your current position.
+
+KEYS:
+There are some locked doors in dungeons that require a key for you to
+pass through. Your answer: Use a small key! There are also bigger doors
+that require the big key (a.k.a. boss key). These doors usually lead to
+the boss.
+
+PENDANTS:
+There are three pendants for you to find in the Light World: The Pendant
+of Courage, the Pendant of Power, and the Pendant of Wisdom. When these
+three combine, the seal guarding the master sword is broken and you can
+get it.
+
+CRYSTALS:
+Agahnim has sealed the seven delicious maidens, including Princess
+Zelda, in crystals hidden deep within the dungeons of the Dark World.
+Your goal in the Dark World is to get these sevel crystals. Then their
+power can combine to break the seal guarding Ganon's Tower.
+
+
+,----------------------------------------------------------------------.
+| 8) SECRETS                                                           |
+'----------------------------------------------------------------------'
+
+
+This is a special section of the guide. Here you'll find a list of
+things to do in the game that do not give you any rewards, or affect the
+outcome of the game. It's here to make you appreciate the game more.
+
+
+- I guess this isn't really a secret since so many people know about
+it... In Kakariko Village there are some chickens. How can you resist?
+Slash away with the sword! After about 30 hits, the chicken's family
+will fly in to get revenge! Be careful with this trick, the chickens CAN
+peck you to death!
+
+- In the south-west part of Kakariko Village, there's a small hut with
+no doors and absolutely no way to get inside...or is there? Place a bomb
+in the center of the wall to blow open an entrance. Inside there's a
+bunch of pots with bombs and arrows inside. This is a useful place to
+stock up on supplies.
+
+- Here's a neat trick to do whenever you're running low on magic power:
+Use the ice rod to freeze an enemy, then use the magic hammer on it to
+smash it to pieces. Tada! The result is a magic jar to refill your magic
+meter.
+
+- In Kakariko Village, there's a man that runs away from you really fast
+whenever you try to get close to him. If you have the pegasus boots, you
+can chase after him and actually catch him. He'll say that you must be
+really fast to kidnap Zelda, and he gives you a mildly helpfup tip...
+
+- The running man (above) gives you this tip. All around Hyrule, you can
+bash into trees witht he Pegasus Boots to make small goodies fall out
+like rupees, hearts, and sometimes even a fairy.
+
+- South of your house is a "swampy grassy place", and there's a small
+structure there. Go inside. Push aside the blocks and go on to the next
+room. Pull the right switch to release the water, then go outside.
+There's a fish out of water! Do the honorable thing: Pick up the fish,
+go one screen up and throw him back into the deep water. He'll give you
+a red rupee as a reward.
+
+- In the "swampy grassy place", there's a rabbit that hops in and out of
+the grass. At least, I *think* it's a rabbit. Anyway... when he jumps
+out of the grass, cut the grass underneath him. He'll get stuck. Touch
+him and he will say, "All right! Take it, theif!". What the hell? He
+gives a fairie, ruppee, heart, bombs, arrows, magic jars, and other
+random items.
+
+- You can often find "red bubbly enemies" bouncing around in dungeons.
+These annoying bitches can be deadly! But there is a way to use them to
+your advantage. Sprinkle some magic powder on it and POOF! It's a fairy!
+
+- You know how you need to deflect Agahnim's attacks with the Master
+Sword? There's another weapon that does the job just as effectivly: The
+bug catching net! You can use the bug catching net in the battles with
+Agahnim!
+
+- In the center of Lake Hylia there's an island with a cave inside. In
+the cave, there is a pond that you can throw rupees in. For every 100
+rupees that you throw in, a big fairy will appear and give you a choice
+of increasing your maximum capacity of bombs or arrows. Arrow capacity
+can be increased from 30 to 70, and bomb capacity from 10 to 50! The
+total cost of upgrades is well over 1000 rupees!
+
+- Trivia: In the game's ending credits, a slow ballad of the classic
+Zelda theme begins to play when sound composer Koji Kondo's name
+appears. Sweet.
+
+
+,----------------------------------------------------------------------.
+| 9) CREDITS & INFO                                                    |
+'----------------------------------------------------------------------'
+
+
+Special thanks to...
+   - Nintendo for making this game and never letting me down
+   - gamefaqs.com for posting all my FAQs. This is my 11th so far.
+   - www.world-of-nintendo.com for the instruction manual
+
+
+NOTE TO WEBMASTERS:
+You may freely place this document on non-profit websites without
+explicit permission from the author as long as (1) it is not modified at
+all and (2) I recieve full credit. Take note that any future
+updates will be sent only to gamefaqs.com.
+
+REGARDING FEEDBACK:
+Before coming to me with questions, please make sure that it's not
+already answered in this guide. And make sure you're looking at the most
+recent version of the guide (always available at www.gamefaqs.com). All
+feedback goes to mpgonzalez@gmail.com.
+
+For news about the progress of my FAQs, and announcements of future
+projects, visit my site at http://www.geocities.com/coffeefaqs.
+
+Copyright (c) Michael Gonzalez 2004
+
+
+Restore Page
+
+Manage Cookies
