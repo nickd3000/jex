@@ -8,10 +8,12 @@ public class ColorRepo {
         tg.setForegroundColor(TextColor.ANSI.WHITE);
         tg.setBackgroundColor(TextColor.ANSI.BLACK);
     }
+
     public static void setNormalTextColor(TextGraphics tg) {
         tg.setForegroundColor(TextColor.ANSI.WHITE);
         tg.setBackgroundColor(TextColor.ANSI.BLUE);
     }
+
     public static void setInfoBarTextColor(TextGraphics tg) {
         tg.setForegroundColor(TextColor.ANSI.WHITE);
         tg.setBackgroundColor(TextColor.ANSI.GREEN);

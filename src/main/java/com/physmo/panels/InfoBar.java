@@ -1,21 +1,26 @@
-package com.physmo;
+package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.physmo.ColorRepo;
+import com.physmo.Cursor;
+import com.physmo.MainApp;
+import com.physmo.Point;
+import com.physmo.Utilities;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 
 public class InfoBar extends Panel {
-    EditorFrame editorFrame;
+    MainApp editorFrame;
 
-    public InfoBar(EditorFrame editorFrame) {
+    public InfoBar(MainApp editorFrame) {
         this.editorFrame = editorFrame;
     }
 
     @Override
-    void draw(TextGraphics tg) {
+    public void draw(TextGraphics tg) {
         ColorRepo.setInfoBarTextColor(tg);
         drawBackground(tg);
 
-        Viewport viewport = editorFrame.testViewport;
+        Viewport viewport = editorFrame.getActiveViewport();
 
         Cursor curser = viewport.getCursor();
 
@@ -26,11 +31,11 @@ public class InfoBar extends Panel {
 
         Point pos = getCombinedPosition();
 
-        tg.putString(pos.x+1, pos.y, strCoords);
+        tg.putString(pos.x + 1, pos.y, strCoords);
 
         // node info
-        int nodeCount = ((PieceTableTextBuffer)editorFrame.textBuffer).getNodes().size();
-        tg.putString(pos.x+20, pos.y, "nodes:"+nodeCount);
+        int nodeCount = ((PieceTableTextBuffer) editorFrame.textBuffer).getNodes().size();
+        tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
     }
 
     public void drawBackground(TextGraphics tg) {

@@ -9,6 +9,11 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.physmo.buffers.TextBuffer;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
+import com.physmo.document.DocumentContainer;
+import com.physmo.document.DocumentRepo;
+import com.physmo.panels.InfoBar;
+import com.physmo.panels.Panel;
+import com.physmo.panels.Viewport;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,27 +21,31 @@ import java.nio.file.Paths;
 
 
 // The Main App
-public class EditorFrame {
+public class MainApp {
 
+
+    public TextBuffer textBuffer;
     Terminal terminal;
     Screen screen;
     TextGraphics tg;
-
-    TextBuffer textBuffer;
-    Viewport testViewport;
-
+    //Viewport testViewport;
     Panel mainFrame;
     InfoBar infoBar;
     Settings settings = new Settings();
     boolean running = true;
+    int activeViewportId;
 
-    public EditorFrame(Terminal terminal,
-                       Screen screen,
-                       TextGraphics tg, String initialFilePath) {
+    ViewPortRepo viewPortRepo = new ViewPortRepo();
+    DocumentRepo documentRepo = new DocumentRepo();
+
+
+    public MainApp(Terminal terminal,
+                   Screen screen,
+                   TextGraphics tg, String initialFilePath) {
 
         mainFrame = new Panel() {
             @Override
-            void draw(TextGraphics tg) {
+            public void draw(TextGraphics tg) {
 
             }
         };
@@ -71,14 +80,16 @@ public class EditorFrame {
     }
 
 
-
     public void run() throws IOException, InterruptedException {
 
         while (running) {
             processInput();
             //ColorRepo.setDefaultTextColor(tg);
             //tg.fill(' ');
-            testViewport.draw(tg);
+
+            if (getActiveViewport() != null) getActiveViewport().draw(tg);
+            //testViewport.draw(tg);
+
             infoBar.draw(tg);
             setCursorPositionForView();
             screen.refresh();
@@ -90,7 +101,8 @@ public class EditorFrame {
     }
 
     private void setCursorPositionForView() throws IOException {
-        Point cpos = testViewport.getCursorPositionForDisplay();
+        Viewport vp = getActiveViewport();
+        Point cpos = vp.getCursorPositionForDisplay();
 
         screen.setCursorPosition(
                 new TerminalPosition(cpos.x, cpos.y));
@@ -115,28 +127,30 @@ public class EditorFrame {
     }
 
     public void processKeyStroke(KeyStroke keyStroke) throws IOException {
+        Viewport activeViewport = getActiveViewport();
+
         //KeyStroke keyStroke = terminal.readInput();
         if (keyStroke.getKeyType() == KeyType.Character) {
             Character character = keyStroke.getCharacter();
-            int charPos = testViewport.getCursor().getDocumentIndex();
+            int charPos = activeViewport.getCursor().getDocumentIndex();
             textBuffer.insert(charPos, "" + character);
-            testViewport.getCursor().moveRight();
+            activeViewport.getCursor().moveRight();
         }
         if (keyStroke.getKeyType() == KeyType.Enter) {
-            int charPos = testViewport.getCursor().getDocumentIndex();
+            int charPos = activeViewport.getCursor().getDocumentIndex();
             textBuffer.insert(charPos, "\n");
-            testViewport.getCursor().moveRight();
+            activeViewport.getCursor().moveRight();
             //testViewport.getCurser().y++;
-            testViewport.getCursor().x = 0;
+            activeViewport.getCursor().x = 0;
         }
 
         if (keyStroke.getKeyType() == KeyType.Delete) {
-            int charPos = testViewport.getCursor().getDocumentIndex();
+            int charPos = activeViewport.getCursor().getDocumentIndex();
             textBuffer.deleteCharacter(charPos);
         }
         if (keyStroke.getKeyType() == KeyType.Backspace) {
-            int charPos = testViewport.getCursor().getDocumentIndex();
-            testViewport.getCursor().moveLeft();
+            int charPos = activeViewport.getCursor().getDocumentIndex();
+            activeViewport.getCursor().moveLeft();
             textBuffer.deleteCharacter(charPos - 1);
 
         }
@@ -146,51 +160,62 @@ public class EditorFrame {
         }
 
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
-            testViewport.getCursor().moveLeft();
+            activeViewport.getCursor().moveLeft();
         }
         if (keyStroke.getKeyType() == KeyType.ArrowRight) {
-            testViewport.getCursor().moveRight();
+            activeViewport.getCursor().moveRight();
         }
         if (keyStroke.getKeyType() == KeyType.ArrowUp) {
-            testViewport.getCursor().moveUp(1);
+            activeViewport.getCursor().moveUp(1);
         }
         if (keyStroke.getKeyType() == KeyType.ArrowDown) {
-            testViewport.getCursor().moveDown(1);
+            activeViewport.getCursor().moveDown(1);
         }
 
         if (keyStroke.getKeyType() == KeyType.PageUp) {
-            testViewport.getCursor().moveUp(10);
+            activeViewport.getCursor().moveUp(10);
         }
         if (keyStroke.getKeyType() == KeyType.PageDown) {
-            testViewport.getCursor().moveDown(10);
+            activeViewport.getCursor().moveDown(10);
         }
         if (keyStroke.getKeyType() == KeyType.End) {
-            testViewport.getCursor().jumpToEndOfLine();
+            activeViewport.getCursor().jumpToEndOfLine();
         }
         if (keyStroke.getKeyType() == KeyType.Home) {
-            testViewport.getCursor().jumpToStartOfLine();
+            activeViewport.getCursor().jumpToStartOfLine();
         }
     }
 
     public void initTestViewport(TextGraphics tg) {
+        // Create viewport.
+        int viewportId = viewPortRepo.createViewport();
+        Viewport vp = viewPortRepo.getViewportById(viewportId);
+        activeViewportId = viewportId;
 
+        // Create document
+        int documentId = documentRepo.createEmptyDocument();
+        DocumentContainer dc = documentRepo.getDocumentById(documentId);
+
+
+        // Create text buffer
         TerminalSize size = tg.getSize();
-        testViewport = new Viewport();
         textBuffer = new PieceTableTextBuffer();
 
-        if (settings.initialFilePath!=null) {
+        if (settings.initialFilePath != null) {
             textBuffer.setInitialtext(loadFile(settings.initialFilePath));
-        }
-        else {
+        } else {
             textBuffer.setInitialtext(faketextFile());
         }
 
-        testViewport.setTextBuffer(textBuffer);
-        testViewport.setHeight(size.getRows() - 2);
-        testViewport.setWidth(size.getColumns() - 2);
-        testViewport.setPanelX(1);
-        testViewport.setPanelY(1);
-        testViewport.draw(this.tg);
+        // Attech text buffer to document
+        dc.setTextBuffer(textBuffer);
+
+        vp.setTextBuffer(textBuffer);
+        vp.setHeight(size.getRows() - 2);
+        vp.setWidth(size.getColumns() - 2);
+        vp.setPanelX(1);
+        vp.setPanelY(1);
+        vp.draw(this.tg);
     }
 
     public String loadFile(String path) {
@@ -203,5 +228,10 @@ public class EditorFrame {
         }
 
         return content;
+    }
+
+    public Viewport getActiveViewport() {
+        return viewPortRepo.getViewportById(activeViewportId);
+        //return testViewport;
     }
 }

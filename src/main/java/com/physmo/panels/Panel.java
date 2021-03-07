@@ -1,6 +1,7 @@
-package com.physmo;
+package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.physmo.Point;
 
 // base class for all windows and elements
 public abstract class Panel {
@@ -48,7 +49,7 @@ public abstract class Panel {
         dirty = true;
     }
 
-    abstract void draw(TextGraphics tg);
+    protected abstract void draw(TextGraphics tg);
 
     public void drawIfDirty(TextGraphics tg) {
         if (dirty) draw(tg);

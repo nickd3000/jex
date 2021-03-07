@@ -218,7 +218,7 @@ public class PieceTableTextBuffer extends TextBuffer {
 
         if (result.endOfBuffer) {
             result.node.length--;
-            calculateLineStartsForNode(result.node,false);
+            calculateLineStartsForNode(result.node, false);
             return;
         }
 
@@ -226,7 +226,7 @@ public class PieceTableTextBuffer extends TextBuffer {
         if (result.offset == 0) {
             result.node.start++;
             result.node.length--;
-            calculateLineStartsForNode(result.node,false);
+            calculateLineStartsForNode(result.node, false);
         }
 
     }
@@ -271,10 +271,7 @@ public class PieceTableTextBuffer extends TextBuffer {
     }
 
     public boolean isLineEnd(char c) {
-        if (c == '\n') {
-            return true;
-        }
-        return false;
+        return c == '\n';
     }
 
     // returns first of the pair of nodes that are created

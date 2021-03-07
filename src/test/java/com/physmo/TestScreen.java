@@ -7,6 +7,8 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.physmo.panels.Panel;
+import com.physmo.panels.TestPanel;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -63,6 +65,6 @@ public class TestScreen {
             p1.setPanelY(5);
             p1.setWidth(5);
             p1.setHeight(5);
-            p1.draw(tg);
+            ((TestPanel) p1).draw(tg);
         }
 }

@@ -17,7 +17,7 @@ public class App {
     Terminal terminal;
     Screen screen;
     TextGraphics tg;
-    EditorFrame editorFrame;
+    MainApp editorFrame;
 
     public App() {
         try {
@@ -41,7 +41,7 @@ public class App {
     }
 
     public void start(String initialFileName) {
-        editorFrame = new EditorFrame(terminal, screen, tg, initialFileName);
+        editorFrame = new MainApp(terminal, screen, tg, initialFileName);
 
         try {
             editorFrame.run();
