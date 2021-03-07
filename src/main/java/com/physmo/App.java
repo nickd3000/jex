@@ -42,6 +42,9 @@ public class App {
 
     public void start(String initialFileName) {
         editorFrame = new MainApp(terminal, screen, tg, initialFileName);
+        terminal.addResizeListener((terminal1, terminalSize) -> {
+            editorFrame.updateOnResize(terminalSize.getColumns(),terminalSize.getRows());
+        });
 
         try {
             editorFrame.run();
@@ -58,6 +61,10 @@ public class App {
         screen = new TerminalScreen(terminal);
         tg = screen.newTextGraphics();
         screen.startScreen();
+
+        terminal.addResizeListener((terminal1, terminalSize) -> {
+
+        });
     }
 
 //    public static void testWindow() throws IOException, InterruptedException {

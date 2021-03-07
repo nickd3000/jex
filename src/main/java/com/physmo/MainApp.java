@@ -66,6 +66,25 @@ public class MainApp {
         initTestViewport(tg);
     }
 
+    public void updateOnResize(int screenWidth, int screenHeight) {
+//        TerminalSize size = tg.getSize();
+//        int screenWidth = size.getColumns();
+//        int screenHeight = size.getRows();
+
+        // Info Bar
+        infoBar.setPanelX(0);
+        infoBar.setPanelY(screenHeight - 1);
+        infoBar.setHeight(1);
+        infoBar.setWidth(screenWidth);
+
+        // Test viewport
+        Viewport vp = getActiveViewport();
+        vp.setHeight(screenHeight - 2);
+        vp.setWidth(screenWidth - 2);
+        vp.setPanelX(1);
+        vp.setPanelY(1);
+    }
+
     public static String faketextFile() {
         String str = "A text editor is a type of computer program that edits plain text.\n" +
                 "Such programs are sometimes known as notepad software,\n" +
@@ -83,6 +102,9 @@ public class MainApp {
     public void run() throws IOException, InterruptedException {
 
         while (running) {
+
+            tg = screen.newTextGraphics();
+
             processInput();
             //ColorRepo.setDefaultTextColor(tg);
             //tg.fill(' ');
@@ -92,10 +114,14 @@ public class MainApp {
 
             infoBar.draw(tg);
             setCursorPositionForView();
+
+            screen.doResizeIfNecessary();
             screen.refresh();
 
             Thread.sleep(1000 / 60);
 
+            // Hack
+            //updateOnResize(tg);
         }
 
     }

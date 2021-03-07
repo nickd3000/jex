@@ -36,6 +36,10 @@ public class InfoBar extends Panel {
         // node info
         int nodeCount = ((PieceTableTextBuffer) editorFrame.textBuffer).getNodes().size();
         tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
+
+        int w = editorFrame.getActiveViewport().getWidth();
+        int h = editorFrame.getActiveViewport().getHeight();
+        tg.putString(pos.x + 40, pos.y, ""+w+","+h);
     }
 
     public void drawBackground(TextGraphics tg) {
