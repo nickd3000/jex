@@ -3,14 +3,17 @@ package com.physmo.panels;
 import com.googlecode.lanterna.Symbols;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.physmo.ColorRepo;
+import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.Utilities;
 
 public class ScrollBar extends Panel {
     Viewport parentViewport;
+    MainApp mainApp;
 
-    public ScrollBar(Viewport parentViewport) {
+    public ScrollBar(MainApp mainApp, Viewport parentViewport) {
         this.parentViewport = parentViewport;
+        this.mainApp = mainApp;
     }
 
     @Override
@@ -19,7 +22,8 @@ public class ScrollBar extends Panel {
         char charSlider = Symbols.BLOCK_DENSE;
 
         Point pos = getCombinedPosition();
-        ColorRepo.setScrollBarTextColor(tg);
+        //ColorRepo.setScrollBarTextColor(tg);
+        mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
         Utilities.fillRectangle(tg, pos.x, pos.y, width, height, charTrack);
 
         int documentLines = parentViewport.getTextPanel().getDocumentLineCount();

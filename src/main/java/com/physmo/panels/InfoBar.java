@@ -9,18 +9,20 @@ import com.physmo.Utilities;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 
 public class InfoBar extends Panel {
-    MainApp editorFrame;
+    MainApp mainApp;
 
-    public InfoBar(MainApp editorFrame) {
-        this.editorFrame = editorFrame;
+    public InfoBar(MainApp mainApp) {
+        this.mainApp = mainApp;
     }
 
     @Override
     public void draw(TextGraphics tg) {
-        ColorRepo.setInfoBarTextColor(tg);
+        //ColorRepo.setInfoBarTextColor(tg);
+        mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.INFO_BAR);
+
         drawBackground(tg);
 
-        Viewport viewport = editorFrame.getActiveViewport();
+        Viewport viewport = mainApp.getActiveViewport();
 
         Cursor curser = viewport.getCursor();
 
@@ -34,12 +36,12 @@ public class InfoBar extends Panel {
         tg.putString(pos.x + 1, pos.y, strCoords);
 
         // node info
-        int nodeCount = ((PieceTableTextBuffer) editorFrame.textBuffer).getNodes().size();
+        int nodeCount = ((PieceTableTextBuffer) mainApp.textBuffer).getNodes().size();
         tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
 
-        int w = editorFrame.getActiveViewport().getWidth();
-        int h = editorFrame.getActiveViewport().getHeight();
-        tg.putString(pos.x + 40, pos.y, ""+w+","+h);
+        int w = mainApp.getActiveViewport().getWidth();
+        int h = mainApp.getActiveViewport().getHeight();
+        tg.putString(pos.x + 40, pos.y, "" + w + "," + h);
     }
 
     public void drawBackground(TextGraphics tg) {

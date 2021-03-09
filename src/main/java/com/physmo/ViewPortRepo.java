@@ -14,8 +14,8 @@ public class ViewPortRepo {
         return viewportMap.get(id);
     }
 
-    public int createViewport() {
-        Viewport vp = new Viewport();
+    public int createViewport(MainApp mainApp) {
+        Viewport vp = new Viewport(mainApp);
         vp.setId(numberFountain++);
         viewportMap.put(vp.getId(), vp);
         return vp.getId();

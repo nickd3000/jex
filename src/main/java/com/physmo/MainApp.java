@@ -34,14 +34,12 @@ public class MainApp {
     Settings settings = new Settings();
     boolean running = true;
     int activeViewportId;
-
+    ColorRepo colorRepo = new ColorRepo();
     ViewPortRepo viewPortRepo = new ViewPortRepo();
     DocumentRepo documentRepo = new DocumentRepo();
-
     boolean pendingResize = false;
     int pendingWidth = 0;
     int pendingHeight = 0;
-
     public MainApp(Terminal terminal,
                    Screen screen,
                    TextGraphics tg, String initialFilePath) {
@@ -80,6 +78,10 @@ public class MainApp {
         str = str + str;
         str = str + str;
         return str;
+    }
+
+    public ColorRepo getColorRepo() {
+        return colorRepo;
     }
 
     // Resize handler can be called at any causing update anomolies, we want to handle the resize when we are ready.
@@ -233,7 +235,7 @@ public class MainApp {
 
     public void initTestViewport(TextGraphics tg) {
         // Create viewport.
-        int viewportId = viewPortRepo.createViewport();
+        int viewportId = viewPortRepo.createViewport(this);
         Viewport vp = viewPortRepo.getViewportById(viewportId);
         activeViewportId = viewportId;
 

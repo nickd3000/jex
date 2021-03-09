@@ -3,6 +3,7 @@ package com.physmo.panels;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.physmo.ColorRepo;
 import com.physmo.Cursor;
+import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.Utilities;
 import com.physmo.buffers.TextBuffer;
@@ -15,10 +16,11 @@ public class TextPanel extends Panel {
     TextBuffer textBuffer;
     int scrollOffset = 0;
     Cursor cursor;
+    MainApp mainApp;
 
-
-    public TextPanel() {
+    public TextPanel(MainApp mainApp) {
         this.setVisible(false);
+        this.mainApp = mainApp;
     }
 
     public Cursor getCursor() {
@@ -61,7 +63,9 @@ public class TextPanel extends Panel {
         // hack
         scrollToCursor();
 
-        ColorRepo.setNormalTextColor(tg);
+        // ColorRepo.setNormalTextColor(tg);
+        mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
+
         Point panelPos = getCombinedPosition();
         Utilities.fillRectangle(tg, panelPos.x, panelPos.y, width, height, ' ');
 

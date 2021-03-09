@@ -9,11 +9,13 @@ public class Node {
     public int length;
     int bufferId;
     List<Integer> lineStarts = new ArrayList<>(); // Offset from start of the section.
+
     public Node(int start, int length, int bufferId) {
         this.start = start;
         this.length = length;
         this.bufferId = bufferId;
     }
+
     public Node() {
     }
 

@@ -2,6 +2,7 @@ package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.physmo.Cursor;
+import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.buffers.TextBuffer;
 
@@ -13,13 +14,16 @@ public class Viewport extends Panel {
 
     int id;
     TextBuffer textBuffer;
-    ScrollBar scrollBar = new ScrollBar(this);
+    ScrollBar scrollBar;
     TextPanel textPanel;
+    MainApp mainApp;
 
-    public Viewport() {
-        textPanel = new TextPanel();
+    public Viewport(MainApp mainApp) {
+        this.mainApp = mainApp;
+        textPanel = new TextPanel(mainApp);
         textPanel.setParent(this);
 
+        scrollBar = new ScrollBar(mainApp, this);
     }
 
     public TextPanel getTextPanel() {
