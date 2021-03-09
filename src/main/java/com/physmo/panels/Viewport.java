@@ -1,21 +1,47 @@
 package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.physmo.ColorRepo;
 import com.physmo.Cursor;
 import com.physmo.Point;
-import com.physmo.Utilities;
 import com.physmo.buffers.TextBuffer;
 
 // TODO: rename to text viewport?
+// Vieport contains:
+//  text panel
+//  scroll bar
 public class Viewport extends Panel {
 
     int id;
     TextBuffer textBuffer;
-    int scrollOffset = 0;
-    Cursor cursor;
+    ScrollBar scrollBar = new ScrollBar(this);
+    TextPanel textPanel;
 
     public Viewport() {
+        textPanel = new TextPanel();
+        textPanel.setParent(this);
+
+    }
+
+    public TextPanel getTextPanel() {
+        return textPanel;
+    }
+
+    public void doLayout() {
+
+        textPanel.setParent(this);
+        textPanel.setPanelX(0);
+        textPanel.setPanelY(0);
+        textPanel.setWidth(this.width - 1);
+        textPanel.setHeight(this.height);
+        textPanel.setVisible(true);
+
+
+        scrollBar.setParent(this);
+        scrollBar.setPanelX(this.width - 1);
+        scrollBar.setPanelY(0);
+        scrollBar.setWidth(1);
+        scrollBar.setHeight(this.height);
+        scrollBar.setVisible(true);
     }
 
     public int getId() {
@@ -27,65 +53,24 @@ public class Viewport extends Panel {
     }
 
     public Cursor getCursor() {
-        return cursor;
+        return textPanel.getCursor();
     }
 
     public Point getCursorPositionForDisplay() {
-
-        Point combinedPosition = getCombinedPosition();
-        Point cpos = new Point();
-        cpos.x = combinedPosition.x + cursor.x;
-        cpos.y = combinedPosition.y - scrollOffset + cursor.y;
-        return cpos;
+        return textPanel.getCursorPositionForDisplay();
     }
 
     public void setTextBuffer(TextBuffer textBuffer) {
         this.textBuffer = textBuffer;
-        cursor = new Cursor(textBuffer);
-    }
+        textPanel.setTextBuffer(textBuffer);
 
-    // if cursor goes off screen scroll to show it.
-    public void scrollToCursor() {
-        int scrollPad = 5;
-//        if (cursor.y>scrollOffset+height-scrollPad) {
-//            scrollOffset = cursor.y-height+scrollPad;
-//        };
-        if (scrollOffset < cursor.y - height + scrollPad) {
-            scrollOffset = cursor.y - height + scrollPad;
-        }
-        if (scrollOffset > cursor.y - scrollPad) {
-            scrollOffset = cursor.y - scrollPad;
-            if (scrollOffset < 0) scrollOffset = 0;
-        }
+
     }
 
     @Override
     public void draw(TextGraphics tg) {
         if (textBuffer == null) return;
-
-        // hack
-        scrollToCursor();
-
-        ColorRepo.setNormalTextColor(tg);
-        Point panelPos = getCombinedPosition();
-        Utilities.fillRectangle(tg, panelPos.x, panelPos.y, width, height, ' ');
-
-        int usableWidth = width;
-
-        int lineCount = textBuffer.getLineCount();
-        String currentLine = "";
-        for (int i = 0; i < height; i++) {
-            if (i < lineCount) {
-                currentLine = textBuffer.getLine(i + scrollOffset);
-            } else {
-                currentLine = ".";
-            }
-
-            if (currentLine.length() > usableWidth)
-                currentLine = currentLine.substring(0, usableWidth);
-
-            tg.putString(panelX, panelY + i, currentLine);
-        }
-
+        textPanel.draw(tg);
+        scrollBar.draw(tg);
     }
 }

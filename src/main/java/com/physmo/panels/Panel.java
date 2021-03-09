@@ -12,6 +12,15 @@ public abstract class Panel {
     int height;
     Panel parent;
     boolean dirty = false;
+    boolean visible = true;
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
 
     public int getPanelX() {
         return panelX;

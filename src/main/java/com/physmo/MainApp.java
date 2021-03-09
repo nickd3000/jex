@@ -38,6 +38,9 @@ public class MainApp {
     ViewPortRepo viewPortRepo = new ViewPortRepo();
     DocumentRepo documentRepo = new DocumentRepo();
 
+    boolean pendingResize = false;
+    int pendingWidth = 0;
+    int pendingHeight = 0;
 
     public MainApp(Terminal terminal,
                    Screen screen,
@@ -66,25 +69,6 @@ public class MainApp {
         initTestViewport(tg);
     }
 
-    public void updateOnResize(int screenWidth, int screenHeight) {
-//        TerminalSize size = tg.getSize();
-//        int screenWidth = size.getColumns();
-//        int screenHeight = size.getRows();
-
-        // Info Bar
-        infoBar.setPanelX(0);
-        infoBar.setPanelY(screenHeight - 1);
-        infoBar.setHeight(1);
-        infoBar.setWidth(screenWidth);
-
-        // Test viewport
-        Viewport vp = getActiveViewport();
-        vp.setHeight(screenHeight - 2);
-        vp.setWidth(screenWidth - 2);
-        vp.setPanelX(1);
-        vp.setPanelY(1);
-    }
-
     public static String faketextFile() {
         String str = "A text editor is a type of computer program that edits plain text.\n" +
                 "Such programs are sometimes known as notepad software,\n" +
@@ -98,10 +82,45 @@ public class MainApp {
         return str;
     }
 
+    // Resize handler can be called at any causing update anomolies, we want to handle the resize when we are ready.
+    public void queueResize(int screenWidth, int screenHeight) {
+        pendingResize = true;
+        pendingWidth = screenWidth;
+        pendingHeight = screenHeight;
+    }
+
+    public void resizeIfQueued() {
+
+        if (pendingResize == false) return;
+        pendingResize = false;
+
+        mainFrame.setPanelX(0);
+        mainFrame.setPanelY(0);
+        mainFrame.setHeight(pendingHeight);
+        mainFrame.setWidth(pendingWidth);
+
+
+        // Info Bar
+        infoBar.setParent(mainFrame);
+        infoBar.setPanelX(0);
+        infoBar.setPanelY(pendingHeight - 1);
+        infoBar.setHeight(1);
+        infoBar.setWidth(pendingWidth);
+
+        // Test viewport
+        Viewport vp = getActiveViewport();
+        vp.setParent(mainFrame);
+        vp.setHeight(pendingHeight);
+        vp.setWidth(pendingWidth);
+        vp.setPanelX(0);
+        vp.setPanelY(0);
+        vp.doLayout();
+    }
 
     public void run() throws IOException, InterruptedException {
 
         while (running) {
+            resizeIfQueued();
 
             tg = screen.newTextGraphics();
 
@@ -238,9 +257,10 @@ public class MainApp {
 
         vp.setTextBuffer(textBuffer);
         vp.setHeight(size.getRows() - 2);
-        vp.setWidth(size.getColumns() - 2);
-        vp.setPanelX(1);
+        vp.setWidth(size.getColumns());
+        vp.setPanelX(0);
         vp.setPanelY(1);
+        vp.doLayout();
         vp.draw(this.tg);
     }
 

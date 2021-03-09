@@ -43,7 +43,7 @@ public class App {
     public void start(String initialFileName) {
         editorFrame = new MainApp(terminal, screen, tg, initialFileName);
         terminal.addResizeListener((terminal1, terminalSize) -> {
-            editorFrame.updateOnResize(terminalSize.getColumns(),terminalSize.getRows());
+            editorFrame.queueResize(terminalSize.getColumns(), terminalSize.getRows());
         });
 
         try {
