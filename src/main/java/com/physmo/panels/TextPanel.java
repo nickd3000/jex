@@ -46,8 +46,8 @@ public class TextPanel extends Panel {
 //        if (cursor.y>scrollOffset+height-scrollPad) {
 //            scrollOffset = cursor.y-height+scrollPad;
 //        };
-        if (scrollOffset < cursor.y - height + scrollPad) {
-            scrollOffset = cursor.y - height + scrollPad;
+        if (scrollOffset < cursor.y - size.y + scrollPad) {
+            scrollOffset = cursor.y - size.y + scrollPad;
         }
         if (scrollOffset > cursor.y - scrollPad) {
             scrollOffset = cursor.y - scrollPad;
@@ -67,15 +67,16 @@ public class TextPanel extends Panel {
         mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
 
         Point panelPos = getCombinedPosition();
-        Utilities.fillRectangle(tg, panelPos.x, panelPos.y, width, height, ' ');
+        if (size.x>0 && size.y>0)
+            Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
 
         //Utilities.fillRectangle(tg, 10, 5, 2, 2, 'n');
 
-        int usableWidth = width;
+        int usableWidth = size.x;
 
         int lineCount = textBuffer.getLineCount();
         String currentLine = "";
-        for (int i = 0; i < height; i++) {
+        for (int i = 0; i < size.y; i++) {
             if (i < lineCount) {
                 currentLine = textBuffer.getLine(i + scrollOffset);
             } else {

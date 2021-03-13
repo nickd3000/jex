@@ -9,8 +9,8 @@ public class TestPanel extends Panel {
     public void draw(TextGraphics tg) {
         Point pos = getCombinedPosition();
 
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
+        for (int y = 0; y < size.y; y++) {
+            for (int x = 0; x < size.x; x++) {
                 tg.putString(pos.x + x, pos.y + y, "*");
             }
         }

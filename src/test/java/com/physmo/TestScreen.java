@@ -61,10 +61,8 @@ public class TestScreen {
 
         public static void test3(TextGraphics tg) {
             Panel p1 = new TestPanel();
-            p1.setPanelX(5);
-            p1.setPanelY(5);
-            p1.setWidth(5);
-            p1.setHeight(5);
+            p1.setPosition(5,5);
+            p1.setSize(5,5);
             ((TestPanel) p1).draw(tg);
         }
 }

@@ -21,9 +21,10 @@ public class Viewport extends Panel {
     public Viewport(MainApp mainApp) {
         this.mainApp = mainApp;
         textPanel = new TextPanel(mainApp);
-        textPanel.setParent(this);
+        addChild(textPanel);
 
         scrollBar = new ScrollBar(mainApp, this);
+        addChild(scrollBar);
     }
 
     public TextPanel getTextPanel() {
@@ -31,20 +32,12 @@ public class Viewport extends Panel {
     }
 
     public void doLayout() {
-
-        textPanel.setParent(this);
-        textPanel.setPanelX(0);
-        textPanel.setPanelY(0);
-        textPanel.setWidth(this.width - 1);
-        textPanel.setHeight(this.height);
+        textPanel.setPosition(0,0);
+        textPanel.setSize(this.size.x - 1, this.size.y);
         textPanel.setVisible(true);
 
-
-        scrollBar.setParent(this);
-        scrollBar.setPanelX(this.width - 1);
-        scrollBar.setPanelY(0);
-        scrollBar.setWidth(1);
-        scrollBar.setHeight(this.height);
+        scrollBar.setPosition(this.size.x - 1, 0);
+        scrollBar.setSize(1,this.size.y);
         scrollBar.setVisible(true);
     }
 

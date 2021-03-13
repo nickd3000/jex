@@ -52,11 +52,9 @@ public class MainApp {
         };
 
         infoBar = new InfoBar(this);
-        infoBar.setParent(mainFrame);
-        infoBar.setPanelX(0);
-        infoBar.setPanelY(tg.getSize().getRows() - 1);
-        infoBar.setHeight(1);
-        infoBar.setWidth(tg.getSize().getColumns());
+        infoBar.setPosition(0, tg.getSize().getRows() - 1);
+        infoBar.setSize(tg.getSize().getColumns(), 1 );
+        mainFrame.addChild(infoBar);
 
         this.terminal = terminal;
         this.screen = screen;
@@ -95,27 +93,21 @@ public class MainApp {
 
         if (pendingResize == false) return;
         pendingResize = false;
-
-        mainFrame.setPanelX(0);
-        mainFrame.setPanelY(0);
-        mainFrame.setHeight(pendingHeight);
-        mainFrame.setWidth(pendingWidth);
+        mainFrame.setPosition(0,0);
+        mainFrame.setSize(pendingWidth, pendingHeight);
 
 
         // Info Bar
-        infoBar.setParent(mainFrame);
-        infoBar.setPanelX(0);
-        infoBar.setPanelY(pendingHeight - 1);
-        infoBar.setHeight(1);
-        infoBar.setWidth(pendingWidth);
+        infoBar.setPosition(0,pendingHeight - 1);
+        infoBar.setSize(pendingWidth, 1);
+        //mainFrame.addChild(infoBar);
 
         // Test viewport
         Viewport vp = getActiveViewport();
-        vp.setParent(mainFrame);
-        vp.setHeight(pendingHeight);
-        vp.setWidth(pendingWidth);
-        vp.setPanelX(0);
-        vp.setPanelY(0);
+        //vp.setParent(mainFrame);
+        vp.setPosition(0,0);
+        vp.setSize(pendingWidth,pendingHeight);
+        //mainFrame.addChild(vp);
         vp.doLayout();
     }
 
@@ -258,10 +250,8 @@ public class MainApp {
         dc.setTextBuffer(textBuffer);
 
         vp.setTextBuffer(textBuffer);
-        vp.setHeight(size.getRows() - 2);
-        vp.setWidth(size.getColumns());
-        vp.setPanelX(0);
-        vp.setPanelY(1);
+        vp.setPosition(0,1);
+        vp.setSize(size.getColumns(), size.getRows() - 2);
         vp.doLayout();
         vp.draw(this.tg);
     }

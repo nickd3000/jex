@@ -24,10 +24,10 @@ public class ScrollBar extends Panel {
         Point pos = getCombinedPosition();
         //ColorRepo.setScrollBarTextColor(tg);
         mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
-        Utilities.fillRectangle(tg, pos.x, pos.y, width, height, charTrack);
+        Utilities.fillRectangle(tg, pos.x, pos.y, size.x, size.y, charTrack);
 
         int documentLines = parentViewport.getTextPanel().getDocumentLineCount();
-        int textWindowHeight = parentViewport.getTextPanel().getHeight();
+        int textWindowHeight = parentViewport.getTextPanel().getSize().y;
         int scrollOffset = parentViewport.getTextPanel().getScrollOffset();
 
         double ratio = (double) textWindowHeight / (double) (documentLines + textWindowHeight);
@@ -35,7 +35,7 @@ public class ScrollBar extends Panel {
         if (barSize < 1) barSize = 1;
         int barPos = (int) ((double) (textWindowHeight - barSize) * ((double) scrollOffset / (double) documentLines));
 
-        Utilities.fillRectangle(tg, pos.x, pos.y + barPos, width, barSize, charSlider);
+        Utilities.fillRectangle(tg, pos.x, pos.y + barPos, size.y, barSize, charSlider);
 
 //        ColorRepo.setInfoBarTextColor(tg);
 //        drawBackground(tg);

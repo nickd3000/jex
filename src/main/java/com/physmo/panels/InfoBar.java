@@ -39,8 +39,8 @@ public class InfoBar extends Panel {
         int nodeCount = ((PieceTableTextBuffer) mainApp.textBuffer).getNodes().size();
         tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
 
-        int w = mainApp.getActiveViewport().getWidth();
-        int h = mainApp.getActiveViewport().getHeight();
+        int w = mainApp.getActiveViewport().getSize().x;
+        int h = mainApp.getActiveViewport().getSize().y;
         tg.putString(pos.x + 40, pos.y, "" + w + "," + h);
     }
 
@@ -48,7 +48,7 @@ public class InfoBar extends Panel {
         Point panelPos = getCombinedPosition();
 //        TerminalPosition pos = new TerminalPosition(panelPos.x, panelPos.y);
 //        TerminalSize size = new TerminalSize(width, height);
-        Utilities.fillRectangle(tg, panelPos.x, panelPos.y, width, height, ' ');
+        Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
 //        tg.fillRectangle(pos, size, '.');
     }
 }

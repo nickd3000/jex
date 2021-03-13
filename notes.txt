@@ -9,6 +9,8 @@ TASKS
 [ ] line numbers
 [ ] word caching - i.e. don't add a node for each letter
 [ ] menu system
+[ ] selection (shift+direction)
+[ ] explore mouse options
 
 
 DONE
@@ -44,3 +46,18 @@ https://stackoverflow.com/questions/8371556/line-management-in-a-text-editor
 https://nullprogram.com/blog/2017/09/07/
 * https://darrenburns.net/posts/node-table/
 https://code.visualstudio.com/blogs/2018/03/23/text-buffer-reimplementation#_piece-tree
+
+Online DOS: https://jamesfriend.com.au/pce-js/ibmpc-games/
+
+MS Edit Menu:
+File
+    New, Open Save, Save As, Print, Exit
+Edit
+    Cut copy paste clear
+Search
+    Find...
+    Repeat last find
+    Change
+Options
+    Display
+    Help Path...
