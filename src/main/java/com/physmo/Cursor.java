@@ -27,6 +27,17 @@ public class Cursor {
         xMemory = x;
     }
 
+    public void jumpToEndOfLine() {
+        int len = getCurrentLineLength();
+        x = len;
+        xMemory = x;
+    }
+
+    public int getCurrentLineLength() {
+        String line = textBuffer.getLine(y);
+        return line.length();
+    }
+
     public void moveRight() {
         x++;
         if (x > getCurrentLineLength()) {
@@ -62,19 +73,8 @@ public class Cursor {
         }
     }
 
-    public void jumpToEndOfLine() {
-        int len = getCurrentLineLength();
-        x = len;
-        xMemory = x;
-    }
-
     public void jumpToStartOfLine() {
         x = 0;
         xMemory = x;
-    }
-
-    public int getCurrentLineLength() {
-        String line = textBuffer.getLine(y);
-        return line.length();
     }
 }

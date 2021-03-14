@@ -94,6 +94,13 @@ public class TestPieceBuffer {
         printAllLines(pt);
     }
 
+    public void printAllLines(PieceTableTextBuffer pt) {
+        int lineCount = pt.getLineCount();
+        for (int i = 0; i < lineCount; i++) {
+            System.out.println(pt.getLine(i));
+        }
+    }
+
     @Test
     public void testInsertSimple() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
@@ -200,12 +207,5 @@ public class TestPieceBuffer {
         pt.deleteCharacter(3);
 
         printAllLines(pt);
-    }
-
-    public void printAllLines(PieceTableTextBuffer pt) {
-        int lineCount = pt.getLineCount();
-        for (int i = 0; i < lineCount; i++) {
-            System.out.println(pt.getLine(i));
-        }
     }
 }

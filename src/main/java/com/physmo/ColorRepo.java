@@ -21,11 +21,6 @@ public class ColorRepo {
         initColors();
     }
 
-    public void setThemeElementColor(TextGraphics tg, String element) {
-        tg.setForegroundColor(styles.get("DOS").get(element + FG));
-        tg.setBackgroundColor(styles.get("DOS").get(element + BG));
-    }
-
     public void initColors() {
         Map<String, TextColor.ANSI> dosStyle = new HashMap<>();
         dosStyle.put(NORMAL_TEXT + FG, TextColor.ANSI.WHITE);
@@ -37,23 +32,9 @@ public class ColorRepo {
         styles.put("DOS", dosStyle);
     }
 
-//    public static void setDefaultTextColor(TextGraphics tg) {
-//        tg.setForegroundColor(TextColor.ANSI.WHITE);
-//        tg.setBackgroundColor(TextColor.ANSI.BLACK);
-//    }
-//
-//    public static void setNormalTextColor(TextGraphics tg) {
-//        tg.setForegroundColor(TextColor.ANSI.WHITE);
-//        tg.setBackgroundColor(TextColor.ANSI.GREEN_BRIGHT);
-//    }
-//
-//    public static void setInfoBarTextColor(TextGraphics tg) {
-//        tg.setForegroundColor(TextColor.ANSI.WHITE);
-//        tg.setBackgroundColor(TextColor.ANSI.GREEN);
-//    }
-//
-//    public static void setScrollBarTextColor(TextGraphics tg) {
-//        tg.setForegroundColor(TextColor.ANSI.WHITE);
-//        tg.setBackgroundColor(TextColor.ANSI.RED);
-//    }
+    public void setThemeElementColor(TextGraphics tg, String element) {
+        tg.setForegroundColor(styles.get("DOS").get(element + FG));
+        tg.setBackgroundColor(styles.get("DOS").get(element + BG));
+    }
+
 }

@@ -27,6 +27,17 @@ public class App {
         }
     }
 
+    public void initLanterna() throws IOException {
+        terminal = new DefaultTerminalFactory().createTerminal();
+        screen = new TerminalScreen(terminal);
+        tg = screen.newTextGraphics();
+        screen.startScreen();
+
+        terminal.addResizeListener((terminal1, terminalSize) -> {
+
+        });
+    }
+
     public static void main(String[] args) {
 
         String startingFileName = null;
@@ -55,38 +66,5 @@ public class App {
         }
 
     }
-
-    public void initLanterna() throws IOException {
-        terminal = new DefaultTerminalFactory().createTerminal();
-        screen = new TerminalScreen(terminal);
-        tg = screen.newTextGraphics();
-        screen.startScreen();
-
-        terminal.addResizeListener((terminal1, terminalSize) -> {
-
-        });
-    }
-
-//    public static void testWindow() throws IOException, InterruptedException {
-//
-//        //write a text
-//        tg.putString(1, 1, "1,1");
-//        tg.putString(10, 10, "10,10");
-//        tg.putString(20, 20, "20,20");
-//
-//        Viewport viewport = new Viewport();
-//        TextBuffer textBuffer = new PieceTableTextBuffer();
-//        textBuffer.setInitialtext(faketextFile());
-//        viewport.setTextBuffer(textBuffer);
-//        viewport.setHeight(20);
-//        viewport.setWidth(20);
-//        viewport.setX(2);
-//        viewport.setY(2);
-//        viewport.draw(tg);
-//
-//        screen.refresh();
-//        Thread.sleep(1000 * 10);
-//    }
-
 
 }

@@ -18,7 +18,7 @@ public class TestScreen {
 
     @Test
     @Ignore
-    public void mainTest()  throws IOException, InterruptedException {
+    public void mainTest() throws IOException, InterruptedException {
         Terminal terminal = new DefaultTerminalFactory().createTerminal();
         Screen screen = new TerminalScreen(terminal);
 
@@ -34,35 +34,35 @@ public class TestScreen {
         test2(tg);
         test3(tg);
         screen.refresh();
-        Thread.sleep(1000*10);
+        Thread.sleep(1000 * 10);
     }
 
 
-        public static void test1(TextGraphics tg) {
-            TerminalSize size = tg.getSize();
-            int w = size.getColumns();
-            int h = size.getRows();
-            tg.putString(w-1,h-1, "*");
-        }
+    public static void test1(TextGraphics tg) {
+        TerminalSize size = tg.getSize();
+        int w = size.getColumns();
+        int h = size.getRows();
+        tg.putString(w - 1, h - 1, "*");
+    }
 
-        public static void test2(TextGraphics tg) {
-            int y=5;
-            tg.setForegroundColor(TextColor.ANSI.BLUE);
-            tg.putString(5,y++, "ANSI.BLUE");
-            tg.setForegroundColor(TextColor.ANSI.RED);
-            tg.putString(5,y++, "ANSI.RED");
-            tg.setForegroundColor(TextColor.ANSI.YELLOW_BRIGHT);
-            tg.putString(5,y++, "ANSI.YELLOW_BRIGHT");
-            tg.setForegroundColor(new TextColor.RGB(100,200,30));
-            tg.putString(5,y++, "ANSI.YELLOW_BRIGHT");
-            tg.setForegroundColor(new TextColor.RGB(130,200,30));
-            tg.putString(5,y++, "ANSI.YELLOW_BRIGHT");
-        }
+    public static void test2(TextGraphics tg) {
+        int y = 5;
+        tg.setForegroundColor(TextColor.ANSI.BLUE);
+        tg.putString(5, y++, "ANSI.BLUE");
+        tg.setForegroundColor(TextColor.ANSI.RED);
+        tg.putString(5, y++, "ANSI.RED");
+        tg.setForegroundColor(TextColor.ANSI.YELLOW_BRIGHT);
+        tg.putString(5, y++, "ANSI.YELLOW_BRIGHT");
+        tg.setForegroundColor(new TextColor.RGB(100, 200, 30));
+        tg.putString(5, y++, "ANSI.YELLOW_BRIGHT");
+        tg.setForegroundColor(new TextColor.RGB(130, 200, 30));
+        tg.putString(5, y++, "ANSI.YELLOW_BRIGHT");
+    }
 
-        public static void test3(TextGraphics tg) {
-            Panel p1 = new TestPanel();
-            p1.setPosition(5,5);
-            p1.setSize(5,5);
-            ((TestPanel) p1).draw(tg);
-        }
+    public static void test3(TextGraphics tg) {
+        Panel p1 = new TestPanel();
+        p1.setPosition(5, 5);
+        p1.setSize(5, 5);
+        ((TestPanel) p1).draw(tg);
+    }
 }

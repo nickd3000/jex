@@ -21,19 +21,4 @@ public class ViewPortRepo {
         return vp.getId();
     }
 
-    /*
-        int numberFountain = 0;
-    Map<Integer, DocumentContainer> documentMap;
-
-    public DocumentContainer getDocumentById(int id) {
-        return documentMap.get(id);
-    }
-
-    public int createEmptyDocument() {
-        DocumentContainer dc = new DocumentContainer();
-        dc.id = numberFountain++;
-        documentMap.put(dc.id, dc);
-        return dc.id;
-    }
-     */
 }

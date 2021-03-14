@@ -34,17 +34,17 @@ public abstract class Panel {
         this.parent = parent;
     }
 
-    public Panel getParent() {
-        return parent;
-    }
-
-
     public boolean isVisible() {
         return visible;
     }
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public void drawIfDirty(TextGraphics tg) {
+        if (dirty) draw(tg);
+        dirty = false;
     }
 
 //    public int getWidth() {
@@ -65,11 +65,6 @@ public abstract class Panel {
 //        dirty = true;
 //    }
 
-    public void drawIfDirty(TextGraphics tg) {
-        if (dirty) draw(tg);
-        dirty = false;
-    }
-
     protected abstract void draw(TextGraphics tg);
 
     public boolean isDirty() {
@@ -77,16 +72,13 @@ public abstract class Panel {
     }
 
     public void setPosition(int x, int y) {
-        this.position = new Point(x,y);
-        dirty = true;
-    }
-    public void setPosition(Point p) {
-        this.position = new Point(p);
+        this.position = new Point(x, y);
         dirty = true;
     }
 
-    public Point getPosition() {
-        return position;
+    public void setPosition(Point p) {
+        this.position = new Point(p);
+        dirty = true;
     }
 
     public Point getSize() {
@@ -94,9 +86,10 @@ public abstract class Panel {
     }
 
     public void setSize(int w, int h) {
-        this.size = new Point(w,h);
+        this.size = new Point(w, h);
         dirty = true;
     }
+
     public void setSize(Point p) {
         this.size = new Point(p);
         dirty = true;
@@ -113,6 +106,14 @@ public abstract class Panel {
         }
 
         return new Point(xx, yy);
+    }
+
+    public Panel getParent() {
+        return parent;
+    }
+
+    public Point getPosition() {
+        return position;
     }
 
 //    public int getPanelX() {

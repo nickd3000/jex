@@ -32,12 +32,12 @@ public class Viewport extends Panel {
     }
 
     public void doLayout() {
-        textPanel.setPosition(0,0);
+        textPanel.setPosition(0, 0);
         textPanel.setSize(this.size.x - 1, this.size.y);
         textPanel.setVisible(true);
 
         scrollBar.setPosition(this.size.x - 1, 0);
-        scrollBar.setSize(1,this.size.y);
+        scrollBar.setSize(1, this.size.y);
         scrollBar.setVisible(true);
     }
 

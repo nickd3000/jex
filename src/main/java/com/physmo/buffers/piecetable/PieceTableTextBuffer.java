@@ -28,6 +28,29 @@ public class PieceTableTextBuffer extends TextBuffer {
         nodes.add(firstNode);
     }
 
+    // linux = \n  windows = \r\n
+    public void calculateLineStartsForNode(Node node, boolean addLineStartToBeginning) {
+        node.lineStarts.clear();
+        if (addLineStartToBeginning) node.lineStarts.add(0);
+
+        String buffer = getBufferById(node.bufferId);
+        int end = node.start + node.length;
+        for (int i = node.start; i < end; i++) {
+            if (isLineEnd(buffer.charAt(i))) {
+                node.lineStarts.add(i - node.start + 1);
+            }
+        }
+    }
+
+    public String getBufferById(int id) {
+        if (id == 1) return buffer1;
+        else return bufferOriginal;
+    }
+
+    public boolean isLineEnd(char c) {
+        return c == '\n';
+    }
+
     @Override
     public String getLine(int lineNumber) {
         int trackLine = 0;
@@ -87,6 +110,26 @@ public class PieceTableTextBuffer extends TextBuffer {
         String b = getBufferById(result.node.bufferId);
         return "" + b.charAt(result.node.start + result.offset);
 
+    }
+
+    public PieceFindResult findPieceForPosition(int position) {
+        PieceFindResult result = new PieceFindResult();
+
+        int rollingPosition = 0;
+        for (Node node : nodes) {
+            int nextPosition = rollingPosition + node.length;
+            if (position >= rollingPosition && position < nextPosition) {
+                result.node = node;
+                result.piecePosition = rollingPosition;
+                result.offset = position - rollingPosition;
+                return result;
+            }
+            rollingPosition = nextPosition;
+        }
+
+        result.endOfBuffer = true;
+
+        return result;
     }
 
     /*
@@ -151,7 +194,6 @@ public class PieceTableTextBuffer extends TextBuffer {
         }
 
     }
-
 
     public void insertAtEnd(String text) {
         String buffer = getBufferById(1);
@@ -229,49 +271,6 @@ public class PieceTableTextBuffer extends TextBuffer {
             calculateLineStartsForNode(result.node, false);
         }
 
-    }
-
-    public String getBufferById(int id) {
-        if (id == 1) return buffer1;
-        else return bufferOriginal;
-    }
-
-    public PieceFindResult findPieceForPosition(int position) {
-        PieceFindResult result = new PieceFindResult();
-
-        int rollingPosition = 0;
-        for (Node node : nodes) {
-            int nextPosition = rollingPosition + node.length;
-            if (position >= rollingPosition && position < nextPosition) {
-                result.node = node;
-                result.piecePosition = rollingPosition;
-                result.offset = position - rollingPosition;
-                return result;
-            }
-            rollingPosition = nextPosition;
-        }
-
-        result.endOfBuffer = true;
-
-        return result;
-    }
-
-    // linux = \n  windows = \r\n
-    public void calculateLineStartsForNode(Node node, boolean addLineStartToBeginning) {
-        node.lineStarts.clear();
-        if (addLineStartToBeginning) node.lineStarts.add(0);
-
-        String buffer = getBufferById(node.bufferId);
-        int end = node.start + node.length;
-        for (int i = node.start; i < end; i++) {
-            if (isLineEnd(buffer.charAt(i))) {
-                node.lineStarts.add(i - node.start + 1);
-            }
-        }
-    }
-
-    public boolean isLineEnd(char c) {
-        return c == '\n';
     }
 
     // returns first of the pair of nodes that are created

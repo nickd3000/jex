@@ -40,21 +40,6 @@ public class TextPanel extends Panel {
         cursor = new Cursor(textBuffer);
     }
 
-    // if cursor goes off screen scroll to show it.
-    public void scrollToCursor() {
-
-//        if (cursor.y>scrollOffset+height-scrollPad) {
-//            scrollOffset = cursor.y-height+scrollPad;
-//        };
-        if (scrollOffset < cursor.y - size.y + scrollPad) {
-            scrollOffset = cursor.y - size.y + scrollPad;
-        }
-        if (scrollOffset > cursor.y - scrollPad) {
-            scrollOffset = cursor.y - scrollPad;
-            if (scrollOffset < 0) scrollOffset = 0;
-        }
-    }
-
     @Override
     public void draw(TextGraphics tg) {
         if (textBuffer == null) return;
@@ -67,7 +52,7 @@ public class TextPanel extends Panel {
         mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
 
         Point panelPos = getCombinedPosition();
-        if (size.x>0 && size.y>0)
+        if (size.x > 0 && size.y > 0)
             Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
 
         //Utilities.fillRectangle(tg, 10, 5, 2, 2, 'n');
@@ -89,6 +74,21 @@ public class TextPanel extends Panel {
             tg.putString(panelPos.x, panelPos.y + i, currentLine);
         }
 
+    }
+
+    // if cursor goes off screen scroll to show it.
+    public void scrollToCursor() {
+
+//        if (cursor.y>scrollOffset+height-scrollPad) {
+//            scrollOffset = cursor.y-height+scrollPad;
+//        };
+        if (scrollOffset < cursor.y - size.y + scrollPad) {
+            scrollOffset = cursor.y - size.y + scrollPad;
+        }
+        if (scrollOffset > cursor.y - scrollPad) {
+            scrollOffset = cursor.y - scrollPad;
+            if (scrollOffset < 0) scrollOffset = 0;
+        }
     }
 
     public int getScrollOffset() {

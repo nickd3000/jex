@@ -40,6 +40,7 @@ public class MainApp {
     boolean pendingResize = false;
     int pendingWidth = 0;
     int pendingHeight = 0;
+
     public MainApp(Terminal terminal,
                    Screen screen,
                    TextGraphics tg, String initialFilePath) {
@@ -53,7 +54,7 @@ public class MainApp {
 
         infoBar = new InfoBar(this);
         infoBar.setPosition(0, tg.getSize().getRows() - 1);
-        infoBar.setSize(tg.getSize().getColumns(), 1 );
+        infoBar.setSize(tg.getSize().getColumns(), 1);
         mainFrame.addChild(infoBar);
 
         this.terminal = terminal;
@@ -63,6 +64,37 @@ public class MainApp {
         settings.initialFilePath = initialFilePath;
 
         initTestViewport(tg);
+    }
+
+    public void initTestViewport(TextGraphics tg) {
+        // Create viewport.
+        int viewportId = viewPortRepo.createViewport(this);
+        Viewport vp = viewPortRepo.getViewportById(viewportId);
+        activeViewportId = viewportId;
+
+        // Create document
+        int documentId = documentRepo.createEmptyDocument();
+        DocumentContainer dc = documentRepo.getDocumentById(documentId);
+
+
+        // Create text buffer
+        TerminalSize size = tg.getSize();
+        textBuffer = new PieceTableTextBuffer();
+
+        if (settings.initialFilePath != null) {
+            textBuffer.setInitialtext(loadFile(settings.initialFilePath));
+        } else {
+            textBuffer.setInitialtext(faketextFile());
+        }
+
+        // Attech text buffer to document
+        dc.setTextBuffer(textBuffer);
+
+        vp.setTextBuffer(textBuffer);
+        vp.setPosition(0, 1);
+        vp.setSize(size.getColumns(), size.getRows() - 2);
+        vp.doLayout();
+        vp.draw(this.tg);
     }
 
     public static String faketextFile() {
@@ -78,6 +110,18 @@ public class MainApp {
         return str;
     }
 
+    public String loadFile(String path) {
+        String content = "";
+
+        try {
+            content = new String(Files.readAllBytes(Paths.get(path)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content;
+    }
+
     public ColorRepo getColorRepo() {
         return colorRepo;
     }
@@ -87,28 +131,6 @@ public class MainApp {
         pendingResize = true;
         pendingWidth = screenWidth;
         pendingHeight = screenHeight;
-    }
-
-    public void resizeIfQueued() {
-
-        if (pendingResize == false) return;
-        pendingResize = false;
-        mainFrame.setPosition(0,0);
-        mainFrame.setSize(pendingWidth, pendingHeight);
-
-
-        // Info Bar
-        infoBar.setPosition(0,pendingHeight - 1);
-        infoBar.setSize(pendingWidth, 1);
-        //mainFrame.addChild(infoBar);
-
-        // Test viewport
-        Viewport vp = getActiveViewport();
-        //vp.setParent(mainFrame);
-        vp.setPosition(0,0);
-        vp.setSize(pendingWidth,pendingHeight);
-        //mainFrame.addChild(vp);
-        vp.doLayout();
     }
 
     public void run() throws IOException, InterruptedException {
@@ -137,6 +159,33 @@ public class MainApp {
             //updateOnResize(tg);
         }
 
+    }
+
+    public void resizeIfQueued() {
+
+        if (pendingResize == false) return;
+        pendingResize = false;
+        mainFrame.setPosition(0, 0);
+        mainFrame.setSize(pendingWidth, pendingHeight);
+
+
+        // Info Bar
+        infoBar.setPosition(0, pendingHeight - 1);
+        infoBar.setSize(pendingWidth, 1);
+        //mainFrame.addChild(infoBar);
+
+        // Test viewport
+        Viewport vp = getActiveViewport();
+        //vp.setParent(mainFrame);
+        vp.setPosition(0, 0);
+        vp.setSize(pendingWidth, pendingHeight);
+        //mainFrame.addChild(vp);
+        vp.doLayout();
+    }
+
+    public Viewport getActiveViewport() {
+        return viewPortRepo.getViewportById(activeViewportId);
+        //return testViewport;
     }
 
     private void setCursorPositionForView() throws IOException {
@@ -223,53 +272,5 @@ public class MainApp {
         if (keyStroke.getKeyType() == KeyType.Home) {
             activeViewport.getCursor().jumpToStartOfLine();
         }
-    }
-
-    public void initTestViewport(TextGraphics tg) {
-        // Create viewport.
-        int viewportId = viewPortRepo.createViewport(this);
-        Viewport vp = viewPortRepo.getViewportById(viewportId);
-        activeViewportId = viewportId;
-
-        // Create document
-        int documentId = documentRepo.createEmptyDocument();
-        DocumentContainer dc = documentRepo.getDocumentById(documentId);
-
-
-        // Create text buffer
-        TerminalSize size = tg.getSize();
-        textBuffer = new PieceTableTextBuffer();
-
-        if (settings.initialFilePath != null) {
-            textBuffer.setInitialtext(loadFile(settings.initialFilePath));
-        } else {
-            textBuffer.setInitialtext(faketextFile());
-        }
-
-        // Attech text buffer to document
-        dc.setTextBuffer(textBuffer);
-
-        vp.setTextBuffer(textBuffer);
-        vp.setPosition(0,1);
-        vp.setSize(size.getColumns(), size.getRows() - 2);
-        vp.doLayout();
-        vp.draw(this.tg);
-    }
-
-    public String loadFile(String path) {
-        String content = "";
-
-        try {
-            content = new String(Files.readAllBytes(Paths.get(path)));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return content;
-    }
-
-    public Viewport getActiveViewport() {
-        return viewPortRepo.getViewportById(activeViewportId);
-        //return testViewport;
     }
 }
