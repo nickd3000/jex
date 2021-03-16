@@ -3,8 +3,10 @@ package com.physmo.panels;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.physmo.Point;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 // base class for all windows and elements
 public abstract class Panel {
@@ -21,8 +23,18 @@ public abstract class Panel {
 //    int height;
 
     Panel parent;
-    boolean dirty = false;
+    boolean dirty = true;
     boolean visible = true;
+    boolean focus = false;
+
+    public boolean hasFocus() {
+        return focus;
+    }
+
+    public void setFocus(boolean focus) {
+        dirty = true;
+        this.focus = focus;
+    }
 
     public void addChild(Panel child) {
         if (children.contains(child)) throw new ArrayStoreException("Child already exists");
@@ -42,30 +54,32 @@ public abstract class Panel {
         this.visible = visible;
     }
 
-    public void drawIfDirty(TextGraphics tg) {
-        if (dirty) draw(tg);
+    // Breadth first drawing of children.
+    public void drawChildren(TextGraphics tg, boolean forceDraw) {
+        Queue<Panel> queue = new ArrayDeque<>();
+        queue.add(this);
+
+        while (!queue.isEmpty()) {
+            Panel p = queue.poll();
+            p.drawIfDirty(tg, forceDraw);
+
+            for (Panel child : p.getChildren()) {
+                queue.add(child);
+            }
+        }
+    }
+
+    public void drawIfDirty(TextGraphics tg, boolean forceDraw) {
+        if (dirty || forceDraw) draw(tg);
         dirty = false;
     }
 
-//    public int getWidth() {
-//        return width;
-//    }
-//
-//    public void setWidth(int width) {
-//        this.width = width;
-//        dirty = true;
-//    }
-//
-//    public int getHeight() {
-//        return height;
-//    }
-//
-//    public void setHeight(int height) {
-//        this.height = height;
-//        dirty = true;
-//    }
 
     protected abstract void draw(TextGraphics tg);
+
+    public List<Panel> getChildren() {
+        return children;
+    }
 
     public boolean isDirty() {
         return dirty;
@@ -116,22 +130,4 @@ public abstract class Panel {
         return position;
     }
 
-//    public int getPanelX() {
-//        return panelX;
-//    }
-//
-//    public int getPanelY() {
-//        return panelY;
-//    }
-
-
-//    public void setPanelX(int panelX) {
-//        this.panelX = panelX;
-//        dirty = true;
-//    }
-//
-//    public void setPanelY(int panelY) {
-//        this.panelY = panelY;
-//        dirty = true;
-//    }
 }

@@ -18,8 +18,8 @@ public class ScrollBar extends Panel {
 
     @Override
     public void draw(TextGraphics tg) {
-        char charTrack = Symbols.DOUBLE_LINE_VERTICAL;
-        char charSlider = Symbols.BLOCK_DENSE;
+        char charTrack = Symbols.BLOCK_MIDDLE;
+        char charSlider = Symbols.BLOCK_SOLID;
 
         Point pos = getCombinedPosition();
         //ColorRepo.setScrollBarTextColor(tg);
@@ -37,36 +37,6 @@ public class ScrollBar extends Panel {
 
         Utilities.fillRectangle(tg, pos.x, pos.y + barPos, size.y, barSize, charSlider);
 
-//        ColorRepo.setInfoBarTextColor(tg);
-//        drawBackground(tg);
-//
-//        Viewport viewport = editorFrame.getActiveViewport();
-//
-//        Cursor curser = viewport.getCursor();
-//
-//        int y = curser.y;
-//        int x = curser.x;
-//
-//        String strCoords = "[" + x + "," + y + "]";
-//
-//        Point pos = getCombinedPosition();
-//
-//        tg.putString(pos.x + 1, pos.y, strCoords);
-//
-//        // node info
-//        int nodeCount = ((PieceTableTextBuffer) editorFrame.textBuffer).getNodes().size();
-//        tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
-//
-//        int w = editorFrame.getActiveViewport().getWidth();
-//        int h = editorFrame.getActiveViewport().getHeight();
-//        tg.putString(pos.x + 40, pos.y, ""+w+","+h);
     }
 
-    public void drawBackground(TextGraphics tg) {
-//        Point panelPos = getCombinedPosition();
-////        TerminalPosition pos = new TerminalPosition(panelPos.x, panelPos.y);
-////        TerminalSize size = new TerminalSize(width, height);
-//        Utilities.fillRectangle(tg, panelPos.x, panelPos.y, width, height, ' ');
-////        tg.fillRectangle(pos, size, '.');
-    }
 }

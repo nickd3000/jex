@@ -68,6 +68,6 @@ public class Viewport extends Panel {
     public void draw(TextGraphics tg) {
         if (textBuffer == null) return;
         textPanel.draw(tg);
-        scrollBar.draw(tg);
+        //scrollBar.draw(tg);
     }
 }

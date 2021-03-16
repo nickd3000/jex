@@ -11,8 +11,7 @@ import com.physmo.buffers.TextBuffer;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 import com.physmo.document.DocumentContainer;
 import com.physmo.document.DocumentRepo;
-import com.physmo.panels.InfoBar;
-import com.physmo.panels.Panel;
+import com.physmo.panels.MainFrame;
 import com.physmo.panels.Viewport;
 
 import java.io.IOException;
@@ -29,8 +28,8 @@ public class MainApp {
     Screen screen;
     TextGraphics tg;
     //Viewport testViewport;
-    Panel mainFrame;
-    InfoBar infoBar;
+    MainFrame mainFrame;
+
     Settings settings = new Settings();
     boolean running = true;
     int activeViewportId;
@@ -45,17 +44,7 @@ public class MainApp {
                    Screen screen,
                    TextGraphics tg, String initialFilePath) {
 
-        mainFrame = new Panel() {
-            @Override
-            public void draw(TextGraphics tg) {
-
-            }
-        };
-
-        infoBar = new InfoBar(this);
-        infoBar.setPosition(0, tg.getSize().getRows() - 1);
-        infoBar.setSize(tg.getSize().getColumns(), 1);
-        mainFrame.addChild(infoBar);
+        mainFrame = new MainFrame(this, tg.getSize().getColumns(), tg.getSize().getRows());
 
         this.terminal = terminal;
         this.screen = screen;
@@ -87,14 +76,13 @@ public class MainApp {
             textBuffer.setInitialtext(faketextFile());
         }
 
-        // Attech text buffer to document
+        // Attach text buffer to document
         dc.setTextBuffer(textBuffer);
 
         vp.setTextBuffer(textBuffer);
-        vp.setPosition(0, 1);
-        vp.setSize(size.getColumns(), size.getRows() - 2);
-        vp.doLayout();
-        vp.draw(this.tg);
+
+        mainFrame.addViewport(vp);
+
     }
 
     public static String faketextFile() {
@@ -133,6 +121,7 @@ public class MainApp {
         pendingHeight = screenHeight;
     }
 
+    // TODO: this should all be event based
     public void run() throws IOException, InterruptedException {
 
         while (running) {
@@ -141,13 +130,12 @@ public class MainApp {
             tg = screen.newTextGraphics();
 
             processInput();
-            //ColorRepo.setDefaultTextColor(tg);
-            //tg.fill(' ');
 
-            if (getActiveViewport() != null) getActiveViewport().draw(tg);
-            //testViewport.draw(tg);
+            if (getActiveViewport() != null) {
+                getActiveViewport().drawChildren(tg, true);
+            }
 
-            infoBar.draw(tg);
+            mainFrame.drawChildren(tg, true);
             setCursorPositionForView();
 
             screen.doResizeIfNecessary();
@@ -168,24 +156,16 @@ public class MainApp {
         mainFrame.setPosition(0, 0);
         mainFrame.setSize(pendingWidth, pendingHeight);
 
+        mainFrame.doLayout();
 
-        // Info Bar
-        infoBar.setPosition(0, pendingHeight - 1);
-        infoBar.setSize(pendingWidth, 1);
-        //mainFrame.addChild(infoBar);
 
         // Test viewport
-        Viewport vp = getActiveViewport();
-        //vp.setParent(mainFrame);
-        vp.setPosition(0, 0);
-        vp.setSize(pendingWidth, pendingHeight);
-        //mainFrame.addChild(vp);
-        vp.doLayout();
-    }
+//        Viewport vp = getActiveViewport();
 
-    public Viewport getActiveViewport() {
-        return viewPortRepo.getViewportById(activeViewportId);
-        //return testViewport;
+//        vp.setPosition(0, 0);
+//        vp.setSize(pendingWidth, pendingHeight);
+
+//        vp.doLayout();
     }
 
     private void setCursorPositionForView() throws IOException {
@@ -272,5 +252,10 @@ public class MainApp {
         if (keyStroke.getKeyType() == KeyType.Home) {
             activeViewport.getCursor().jumpToStartOfLine();
         }
+    }
+
+    public Viewport getActiveViewport() {
+        return viewPortRepo.getViewportById(activeViewportId);
+        //return testViewport;
     }
 }

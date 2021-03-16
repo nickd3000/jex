@@ -8,7 +8,7 @@ import com.physmo.Point;
 import com.physmo.Utilities;
 import com.physmo.buffers.TextBuffer;
 
-// TODO: rename to text viewport?
+
 public class TextPanel extends Panel {
 
     int scrollPad = 2;
@@ -79,9 +79,6 @@ public class TextPanel extends Panel {
     // if cursor goes off screen scroll to show it.
     public void scrollToCursor() {
 
-//        if (cursor.y>scrollOffset+height-scrollPad) {
-//            scrollOffset = cursor.y-height+scrollPad;
-//        };
         if (scrollOffset < cursor.y - size.y + scrollPad) {
             scrollOffset = cursor.y - size.y + scrollPad;
         }

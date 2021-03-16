@@ -1,6 +1,9 @@
 
 
 TASKS
+[ ] create mainframe panel type
+[ ] start input routing
+[ ] cascading redraw
 [ ] bug - deleting at start of file has weird outcome
 [ ] load file
 [ ] file browser
