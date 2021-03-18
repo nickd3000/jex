@@ -11,6 +11,7 @@ public class ColorRepo {
     public static String INFO_BAR = "INFO_BAR";
     public static String SCROLL_BAR = "SCROLL_BAR";
     public static String MENU_BAR = "MENU_BAR";
+    public static String LIST_PANEL = "LIST_PANEL";
     String FG = "FG";
     String BG = "BG";
 
@@ -31,6 +32,8 @@ public class ColorRepo {
         dosStyle.put(SCROLL_BAR + BG, TextColor.ANSI.BLACK);
         dosStyle.put(MENU_BAR + FG, TextColor.ANSI.BLACK);
         dosStyle.put(MENU_BAR + BG, TextColor.ANSI.WHITE);
+        dosStyle.put(LIST_PANEL + FG, TextColor.ANSI.RED);
+        dosStyle.put(LIST_PANEL + BG, TextColor.ANSI.RED_BRIGHT);
         styles.put("DOS", dosStyle);
     }
 

@@ -1,6 +1,7 @@
 package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.input.KeyStroke;
 import com.physmo.Point;
 
 import java.util.ArrayDeque;
@@ -16,16 +17,15 @@ public abstract class Panel {
     // todo change to points
     Point position = new Point(0, 0);
     Point size = new Point(0, 0);
-
-//    int panelX;
-//    int panelY;
-//    int width;
-//    int height;
-
     Panel parent;
     boolean dirty = true;
     boolean visible = true;
     boolean focus = false;
+    FocusTraverser focusTraverser = new FocusTraverser();
+
+    public FocusTraverser getFocusTraverser() {
+        return focusTraverser;
+    }
 
     public boolean hasFocus() {
         return focus;
@@ -79,6 +79,10 @@ public abstract class Panel {
 
     public List<Panel> getChildren() {
         return children;
+    }
+
+    protected boolean processKeystroke(KeyStroke keyStroke) {
+        return false;
     }
 
     public boolean isDirty() {

@@ -1,4 +1,10 @@
 
+Lanterna Library
+================
+Caveats
+We can't detect SHIFT being pressed - no SHIFT+TAB
+We can't detect CTRL or ALT as individual key presses - no ALT to open menu.
+
 
 TASKS
 [ ] create mainframe panel type

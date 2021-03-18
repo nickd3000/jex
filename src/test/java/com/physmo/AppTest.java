@@ -2,8 +2,6 @@ package com.physmo;
 
 import org.junit.Test;
 
-import java.io.File;
-
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -16,15 +14,6 @@ public class AppTest {
     @Test
     public void shouldAnswerWithTrue() {
         assertTrue(true);
-    }
-
-    @Test
-    public void misc() {
-        File f = new File("/");
-        File[] files = f.listFiles();
-        for (File file : files) {
-            System.out.println(file.getName());
-        }
     }
 
 }

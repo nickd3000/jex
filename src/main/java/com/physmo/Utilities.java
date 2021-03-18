@@ -6,10 +6,19 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
 public class Utilities {
+
+    public static void fillRectangle(TextGraphics tg, Point position, Point size, char c) {
+        fillRectangle(tg, position.x, position.y, size.x, size.y, c);
+    }
+
     public static void fillRectangle(TextGraphics tg, int x, int y, int width, int height, char c) {
         TerminalPosition pos = new TerminalPosition(x, y);
         TerminalSize size = new TerminalSize(width, height);
         tg.fillRectangle(pos, size, c);
+    }
+
+    public static void drawBox(TextGraphics tg, Point position, Point size, char c) {
+        drawBox(tg, position.x, position.y, size.x, size.y, c);
     }
 
     public static void drawBox(TextGraphics tg, int x, int y, int width, int height, char c) {
