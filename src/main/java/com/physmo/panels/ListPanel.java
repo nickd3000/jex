@@ -51,6 +51,8 @@ public class ListPanel extends Panel {
 
     @Override
     protected void draw(TextGraphics tg) {
+        if (!visible) return;
+
         tg.setForegroundColor(colorMap.get("FG"));
         tg.setBackgroundColor(colorMap.get("BG"));
 
@@ -126,4 +128,14 @@ public class ListPanel extends Panel {
     public void addSelectionHandler(ListPanelCallback f) {
         selectionHandler = f;
     }
+
+    public void sizeToContent(int minWidth) {
+        size.x = minWidth;
+        size.y = list.size();
+        if (showBorders) {
+            size.x += 2;
+            size.y += 2;
+        }
+    }
+
 }

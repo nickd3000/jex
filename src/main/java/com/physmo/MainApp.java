@@ -135,7 +135,8 @@ public class MainApp {
                 getActiveViewport().drawChildren(tg, true);
             }
 
-            mainFrame.drawChildren(tg, true);
+            //mainFrame.drawChildren(tg, true);
+            mainFrame.draw(tg);
             setCursorPositionForView();
 
             screen.doResizeIfNecessary();
@@ -194,64 +195,20 @@ public class MainApp {
         }
     }
 
-    public void processKeyStroke(KeyStroke keyStroke) throws IOException {
+    public boolean processKeyStroke(KeyStroke keyStroke) throws IOException {
         Viewport activeViewport = getActiveViewport();
 
-        //KeyStroke keyStroke = terminal.readInput();
-        if (keyStroke.getKeyType() == KeyType.Character) {
-            Character character = keyStroke.getCharacter();
-            int charPos = activeViewport.getCursor().getDocumentIndex();
-            textBuffer.insert(charPos, "" + character);
-            activeViewport.getCursor().moveRight();
-        }
-        if (keyStroke.getKeyType() == KeyType.Enter) {
-            int charPos = activeViewport.getCursor().getDocumentIndex();
-            textBuffer.insert(charPos, "\n");
-            activeViewport.getCursor().moveRight();
-            //testViewport.getCurser().y++;
-            activeViewport.getCursor().x = 0;
+
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.isCtrlDown()) {
+            if (keyStroke.getCharacter() == 'c') {
+                running = false;
+                return true;
+            }
         }
 
-        if (keyStroke.getKeyType() == KeyType.Delete) {
-            int charPos = activeViewport.getCursor().getDocumentIndex();
-            textBuffer.deleteCharacter(charPos);
-        }
-        if (keyStroke.getKeyType() == KeyType.Backspace) {
-            int charPos = activeViewport.getCursor().getDocumentIndex();
-            activeViewport.getCursor().moveLeft();
-            textBuffer.deleteCharacter(charPos - 1);
 
-        }
+        return mainFrame.processKeystroke(keyStroke);
 
-        if (keyStroke.getKeyType() == KeyType.Escape) {
-            running = false;
-        }
-
-        if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
-            activeViewport.getCursor().moveLeft();
-        }
-        if (keyStroke.getKeyType() == KeyType.ArrowRight) {
-            activeViewport.getCursor().moveRight();
-        }
-        if (keyStroke.getKeyType() == KeyType.ArrowUp) {
-            activeViewport.getCursor().moveUp(1);
-        }
-        if (keyStroke.getKeyType() == KeyType.ArrowDown) {
-            activeViewport.getCursor().moveDown(1);
-        }
-
-        if (keyStroke.getKeyType() == KeyType.PageUp) {
-            activeViewport.getCursor().moveUp(10);
-        }
-        if (keyStroke.getKeyType() == KeyType.PageDown) {
-            activeViewport.getCursor().moveDown(10);
-        }
-        if (keyStroke.getKeyType() == KeyType.End) {
-            activeViewport.getCursor().jumpToEndOfLine();
-        }
-        if (keyStroke.getKeyType() == KeyType.Home) {
-            activeViewport.getCursor().jumpToStartOfLine();
-        }
     }
 
     public Viewport getActiveViewport() {

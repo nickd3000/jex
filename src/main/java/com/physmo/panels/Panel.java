@@ -75,13 +75,13 @@ public abstract class Panel {
     }
 
 
-    protected abstract void draw(TextGraphics tg);
+    abstract void draw(TextGraphics tg);
 
     public List<Panel> getChildren() {
         return children;
     }
 
-    protected boolean processKeystroke(KeyStroke keyStroke) {
+    public boolean processKeystroke(KeyStroke keyStroke) {
         return false;
     }
 

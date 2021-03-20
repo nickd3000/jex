@@ -42,4 +42,9 @@ public class ColorRepo {
         tg.setBackgroundColor(styles.get("DOS").get(element + BG));
     }
 
+    public void setThemeElementColorInverted(TextGraphics tg, String element) {
+        tg.setForegroundColor(styles.get("DOS").get(element + BG));
+        tg.setBackgroundColor(styles.get("DOS").get(element + FG));
+    }
+
 }

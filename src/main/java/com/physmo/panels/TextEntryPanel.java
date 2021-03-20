@@ -39,7 +39,7 @@ public class TextEntryPanel extends Panel {
     }
 
     @Override
-    protected boolean processKeystroke(KeyStroke keyStroke) {
+    public boolean processKeystroke(KeyStroke keyStroke) {
         super.processKeystroke(keyStroke);
 
         if (keyStroke.getKeyType() == KeyType.Character) {

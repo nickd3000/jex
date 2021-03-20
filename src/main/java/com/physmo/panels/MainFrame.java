@@ -1,6 +1,8 @@
 package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.input.KeyStroke;
+import com.googlecode.lanterna.input.KeyType;
 import com.physmo.MainApp;
 import com.physmo.Point;
 
@@ -46,12 +48,46 @@ public class MainFrame extends Panel {
     }
 
     @Override
-    protected void draw(TextGraphics tg) {
+    public void draw(TextGraphics tg) {
+        Viewport vp = mainApp.getActiveViewport();
+        if (vp != null) {
+            vp.draw(tg);
+        }
 
+        menuBar.draw(tg);
+        infoBar.draw(tg);
     }
 
     public void addViewport(Viewport vp) {
         this.addChild(vp);
         doLayout();
+        vp.setFocus(true);
+    }
+
+    @Override
+    public boolean processKeystroke(KeyStroke keyStroke) {
+        //return super.processKeystroke(keyStroke);
+
+        Viewport vp = mainApp.getActiveViewport();
+
+        if (keyStroke.getKeyType() == KeyType.Escape) {
+            if (vp.hasFocus()) {
+                menuBar.setFocus(true);
+                vp.setFocus(false);
+            } else {
+                menuBar.setFocus(false);
+                vp.setFocus(true);
+            }
+        }
+
+        if (menuBar.hasFocus()) {
+            menuBar.processKeystroke(keyStroke);
+        }
+
+        if (vp.hasFocus()) {
+            vp.processKeystroke(keyStroke);
+        }
+
+        return false;
     }
 }
