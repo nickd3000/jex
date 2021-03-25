@@ -4,6 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.physmo.ColorRepo;
+import com.physmo.Commands;
 import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.Utilities;
@@ -32,10 +33,10 @@ public class MenuBar extends Panel {
 
         ListPanel fileSubMenu = new ListPanel();
         fileSubMenu.getList().add(new ListElement("New", "FILE_NEW"));
-        fileSubMenu.getList().add(new ListElement("Open...", "FILE_OPEN"));
+        fileSubMenu.getList().add(new ListElement("Open...", Commands.FILE_OPEN));
         fileSubMenu.getList().add(new ListElement("Save", "FILE_SAVE"));
         fileSubMenu.getList().add(new ListElement("Save As", "FILE_SAVE_AS"));
-        fileSubMenu.getList().add(new ListElement("Exit", "FILE_EXIT"));
+        fileSubMenu.getList().add(new ListElement("Exit", Commands.FILE_EXIT));
         fileSubMenu.setVisible(true);
         fileSubMenu.sizeToContent(10);
         fileSubMenu.setPosition(getTopLevelMenuItemXPosition(0), 1);
@@ -90,7 +91,10 @@ public class MenuBar extends Panel {
         //        String action = (String)object;
 
         if (action.equals("FILE_EXIT")) {
-            System.out.println("file exit called.");
+            mainApp.commandReceiver("FILE_EXIT", null);
+        }
+        if (action.equals(Commands.FILE_OPEN)) {
+            mainApp.commandReceiver(Commands.FILE_OPEN, null);
         }
     }
 

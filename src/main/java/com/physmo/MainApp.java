@@ -11,6 +11,7 @@ import com.physmo.buffers.TextBuffer;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 import com.physmo.document.DocumentContainer;
 import com.physmo.document.DocumentRepo;
+import com.physmo.panels.FilePanel;
 import com.physmo.panels.MainFrame;
 import com.physmo.panels.Viewport;
 
@@ -40,6 +41,9 @@ public class MainApp {
     int pendingWidth = 0;
     int pendingHeight = 0;
 
+    FilePanel fileOpenPanel;
+    MainStates currentState = MainStates.NORMAL;
+
     public MainApp(Terminal terminal,
                    Screen screen,
                    TextGraphics tg, String initialFilePath) {
@@ -52,10 +56,20 @@ public class MainApp {
 
         settings.initialFilePath = initialFilePath;
 
-        initTestViewport(tg);
+        loadFile(tg, settings.initialFilePath);
+
+        fileOpenPanel = new FilePanel();
+        fileOpenPanel.setSize(60, 16);
+        fileOpenPanel.setPosition(5, 5);
+        fileOpenPanel.doLayout();
+        fileOpenPanel.addLoadFileCallback(o -> {
+            System.out.println("MainApp:"+(String)o);
+            loadFile(tg, (String)o);
+            changeState(MainStates.NORMAL);
+        });
     }
 
-    public void initTestViewport(TextGraphics tg) {
+    public void loadFile(TextGraphics tg, String path) {
         // Create viewport.
         int viewportId = viewPortRepo.createViewport(this);
         Viewport vp = viewPortRepo.getViewportById(viewportId);
@@ -70,8 +84,8 @@ public class MainApp {
         TerminalSize size = tg.getSize();
         textBuffer = new PieceTableTextBuffer();
 
-        if (settings.initialFilePath != null) {
-            textBuffer.setInitialtext(loadFile(settings.initialFilePath));
+        if (path != null) {
+            textBuffer.setInitialtext(loadFile(path));
         } else {
             textBuffer.setInitialtext(faketextFile());
         }
@@ -139,6 +153,10 @@ public class MainApp {
             mainFrame.draw(tg);
             setCursorPositionForView();
 
+            if (currentState==MainStates.FILE_OPEN) {
+                fileOpenPanel.drawChildren(tg, true);
+            }
+
             screen.doResizeIfNecessary();
             screen.refresh();
 
@@ -185,7 +203,7 @@ public class MainApp {
         while (keyStroke != null) {
 
             processKeyStroke(keyStroke);
-            if (count > 100) {
+            if (count > 100) { // avoid looping forever
                 return;
             }
 
@@ -206,13 +224,46 @@ public class MainApp {
             }
         }
 
+        if (currentState==MainStates.NORMAL) {
+            return mainFrame.processKeystroke(keyStroke);
+        }
+        else if (currentState==MainStates.FILE_OPEN) {
+            return fileOpenPanel.processKeystroke(keyStroke);
+        }
 
-        return mainFrame.processKeystroke(keyStroke);
-
+        return false;
     }
 
     public Viewport getActiveViewport() {
         return viewPortRepo.getViewportById(activeViewportId);
         //return testViewport;
+    }
+
+    public void commandReceiver(String command, Object data) {
+        if (command.equals(Commands.FILE_EXIT)) {
+            running = false;
+        }
+
+        if (command.equals(Commands.FILE_OPEN)) {
+            changeState(MainStates.FILE_OPEN);
+        }
+    }
+
+    public void changeState(MainStates newState) {
+        if (currentState==MainStates.NORMAL) {
+            if (newState==MainStates.FILE_OPEN) {
+                System.out.println("making file panel visible");
+                fileOpenPanel.setVisible(true);
+                currentState=MainStates.FILE_OPEN;
+            }
+        }
+
+        if (currentState==MainStates.FILE_OPEN) {
+            if (newState==MainStates.NORMAL) {
+                fileOpenPanel.setVisible(false);
+                currentState=MainStates.NORMAL;
+            }
+        }
+
     }
 }

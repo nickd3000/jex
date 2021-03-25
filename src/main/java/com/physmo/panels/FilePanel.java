@@ -18,11 +18,20 @@ public class FilePanel extends Panel {
     Button okButton;
     Button cancelButton;
     ListPanel listPanel;
-    String currentPath = "/tmp";
+    String currentPath = "/Users/nick";
 
-    Panel focusPanel;
+    Panel focusedPanel;
 
-    List<Panel> focusList;
+    Callback loadFileCallback;
+    Callback closeDialogCallback;
+
+    public void addLoadFileCallback(Callback loadFileCallback) {
+        this.loadFileCallback =  loadFileCallback;
+    }
+    public void addCloseDialogCallback(Callback closeDialogCallback) {
+        this.closeDialogCallback =  closeDialogCallback;
+    }
+
 
     public FilePanel() {
         colorMap = new HashMap<>();
@@ -36,6 +45,9 @@ public class FilePanel extends Panel {
         okButton = new Button();
         okButton.text = "<ok>";
         this.addChild(okButton);
+        okButton.addCallback(o -> {
+            System.out.println("ok button pressed");
+        });
 
         cancelButton = new Button();
         cancelButton.text = "<cancel>";
@@ -45,7 +57,8 @@ public class FilePanel extends Panel {
 
         this.addChild(listPanel);
 
-        focusPanel = listPanel;
+        focusedPanel = listPanel;
+        focusedPanel.setFocus(true);
 
         updateFileListPanelOnPathChange();
         setFocusTargets();
@@ -53,6 +66,12 @@ public class FilePanel extends Panel {
 
         listPanel.addSelectionHandler((index, object) -> {
             System.out.println("Selected file: " + index);
+            // we ned to tell the main app to load this file then close the dialog
+            ListElement le = (ListElement) object;
+            File file = ((File)le.object);
+            String fullPath = file.getPath();
+            //fullPath+=file.getName();
+            loadFileCallback.callback(fullPath);
         });
 
     }
@@ -92,7 +111,8 @@ public class FilePanel extends Panel {
 
         for (File file : fileList) {
             String fileName = file.getName();
-            ListElement newListElement = new ListElement(fileName, file);
+            String displayString = getDisplayStringForFile(file);
+            ListElement newListElement = new ListElement(displayString, file);
             listPanelList.add(newListElement);
         }
 
@@ -112,6 +132,8 @@ public class FilePanel extends Panel {
 
     @Override
     public void draw(TextGraphics tg) {
+        if (!isVisible()) return;
+
         tg.setForegroundColor(colorMap.get("BG"));
         tg.setBackgroundColor(colorMap.get("FG"));
 
@@ -126,40 +148,56 @@ public class FilePanel extends Panel {
 
         boolean consumed = false;
 
-        if (focusPanel == pathPanel) {
+        if (focusedPanel == pathPanel) {
             pathPanel.processKeystroke(keyStroke);
         }
 
         if (keyStroke.getKeyType() == KeyType.Tab) {
             consumed = true;
-            focusPanel.setFocus(false);
-            focusPanel = focusPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
-            focusPanel.setFocus(true);
+            focusedPanel.setFocus(false);
+            focusedPanel = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
+            focusedPanel.setFocus(true);
         }
 
         if (keyStroke.getKeyType() == KeyType.ArrowRight) {
-            Panel target = focusPanel.getFocusTraverser().getTarget(FocusTraverser.RIGHT);
+            Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.RIGHT);
             if (target != null) {
-                focusPanel.setFocus(false);
-                focusPanel = target;
-                focusPanel.setFocus(true);
+                focusedPanel.setFocus(false);
+                focusedPanel = target;
+                focusedPanel.setFocus(true);
             }
         }
 
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
-            Panel target = focusPanel.getFocusTraverser().getTarget(FocusTraverser.LEFT);
+            Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.LEFT);
             if (target != null) {
-                focusPanel.setFocus(false);
-                focusPanel = target;
-                focusPanel.setFocus(true);
+                focusedPanel.setFocus(false);
+                focusedPanel = target;
+                focusedPanel.setFocus(true);
             }
         }
 
 
-        if (focusPanel == listPanel) {
+        if (focusedPanel == listPanel) {
             listPanel.processKeystroke(keyStroke);
         }
 
+        if (focusedPanel==okButton || focusedPanel==cancelButton) {
+            focusedPanel.processKeystroke(keyStroke);
+        }
+
         return consumed;
+    }
+
+    public static String getDisplayStringForFile(File file) {
+        long bytes = file.length();
+        file.getName();
+        String fileSize = (prettyFileSize(bytes)+"     ").substring(0,8);
+        String result = fileSize+" "+file.getName();
+        return result;
+    }
+
+    public static String prettyFileSize(long bytes) {
+        return Utilities.humanReadableByteCountBin(bytes);
     }
 }

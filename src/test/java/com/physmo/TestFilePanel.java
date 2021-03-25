@@ -19,6 +19,10 @@ public class TestFilePanel {
         filePanel.setSize(60, 16);
         filePanel.setPosition(5, 5);
 
+        filePanel.addLoadFileCallback(o -> {
+            System.out.println("file: " + (String) o);
+        });
+
         boolean running = true;
 
         while (running) {
@@ -50,4 +54,13 @@ public class TestFilePanel {
 
     }
 
+    @Test
+    public void testPrettyFileSize() {
+
+        System.out.println(FilePanel.prettyFileSize(100));
+        System.out.println(FilePanel.prettyFileSize(2000));
+        System.out.println(FilePanel.prettyFileSize(2000000));
+
+
+    }
 }
