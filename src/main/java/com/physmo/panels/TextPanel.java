@@ -71,9 +71,15 @@ public class TextPanel extends Panel {
             if (currentLine.length() > usableWidth)
                 currentLine = currentLine.substring(0, usableWidth);
 
-            tg.putString(panelPos.x, panelPos.y + i, currentLine);
+            String sanitizedText = sanitizeText(currentLine);
+
+            tg.putString(panelPos.x, panelPos.y + i, sanitizedText);
         }
 
+    }
+
+    public String sanitizeText(String input) {
+        return input.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", "?");
     }
 
     // if cursor goes off screen scroll to show it.

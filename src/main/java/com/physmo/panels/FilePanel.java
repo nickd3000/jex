@@ -25,21 +25,13 @@ public class FilePanel extends Panel {
     Callback loadFileCallback;
     Callback closeDialogCallback;
 
-    public void addLoadFileCallback(Callback loadFileCallback) {
-        this.loadFileCallback =  loadFileCallback;
-    }
-    public void addCloseDialogCallback(Callback closeDialogCallback) {
-        this.closeDialogCallback =  closeDialogCallback;
-    }
-
-
     public FilePanel() {
         colorMap = new HashMap<>();
         colorMap.put("FG", TextColor.ANSI.RED);
         colorMap.put("BG", TextColor.ANSI.WHITE);
 
         pathPanel = new TextEntryPanel();
-        pathPanel.text = "/tmp";
+        pathPanel.text = currentPath;
         this.addChild(pathPanel);
 
         okButton = new Button();
@@ -68,10 +60,17 @@ public class FilePanel extends Panel {
             System.out.println("Selected file: " + index);
             // we ned to tell the main app to load this file then close the dialog
             ListElement le = (ListElement) object;
-            File file = ((File)le.object);
+            File file = ((File) le.object);
             String fullPath = file.getPath();
-            //fullPath+=file.getName();
-            loadFileCallback.callback(fullPath);
+
+            if (file.isFile()) {
+                loadFileCallback.callback(fullPath);
+            } else if (file.isDirectory()) {
+                currentPath = fullPath;
+                pathPanel.setText(fullPath);
+                updateFileListPanelOnPathChange();
+
+            }
         });
 
     }
@@ -124,6 +123,34 @@ public class FilePanel extends Panel {
         return files;
     }
 
+    public static String getDisplayStringForFile(File file) {
+        long bytes = file.length();
+        file.getName();
+
+        String description = "";
+
+        if (file.isFile()) {
+            description = (prettyFileSize(bytes) + "     ").substring(0, 8);
+        } else if (file.isDirectory()) {
+            description = "<DIR>";
+        }
+
+        String result = description + " " + file.getName();
+        return result;
+    }
+
+    public static String prettyFileSize(long bytes) {
+        return Utilities.humanReadableByteCountBin(bytes);
+    }
+
+    public void addLoadFileCallback(Callback loadFileCallback) {
+        this.loadFileCallback = loadFileCallback;
+    }
+
+    public void addCloseDialogCallback(Callback closeDialogCallback) {
+        this.closeDialogCallback = closeDialogCallback;
+    }
+
     @Override
     public void setSize(int w, int h) {
         super.setSize(w, h);
@@ -154,26 +181,38 @@ public class FilePanel extends Panel {
 
         if (keyStroke.getKeyType() == KeyType.Tab) {
             consumed = true;
-            focusedPanel.setFocus(false);
-            focusedPanel = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
-            focusedPanel.setFocus(true);
+//            focusedPanel.setFocus(false);
+//            focusedPanel = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
+//            focusedPanel.setFocus(true);
+
+            Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
+            if (target != null) {
+                switchFocus(target);
+            }
+        }
+
+        if (keyStroke.getKeyType() == KeyType.ArrowLeft && focusedPanel == listPanel) {
+            consumed = true;
+            goUpOneFolder();
         }
 
         if (keyStroke.getKeyType() == KeyType.ArrowRight) {
             Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.RIGHT);
             if (target != null) {
-                focusedPanel.setFocus(false);
-                focusedPanel = target;
-                focusedPanel.setFocus(true);
+//                focusedPanel.setFocus(false);
+//                focusedPanel = target;
+//                focusedPanel.setFocus(true);
+                switchFocus(target);
             }
         }
 
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
             Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.LEFT);
             if (target != null) {
-                focusedPanel.setFocus(false);
-                focusedPanel = target;
-                focusedPanel.setFocus(true);
+//                focusedPanel.setFocus(false);
+//                focusedPanel = target;
+//                focusedPanel.setFocus(true);
+                switchFocus(target);
             }
         }
 
@@ -182,22 +221,31 @@ public class FilePanel extends Panel {
             listPanel.processKeystroke(keyStroke);
         }
 
-        if (focusedPanel==okButton || focusedPanel==cancelButton) {
+        if (focusedPanel == okButton || focusedPanel == cancelButton) {
             focusedPanel.processKeystroke(keyStroke);
         }
 
         return consumed;
     }
 
-    public static String getDisplayStringForFile(File file) {
-        long bytes = file.length();
-        file.getName();
-        String fileSize = (prettyFileSize(bytes)+"     ").substring(0,8);
-        String result = fileSize+" "+file.getName();
-        return result;
+    public void goUpOneFolder() {
+        int lastSlash = currentPath.lastIndexOf('/');
+        String newPath = "";
+
+        if (lastSlash < 1) {
+            newPath = "/";
+        } else {
+            newPath = currentPath.substring(0, lastSlash);
+        }
+
+        currentPath = newPath;
+        pathPanel.setText(newPath);
+        updateFileListPanelOnPathChange();
     }
 
-    public static String prettyFileSize(long bytes) {
-        return Utilities.humanReadableByteCountBin(bytes);
+    public void switchFocus(Panel target) {
+        focusedPanel.setFocus(false);
+        focusedPanel = target;
+        focusedPanel.setFocus(true);
     }
 }

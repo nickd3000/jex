@@ -113,7 +113,10 @@ public class ListPanel extends Panel {
         }
 
         if (keyStroke.getKeyType() == KeyType.Enter) {
-            selectionHandler.call(selectedIndex, list.get(selectedIndex));
+            if (selectedIndex<list.size()) {
+                ListElement selectedObject = list.get(selectedIndex);
+                selectionHandler.call(selectedIndex, selectedObject);
+            }
         }
 
         if (selectedIndex < scrollOffset) {
