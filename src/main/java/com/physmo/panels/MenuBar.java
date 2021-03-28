@@ -4,7 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.physmo.ColorRepo;
-import com.physmo.Commands;
+import com.physmo.command.Commands;
 import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.Utilities;
@@ -91,10 +91,12 @@ public class MenuBar extends Panel {
         //        String action = (String)object;
 
         if (action.equals("FILE_EXIT")) {
-            mainApp.commandReceiver("FILE_EXIT", null);
+            //mainApp.commandReceiver("FILE_EXIT", null);
+            mainApp.getCommandQueue().push(Commands.FILE_EXIT, null);
         }
         if (action.equals(Commands.FILE_OPEN)) {
-            mainApp.commandReceiver(Commands.FILE_OPEN, null);
+            //mainApp.commandReceiver(Commands.FILE_OPEN, null);
+            mainApp.getCommandQueue().push(Commands.FILE_OPEN, null);
         }
     }
 
@@ -181,6 +183,12 @@ public class MenuBar extends Panel {
             return true;
         }
 
+        if (keyType == KeyType.ArrowUp && !dropdownVisible) {
+            setDropdownVisible(true);
+            showSelectedDropdown();
+            return true;
+        }
+
         if (dropdownVisible) {
             if (keyType == KeyType.ArrowUp ||
                     keyType == KeyType.ArrowDown ||
@@ -198,8 +206,10 @@ public class MenuBar extends Panel {
                 panel.setFocus(false);
                 panel.setVisible(false);
             }
-            subMenuList.get(selectedIndex).setFocus(true);
-            subMenuList.get(selectedIndex).setVisible(true);
+            Panel selectedMenu = subMenuList.get(selectedIndex);
+            selectedMenu.setFocus(true);
+            selectedMenu.setVisible(true);
+            ((ListPanel)selectedMenu).setSelectedIndex(0);
         }
     }
 }

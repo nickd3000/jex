@@ -1,6 +1,7 @@
 package com.physmo;
 
 import com.googlecode.lanterna.input.KeyStroke;
+import com.physmo.command.CommandQueue;
 import com.physmo.panels.FilePanel;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,14 +15,14 @@ public class TestFilePanel {
     public void t1() throws IOException {
         Harness harness = new Harness();
         harness.start();
-
-        FilePanel filePanel = new FilePanel();
+        CommandQueue commandQueue = new CommandQueue();
+        FilePanel filePanel = new FilePanel(commandQueue);
         filePanel.setSize(60, 16);
         filePanel.setPosition(5, 5);
 
-        filePanel.addLoadFileCallback(o -> {
-            System.out.println("file: " + (String) o);
-        });
+//        filePanel.addLoadFileCallback(o -> {
+//            System.out.println("file: " + (String) o);
+//        });
 
         boolean running = true;
 
@@ -45,7 +46,8 @@ public class TestFilePanel {
 
     @Test
     public void testGetFileList() {
-        FilePanel filePanel = new FilePanel();
+        CommandQueue commandQueue = new CommandQueue();
+        FilePanel filePanel = new FilePanel(commandQueue);
         File[] fileList = filePanel.getFileList("/");
 
         for (File file : fileList) {

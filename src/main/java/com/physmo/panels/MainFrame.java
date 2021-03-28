@@ -90,4 +90,10 @@ public class MainFrame extends Panel {
 
         return false;
     }
+
+    public void hideMenuBar() {
+        Viewport vp = mainApp.getActiveViewport();
+        menuBar.setFocus(false);
+        vp.setFocus(true);
+    }
 }

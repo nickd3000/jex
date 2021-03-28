@@ -24,6 +24,7 @@ public class ListPanel extends Panel {
     int visibleRows = 0;
     int visibleColumns = 0;
     ListPanelCallback selectionHandler = null;
+    boolean wrapSelection = true;
 
     public ListPanel() {
         list = new ArrayList<>();
@@ -101,15 +102,35 @@ public class ListPanel extends Panel {
 
     }
 
-    @Override
-    public boolean processKeystroke(KeyStroke keyStroke) {
-        if (keyStroke.getKeyType() == KeyType.ArrowUp) {
-            selectedIndex--;
+    public void prevItem() {
+        selectedIndex--;
+
+        if (wrapSelection) {
+            if (selectedIndex < 0) selectedIndex = list.size() - 1;
+        }
+        else {
             if (selectedIndex < 0) selectedIndex = 0;
         }
-        if (keyStroke.getKeyType() == KeyType.ArrowDown) {
-            selectedIndex++;
+    }
+    public void nextItem() {
+        selectedIndex++;
+
+        if (wrapSelection) {
+            if (selectedIndex > list.size() - 1) selectedIndex = 0;
+        }
+        else {
             if (selectedIndex >= list.size() - 1) selectedIndex = list.size() - 1;
+        }
+    }
+
+    @Override
+    public boolean processKeystroke(KeyStroke keyStroke) {
+
+        if (keyStroke.getKeyType() == KeyType.ArrowUp) {
+            prevItem();
+        }
+        if (keyStroke.getKeyType() == KeyType.ArrowDown) {
+            nextItem();
         }
 
         if (keyStroke.getKeyType() == KeyType.Enter) {
@@ -119,10 +140,10 @@ public class ListPanel extends Panel {
             }
         }
 
-        if (selectedIndex < scrollOffset) {
+        while (selectedIndex < scrollOffset) {
             scrollOffset--;
         }
-        if (selectedIndex >= scrollOffset + (visibleRows)) {
+        while (selectedIndex >= scrollOffset + (visibleRows)) {
             scrollOffset++;
         }
         return false;
@@ -141,4 +162,7 @@ public class ListPanel extends Panel {
         }
     }
 
+    public void setSelectedIndex(int i) {
+        selectedIndex=i;
+    }
 }

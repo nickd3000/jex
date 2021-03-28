@@ -4,7 +4,11 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
+import com.physmo.Point;
 import com.physmo.Utilities;
+import com.physmo.command.Command;
+import com.physmo.command.CommandQueue;
+import com.physmo.command.Commands;
 
 import java.io.File;
 import java.util.HashMap;
@@ -22,10 +26,13 @@ public class FilePanel extends Panel {
 
     Panel focusedPanel;
 
-    Callback loadFileCallback;
-    Callback closeDialogCallback;
+    //Callback loadFileCallback;
+    //Callback closeDialogCallback;
+    CommandQueue commandQueue;
 
-    public FilePanel() {
+    public FilePanel(CommandQueue commandQueue) {
+        this.commandQueue = commandQueue;
+
         colorMap = new HashMap<>();
         colorMap.put("FG", TextColor.ANSI.RED);
         colorMap.put("BG", TextColor.ANSI.WHITE);
@@ -44,6 +51,10 @@ public class FilePanel extends Panel {
         cancelButton = new Button();
         cancelButton.text = "<cancel>";
         this.addChild(cancelButton);
+        cancelButton.addCallback(o -> {
+            commandQueue.push(Commands.CLOSE_FILE_PANEL,null);
+        });
+
 
         listPanel = new ListPanel();
 
@@ -60,16 +71,22 @@ public class FilePanel extends Panel {
             System.out.println("Selected file: " + index);
             // we ned to tell the main app to load this file then close the dialog
             ListElement le = (ListElement) object;
+
+            if (le.object==null) {
+                goUpOneFolder();
+                return;
+            }
+
             File file = ((File) le.object);
             String fullPath = file.getPath();
 
             if (file.isFile()) {
-                loadFileCallback.callback(fullPath);
+                //loadFileCallback.callback(fullPath);
+                commandQueue.push(Commands.LOAD_FILE,fullPath);
             } else if (file.isDirectory()) {
                 currentPath = fullPath;
                 pathPanel.setText(fullPath);
                 updateFileListPanelOnPathChange();
-
             }
         });
 
@@ -93,6 +110,13 @@ public class FilePanel extends Panel {
         cancelButton.getFocusTraverser().setTarget(FocusTraverser.RIGHT, okButton);
     }
 
+    public void centerPanel(int windowWidth, int windowHeight) {
+        int pad = 4;
+        this.position = new Point(pad,pad);
+        this.size = new Point(windowWidth-pad*2,windowHeight-pad*2 );
+        doLayout();
+    }
+
     public void doLayout() {
         pathPanel.setPosition(2, 2);
         okButton.setPosition(2, size.y - 3);
@@ -108,6 +132,10 @@ public class FilePanel extends Panel {
 
         listPanelList.clear();
 
+        // Add ".." parent link
+        ListElement parentFolderLink = new ListElement("<..>", null);
+        listPanelList.add(parentFolderLink);
+
         for (File file : fileList) {
             String fileName = file.getName();
             String displayString = getDisplayStringForFile(file);
@@ -115,7 +143,10 @@ public class FilePanel extends Panel {
             listPanelList.add(newListElement);
         }
 
+        listPanel.setSelectedIndex(0);
     }
+
+
 
     public File[] getFileList(String path) {
         File f = new File(path);
@@ -143,13 +174,13 @@ public class FilePanel extends Panel {
         return Utilities.humanReadableByteCountBin(bytes);
     }
 
-    public void addLoadFileCallback(Callback loadFileCallback) {
-        this.loadFileCallback = loadFileCallback;
-    }
+//    public void addLoadFileCallback(Callback loadFileCallback) {
+//        this.loadFileCallback = loadFileCallback;
+//    }
 
-    public void addCloseDialogCallback(Callback closeDialogCallback) {
-        this.closeDialogCallback = closeDialogCallback;
-    }
+//    public void addCloseDialogCallback(Callback closeDialogCallback) {
+//        this.closeDialogCallback = closeDialogCallback;
+//    }
 
     @Override
     public void setSize(int w, int h) {
@@ -181,13 +212,9 @@ public class FilePanel extends Panel {
 
         if (keyStroke.getKeyType() == KeyType.Tab) {
             consumed = true;
-//            focusedPanel.setFocus(false);
-//            focusedPanel = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
-//            focusedPanel.setFocus(true);
-
             Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.FORWARD);
             if (target != null) {
-                switchFocus(target);
+                switchFocusTo(target);
             }
         }
 
@@ -199,20 +226,14 @@ public class FilePanel extends Panel {
         if (keyStroke.getKeyType() == KeyType.ArrowRight) {
             Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.RIGHT);
             if (target != null) {
-//                focusedPanel.setFocus(false);
-//                focusedPanel = target;
-//                focusedPanel.setFocus(true);
-                switchFocus(target);
+                switchFocusTo(target);
             }
         }
 
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
             Panel target = focusedPanel.getFocusTraverser().getTarget(FocusTraverser.LEFT);
             if (target != null) {
-//                focusedPanel.setFocus(false);
-//                focusedPanel = target;
-//                focusedPanel.setFocus(true);
-                switchFocus(target);
+                switchFocusTo(target);
             }
         }
 
@@ -223,6 +244,10 @@ public class FilePanel extends Panel {
 
         if (focusedPanel == okButton || focusedPanel == cancelButton) {
             focusedPanel.processKeystroke(keyStroke);
+        }
+
+        if (keyStroke.getKeyType() == KeyType.Escape) {
+            commandQueue.push(Commands.CLOSE_FILE_PANEL,null);
         }
 
         return consumed;
@@ -243,9 +268,11 @@ public class FilePanel extends Panel {
         updateFileListPanelOnPathChange();
     }
 
-    public void switchFocus(Panel target) {
+    public void switchFocusTo(Panel target) {
         focusedPanel.setFocus(false);
         focusedPanel = target;
         focusedPanel.setFocus(true);
     }
+
+
 }

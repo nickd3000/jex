@@ -9,6 +9,9 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.physmo.buffers.TextBuffer;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
+import com.physmo.command.Command;
+import com.physmo.command.CommandQueue;
+import com.physmo.command.Commands;
 import com.physmo.document.DocumentContainer;
 import com.physmo.document.DocumentRepo;
 import com.physmo.panels.FilePanel;
@@ -43,6 +46,7 @@ public class MainApp {
 
     FilePanel fileOpenPanel;
     MainStates currentState = MainStates.NORMAL;
+    CommandQueue commandQueue = new CommandQueue();
 
     public MainApp(Terminal terminal,
                    Screen screen,
@@ -58,15 +62,19 @@ public class MainApp {
 
         loadFile(tg, settings.initialFilePath);
 
-        fileOpenPanel = new FilePanel();
-        fileOpenPanel.setSize(60, 16);
-        fileOpenPanel.setPosition(5, 5);
+        fileOpenPanel = new FilePanel(commandQueue);
+        fileOpenPanel.centerPanel(tg.getSize().getColumns(), tg.getSize().getRows());
+//        fileOpenPanel.setSize(60, 16);
+//        fileOpenPanel.setPosition(5, 5);
         fileOpenPanel.doLayout();
-        fileOpenPanel.addLoadFileCallback(o -> {
-            System.out.println("MainApp:"+(String)o);
-            loadFile(tg, (String)o);
-            changeState(MainStates.NORMAL);
-        });
+
+        // todo: replace this with command message
+//        fileOpenPanel.addLoadFileCallback(o -> {
+//            commandQueue.push("LOAD_FILE", (String) o);
+//            //System.out.println("MainApp:" + (String) o);
+//            //loadFile(tg, (String) o);
+//            //changeState(MainStates.NORMAL);
+//        });
     }
 
     public void loadFile(TextGraphics tg, String path) {
@@ -124,6 +132,10 @@ public class MainApp {
         return content;
     }
 
+    public CommandQueue getCommandQueue() {
+        return commandQueue;
+    }
+
     public ColorRepo getColorRepo() {
         return colorRepo;
     }
@@ -153,12 +165,19 @@ public class MainApp {
             mainFrame.draw(tg);
             setCursorPositionForView();
 
-            if (currentState==MainStates.FILE_OPEN) {
+            if (currentState == MainStates.FILE_OPEN) {
                 fileOpenPanel.drawChildren(tg, true);
             }
 
             screen.doResizeIfNecessary();
             screen.refresh();
+
+            // change to while
+            if (commandQueue.hasItem()) {
+                commandQueue.popCommand().ifPresent(command1 -> {
+                    commandProcessor(command1);
+                });
+            }
 
             Thread.sleep(1000 / 60);
 
@@ -177,6 +196,7 @@ public class MainApp {
 
         mainFrame.doLayout();
 
+        fileOpenPanel.centerPanel(pendingWidth, pendingHeight);
 
         // Test viewport
 //        Viewport vp = getActiveViewport();
@@ -224,10 +244,16 @@ public class MainApp {
             }
         }
 
-        if (currentState==MainStates.NORMAL) {
-            return mainFrame.processKeystroke(keyStroke);
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.isCtrlDown()) {
+            if (keyStroke.getCharacter() == 'o') {
+                commandQueue.push(Commands.FILE_OPEN, null);
+                return true;
+            }
         }
-        else if (currentState==MainStates.FILE_OPEN) {
+
+        if (currentState == MainStates.NORMAL) {
+            return mainFrame.processKeystroke(keyStroke);
+        } else if (currentState == MainStates.FILE_OPEN) {
             return fileOpenPanel.processKeystroke(keyStroke);
         }
 
@@ -239,29 +265,51 @@ public class MainApp {
         //return testViewport;
     }
 
-    public void commandReceiver(String command, Object data) {
-        if (command.equals(Commands.FILE_EXIT)) {
+    public void commandProcessor(Command c) {
+        if (c.type.equals(Commands.FILE_EXIT)) {
             running = false;
         }
 
-        if (command.equals(Commands.FILE_OPEN)) {
+        if (c.type.equals(Commands.FILE_OPEN)) {
             changeState(MainStates.FILE_OPEN);
+            mainFrame.hideMenuBar();
+        }
+
+        if (c.type.equals(Commands.LOAD_FILE)) {
+            String fileName = (String) (c.object);
+            loadFile(tg, fileName);
+            changeState(MainStates.NORMAL);
+        }
+
+        if (c.type.equals(Commands.CLOSE_FILE_PANEL)) {
+            changeState(MainStates.NORMAL);
         }
     }
 
+    // TODO: convert this to a queue system.
+//    public void commandReceiver(String command, Object data) {
+//        if (command.equals(Commands.FILE_EXIT)) {
+//            running = false;
+//        }
+//
+//        if (command.equals(Commands.FILE_OPEN)) {
+//            changeState(MainStates.FILE_OPEN);
+//        }
+//    }
+
     public void changeState(MainStates newState) {
-        if (currentState==MainStates.NORMAL) {
-            if (newState==MainStates.FILE_OPEN) {
+        if (currentState == MainStates.NORMAL) {
+            if (newState == MainStates.FILE_OPEN) {
                 System.out.println("making file panel visible");
                 fileOpenPanel.setVisible(true);
-                currentState=MainStates.FILE_OPEN;
+                currentState = MainStates.FILE_OPEN;
             }
         }
 
-        if (currentState==MainStates.FILE_OPEN) {
-            if (newState==MainStates.NORMAL) {
+        if (currentState == MainStates.FILE_OPEN) {
+            if (newState == MainStates.NORMAL) {
                 fileOpenPanel.setVisible(false);
-                currentState=MainStates.NORMAL;
+                currentState = MainStates.NORMAL;
             }
         }
 

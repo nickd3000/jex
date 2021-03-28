@@ -1,6 +1,7 @@
 package com.physmo;
 
 import com.googlecode.lanterna.input.KeyStroke;
+import com.physmo.command.CommandQueue;
 import com.physmo.panels.FilePanel;
 import com.physmo.panels.ListElement;
 import com.physmo.panels.ListPanel;
@@ -61,7 +62,8 @@ public class TestListPanel {
 
     @Test
     public void testGetFileList() {
-        FilePanel filePanel = new FilePanel();
+        CommandQueue commandQueue = new CommandQueue();
+        FilePanel filePanel = new FilePanel(commandQueue);
         File[] fileList = filePanel.getFileList("/");
 
         for (File file : fileList) {
