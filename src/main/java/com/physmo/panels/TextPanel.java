@@ -43,7 +43,7 @@ public class TextPanel extends Panel {
     @Override
     public void draw(TextGraphics tg) {
         if (textBuffer == null) return;
-        if (visible == false) return;
+        if (!visible) return;
 
         // hack
         scrollToCursor();
@@ -55,12 +55,11 @@ public class TextPanel extends Panel {
         if (size.x > 0 && size.y > 0)
             Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
 
-        //Utilities.fillRectangle(tg, 10, 5, 2, 2, 'n');
 
         int usableWidth = size.x;
 
         int lineCount = textBuffer.getLineCount();
-        String currentLine = "";
+        String currentLine;
         for (int i = 0; i < size.y; i++) {
             if (i < lineCount) {
                 currentLine = textBuffer.getLine(i + scrollOffset);

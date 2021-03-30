@@ -5,6 +5,27 @@ Caveats
 We can't detect SHIFT being pressed - no SHIFT+TAB
 We can't detect CTRL or ALT as individual key presses - no ALT to open menu.
 
+
+
+TASKS
+[*] fix bugs that happen when app has no viewport
+[ ] file-new
+[ ] file-save
+[ ] start input routing
+[ ] bug - deleting at start of file has weird outcome
+[ ] save file
+[ ] horizontal scrolling
+[ ] line numbers
+[ ] word caching - i.e. don't add a node for each letter
+[ ] selection (shift+direction)
+[ ] explore mouse options
+[*] cascading redraw
+[*] create main frame panel type
+[*] load file
+[*] file browser
+[*] menu system
+
+
 UI tweaks Phase 1
 [*] center file window
 [*] escape can close file panel
@@ -15,22 +36,6 @@ UI tweaks Phase 1
 [*] up can open menu too
 [*] when dropdown opens, first item should be selected
 [*] dropdown selection should wrap?
-
-
-TASKS
-[ ] create mainframe panel type
-[ ] start input routing
-[ ] cascading redraw
-[ ] bug - deleting at start of file has weird outcome
-[ ] load file
-[ ] file browser
-[ ] save file
-[ ] horizontal scrolling
-[ ] line numbers
-[ ] word caching - i.e. don't add a node for each letter
-[ ] menu system
-[ ] selection (shift+direction)
-[ ] explore mouse options
 
 
 DONE

@@ -1,7 +1,6 @@
 package com.physmo;
 
 import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -21,6 +20,7 @@ import com.physmo.panels.Viewport;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Optional;
 
 
 // The Main App
@@ -60,24 +60,163 @@ public class MainApp {
 
         settings.initialFilePath = initialFilePath;
 
-        loadFile(tg, settings.initialFilePath);
+        // Test starting with no viewport
+        //createNewViewportFromFile(tg, settings.initialFilePath);
 
         fileOpenPanel = new FilePanel(commandQueue);
         fileOpenPanel.centerPanel(tg.getSize().getColumns(), tg.getSize().getRows());
-//        fileOpenPanel.setSize(60, 16);
-//        fileOpenPanel.setPosition(5, 5);
         fileOpenPanel.doLayout();
 
-        // todo: replace this with command message
-//        fileOpenPanel.addLoadFileCallback(o -> {
-//            commandQueue.push("LOAD_FILE", (String) o);
-//            //System.out.println("MainApp:" + (String) o);
-//            //loadFile(tg, (String) o);
-//            //changeState(MainStates.NORMAL);
-//        });
     }
 
-    public void loadFile(TextGraphics tg, String path) {
+    public CommandQueue getCommandQueue() {
+        return commandQueue;
+    }
+
+    public ColorRepo getColorRepo() {
+        return colorRepo;
+    }
+
+    // Resize handler can be called at any causing update anomalies, we want to handle the resize when we are ready.
+    public void queueResize(int screenWidth, int screenHeight) {
+        pendingResize = true;
+        pendingWidth = screenWidth;
+        pendingHeight = screenHeight;
+    }
+
+    // TODO: this should all be event based
+    public void run() throws IOException, InterruptedException {
+
+        while (running) {
+            resizeIfQueued();
+
+            tg = screen.newTextGraphics();
+
+            processInput();
+
+            getActiveViewport().ifPresent(vp -> {
+                vp.drawChildren(tg, true);
+            });
+
+            //mainFrame.drawChildren(tg, true);
+            mainFrame.draw(tg);
+            setCursorPositionForView();
+
+            if (currentState == MainStates.FILE_OPEN) {
+                fileOpenPanel.drawChildren(tg, true);
+            }
+
+            screen.doResizeIfNecessary();
+            screen.refresh();
+
+            // change to while
+            if (commandQueue.hasItem()) {
+                commandQueue.popCommand().ifPresent(this::commandProcessor);
+            }
+
+            Thread.sleep(1000 / 60);
+
+        }
+
+    }
+
+    public void resizeIfQueued() {
+
+        if (!pendingResize) return;
+        pendingResize = false;
+        mainFrame.setPosition(0, 0);
+        mainFrame.setSize(pendingWidth, pendingHeight);
+
+        mainFrame.doLayout();
+
+        fileOpenPanel.centerPanel(pendingWidth, pendingHeight);
+
+    }
+
+    private void setCursorPositionForView() throws IOException {
+        getActiveViewport().ifPresent(vp -> {
+
+            Point cpos = vp.getCursorPositionForDisplay();
+
+            screen.setCursorPosition(
+                    new TerminalPosition(cpos.x, cpos.y));
+
+            try {
+                terminal.setCursorVisible(true);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public void processInput() throws IOException {
+        int count = 0;
+        KeyStroke keyStroke = terminal.pollInput();
+        while (keyStroke != null) {
+
+            processKeyStroke(keyStroke);
+            if (count > 100) { // avoid looping forever
+                return;
+            }
+
+            keyStroke = terminal.pollInput();
+            count++;
+
+        }
+    }
+
+    public boolean processKeyStroke(KeyStroke keyStroke) throws IOException {
+
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.isCtrlDown()) {
+            if (keyStroke.getCharacter() == 'c') {
+                running = false;
+                return true;
+            }
+        }
+
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.isCtrlDown()) {
+            if (keyStroke.getCharacter() == 'o') {
+                commandQueue.push(Commands.FILE_OPEN, null);
+                return true;
+            }
+        }
+
+        if (currentState == MainStates.NORMAL) {
+            return mainFrame.processKeystroke(keyStroke);
+        } else if (currentState == MainStates.FILE_OPEN) {
+            return fileOpenPanel.processKeystroke(keyStroke);
+        }
+
+        return false;
+    }
+
+    public Optional<Viewport> getActiveViewport() {
+        return Optional.ofNullable(viewPortRepo.getViewportById(activeViewportId));
+        //return testViewport;
+    }
+
+    public void commandProcessor(Command c) {
+        if (c.type.equals(Commands.FILE_EXIT)) {
+            running = false;
+        }
+
+        if (c.type.equals(Commands.FILE_OPEN)) {
+            changeState(MainStates.FILE_OPEN);
+            mainFrame.hideMenuBar();
+        }
+
+        if (c.type.equals(Commands.LOAD_FILE)) {
+            String fileName = (String) (c.object);
+            createNewViewportFromFile(tg, fileName);
+            changeState(MainStates.NORMAL);
+        }
+
+        if (c.type.equals(Commands.CLOSE_FILE_PANEL)) {
+            changeState(MainStates.NORMAL);
+        }
+    }
+
+    public void createNewViewportFromFile(TextGraphics tg, String path) {
         // Create viewport.
         int viewportId = viewPortRepo.createViewport(this);
         Viewport vp = viewPortRepo.getViewportById(viewportId);
@@ -89,7 +228,6 @@ public class MainApp {
 
 
         // Create text buffer
-        TerminalSize size = tg.getSize();
         textBuffer = new PieceTableTextBuffer();
 
         if (path != null) {
@@ -132,175 +270,9 @@ public class MainApp {
         return content;
     }
 
-    public CommandQueue getCommandQueue() {
-        return commandQueue;
-    }
-
-    public ColorRepo getColorRepo() {
-        return colorRepo;
-    }
-
-    // Resize handler can be called at any causing update anomolies, we want to handle the resize when we are ready.
-    public void queueResize(int screenWidth, int screenHeight) {
-        pendingResize = true;
-        pendingWidth = screenWidth;
-        pendingHeight = screenHeight;
-    }
-
-    // TODO: this should all be event based
-    public void run() throws IOException, InterruptedException {
-
-        while (running) {
-            resizeIfQueued();
-
-            tg = screen.newTextGraphics();
-
-            processInput();
-
-            if (getActiveViewport() != null) {
-                getActiveViewport().drawChildren(tg, true);
-            }
-
-            //mainFrame.drawChildren(tg, true);
-            mainFrame.draw(tg);
-            setCursorPositionForView();
-
-            if (currentState == MainStates.FILE_OPEN) {
-                fileOpenPanel.drawChildren(tg, true);
-            }
-
-            screen.doResizeIfNecessary();
-            screen.refresh();
-
-            // change to while
-            if (commandQueue.hasItem()) {
-                commandQueue.popCommand().ifPresent(command1 -> {
-                    commandProcessor(command1);
-                });
-            }
-
-            Thread.sleep(1000 / 60);
-
-            // Hack
-            //updateOnResize(tg);
-        }
-
-    }
-
-    public void resizeIfQueued() {
-
-        if (pendingResize == false) return;
-        pendingResize = false;
-        mainFrame.setPosition(0, 0);
-        mainFrame.setSize(pendingWidth, pendingHeight);
-
-        mainFrame.doLayout();
-
-        fileOpenPanel.centerPanel(pendingWidth, pendingHeight);
-
-        // Test viewport
-//        Viewport vp = getActiveViewport();
-
-//        vp.setPosition(0, 0);
-//        vp.setSize(pendingWidth, pendingHeight);
-
-//        vp.doLayout();
-    }
-
-    private void setCursorPositionForView() throws IOException {
-        Viewport vp = getActiveViewport();
-        Point cpos = vp.getCursorPositionForDisplay();
-
-        screen.setCursorPosition(
-                new TerminalPosition(cpos.x, cpos.y));
-
-        terminal.setCursorVisible(true);
-    }
-
-    public void processInput() throws IOException {
-        int count = 0;
-        KeyStroke keyStroke = terminal.pollInput();
-        while (keyStroke != null) {
-
-            processKeyStroke(keyStroke);
-            if (count > 100) { // avoid looping forever
-                return;
-            }
-
-            keyStroke = terminal.pollInput();
-            count++;
-
-        }
-    }
-
-    public boolean processKeyStroke(KeyStroke keyStroke) throws IOException {
-        Viewport activeViewport = getActiveViewport();
-
-
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.isCtrlDown()) {
-            if (keyStroke.getCharacter() == 'c') {
-                running = false;
-                return true;
-            }
-        }
-
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.isCtrlDown()) {
-            if (keyStroke.getCharacter() == 'o') {
-                commandQueue.push(Commands.FILE_OPEN, null);
-                return true;
-            }
-        }
-
-        if (currentState == MainStates.NORMAL) {
-            return mainFrame.processKeystroke(keyStroke);
-        } else if (currentState == MainStates.FILE_OPEN) {
-            return fileOpenPanel.processKeystroke(keyStroke);
-        }
-
-        return false;
-    }
-
-    public Viewport getActiveViewport() {
-        return viewPortRepo.getViewportById(activeViewportId);
-        //return testViewport;
-    }
-
-    public void commandProcessor(Command c) {
-        if (c.type.equals(Commands.FILE_EXIT)) {
-            running = false;
-        }
-
-        if (c.type.equals(Commands.FILE_OPEN)) {
-            changeState(MainStates.FILE_OPEN);
-            mainFrame.hideMenuBar();
-        }
-
-        if (c.type.equals(Commands.LOAD_FILE)) {
-            String fileName = (String) (c.object);
-            loadFile(tg, fileName);
-            changeState(MainStates.NORMAL);
-        }
-
-        if (c.type.equals(Commands.CLOSE_FILE_PANEL)) {
-            changeState(MainStates.NORMAL);
-        }
-    }
-
-    // TODO: convert this to a queue system.
-//    public void commandReceiver(String command, Object data) {
-//        if (command.equals(Commands.FILE_EXIT)) {
-//            running = false;
-//        }
-//
-//        if (command.equals(Commands.FILE_OPEN)) {
-//            changeState(MainStates.FILE_OPEN);
-//        }
-//    }
-
     public void changeState(MainStates newState) {
         if (currentState == MainStates.NORMAL) {
             if (newState == MainStates.FILE_OPEN) {
-                System.out.println("making file panel visible");
                 fileOpenPanel.setVisible(true);
                 currentState = MainStates.FILE_OPEN;
             }

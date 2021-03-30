@@ -24,10 +24,6 @@ public class MainFrame extends Panel {
         addChild(menuBar);
 
         doLayout();
-//        infoBar.setPosition(0, height - 1);
-//        infoBar.setSize(width, 1);
-
-
     }
 
     public void doLayout() {
@@ -39,20 +35,20 @@ public class MainFrame extends Panel {
         infoBar.setPosition(0, size.y - 1);
         infoBar.setSize(size.x, 1);
 
-        Viewport vp = mainApp.getActiveViewport();
-        if (vp != null) {
+        mainApp.getActiveViewport().ifPresent(vp -> {
             vp.setPosition(0, 1);
             vp.setSize(size.x, size.y - 2);
             vp.doLayout();
-        }
+        });
+
     }
 
     @Override
     public void draw(TextGraphics tg) {
-        Viewport vp = mainApp.getActiveViewport();
-        if (vp != null) {
+
+        mainApp.getActiveViewport().ifPresent(vp -> {
             vp.draw(tg);
-        }
+        });
 
         menuBar.draw(tg);
         infoBar.draw(tg);
@@ -68,32 +64,40 @@ public class MainFrame extends Panel {
     public boolean processKeystroke(KeyStroke keyStroke) {
         //return super.processKeystroke(keyStroke);
 
-        Viewport vp = mainApp.getActiveViewport();
-
         if (keyStroke.getKeyType() == KeyType.Escape) {
-            if (vp.hasFocus()) {
+            mainApp.getActiveViewport().ifPresentOrElse(vp -> {
+                if (vp.hasFocus()) {
+                    menuBar.setFocus(true);
+                    vp.setFocus(false);
+                } else {
+                    menuBar.setFocus(false);
+                    vp.setFocus(true);
+                }
+            }, () -> {
                 menuBar.setFocus(true);
-                vp.setFocus(false);
-            } else {
-                menuBar.setFocus(false);
-                vp.setFocus(true);
-            }
+
+            });
+
         }
 
         if (menuBar.hasFocus()) {
             menuBar.processKeystroke(keyStroke);
         }
 
-        if (vp.hasFocus()) {
-            vp.processKeystroke(keyStroke);
-        }
+        mainApp.getActiveViewport().ifPresent(vp -> {
+            if (vp.hasFocus()) {
+                vp.processKeystroke(keyStroke);
+            }
+        });
+
 
         return false;
     }
 
     public void hideMenuBar() {
-        Viewport vp = mainApp.getActiveViewport();
         menuBar.setFocus(false);
-        vp.setFocus(true);
+        mainApp.getActiveViewport().ifPresent(vp -> {
+            vp.setFocus(true);
+        });
     }
 }

@@ -2,7 +2,6 @@ package com.physmo.panels;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.physmo.ColorRepo;
-import com.physmo.Cursor;
 import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.Utilities;
@@ -22,33 +21,44 @@ public class InfoBar extends Panel {
 
         drawBackground(tg);
 
-        Viewport viewport = mainApp.getActiveViewport();
+        int[] cursorCoords = getCursorCoords();
 
-        Cursor curser = viewport.getCursor();
-
-        int y = curser.y;
-        int x = curser.x;
-
-        String strCoords = "[" + x + "," + y + "]";
+        String strCoords = "[" + cursorCoords[0] + "," + cursorCoords[1] + "]";
 
         Point pos = getCombinedPosition();
 
         tg.putString(pos.x + 1, pos.y, strCoords);
 
         // node info
-        int nodeCount = ((PieceTableTextBuffer) mainApp.textBuffer).getNodes().size();
-        tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
+        mainApp.getActiveViewport().ifPresent(vp -> {
+            int nodeCount = ((PieceTableTextBuffer) vp.getTextBuffer()).getNodes().size();
+            tg.putString(pos.x + 20, pos.y, "nodes:" + nodeCount);
+        });
 
-        int w = mainApp.getActiveViewport().getSize().x;
-        int h = mainApp.getActiveViewport().getSize().y;
-        tg.putString(pos.x + 40, pos.y, "" + w + "," + h);
+        int[] viewportSize = getViewportSize();
+        tg.putString(pos.x + 40, pos.y, "" + viewportSize[0] + "," + viewportSize[1]);
+    }
+
+    public int[] getCursorCoords() {
+        int[] vals = {0, 0};
+        mainApp.getActiveViewport().ifPresent(vp -> {
+            vals[0] = vp.getCursor().x;
+            vals[1] = vp.getCursor().y;
+        });
+        return vals;
+    }
+
+    public int[] getViewportSize() {
+        int[] vals = {0, 0};
+        mainApp.getActiveViewport().ifPresent(vp -> {
+            vals[0] = vp.getSize().x;
+            vals[1] = vp.getSize().y;
+        });
+        return vals;
     }
 
     public void drawBackground(TextGraphics tg) {
         Point panelPos = getCombinedPosition();
-//        TerminalPosition pos = new TerminalPosition(panelPos.x, panelPos.y);
-//        TerminalSize size = new TerminalSize(width, height);
         Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
-//        tg.fillRectangle(pos, size, '.');
     }
 }

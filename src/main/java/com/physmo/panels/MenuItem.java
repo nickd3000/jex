@@ -27,6 +27,4 @@ public class MenuItem {
     public void setChildren(List<MenuItem> children) {
         this.children = children;
     }
-
-
 }

@@ -61,7 +61,7 @@ public class ListPanel extends Panel {
         if (showBorders) {
             Utilities.drawBox(tg, combinedPosition, size, ' ');
             if (heading.length() > 0) {
-                tg.putString(combinedPosition.x + 2, combinedPosition.y + 0, heading);
+                tg.putString(combinedPosition.x + 2, combinedPosition.y, heading);
             }
         } else {
             Utilities.fillRectangle(tg, combinedPosition, size, ' ');
