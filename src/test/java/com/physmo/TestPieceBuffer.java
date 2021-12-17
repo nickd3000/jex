@@ -13,7 +13,7 @@ public class TestPieceBuffer {
     @Test
     public void test1() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("12345678901234567890");
+        pt.setInitialText("12345678901234567890");
 
         PieceFindResult p = pt.findPieceForPosition(5);
 
@@ -23,7 +23,7 @@ public class TestPieceBuffer {
     @Test
     public void test2() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("12345678901234567890");
+        pt.setInitialText("12345678901234567890");
 
         for (int i = 0; i < 20; i++) {
             System.out.print(pt.getCharacter(i));
@@ -33,7 +33,7 @@ public class TestPieceBuffer {
     @Test
     public void testCalculateLineStartsForNode() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaa\nbbb\nccc\nddd");
+        pt.setInitialText("aaa\nbbb\nccc\nddd");
 
         for (int i = 0; i < 10; i++) {
             System.out.print(pt.getCharacter(i));
@@ -43,7 +43,7 @@ public class TestPieceBuffer {
     @Test
     public void testGetLineBasic() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaa\nbbb\nccc\nddd");
+        pt.setInitialText("aaa\nbbb\nccc\nddd");
 
         String line0 = pt.getLine(0);
         String line1 = pt.getLine(1);
@@ -82,7 +82,7 @@ public class TestPieceBuffer {
     @Test
     public void testSplit() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("abcd\n1234");
+        pt.setInitialText("abcd\n1234");
         Node node = pt.getNodes().get(0);
 
         pt.splitNode(node, 2);
@@ -104,7 +104,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsertSimple() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("1234567890");
+        pt.setInitialText("1234567890");
         pt.insert(5, "abcd");
         //pt.insert(7,"---");
         //System.out.println(pt.getLine(0));
@@ -115,7 +115,7 @@ public class TestPieceBuffer {
     @Test
     public void testLineCount() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaa\nbbb\nccc\nddd");
+        pt.setInitialText("aaa\nbbb\nccc\nddd");
         int lineCount = pt.getLineCount();
         System.out.println(lineCount);
         printAllLines(pt);
@@ -124,7 +124,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsert2() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaaaaa");
+        pt.setInitialText("aaaaaa");
         pt.insert(5, "bbb");
         pt.insert(5, "ccc");
         pt.insert(5, "ddd");
@@ -137,7 +137,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsertAtStart() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaaaaa");
+        pt.setInitialText("aaaaaa");
         pt.insert(0, "bbb");
 
         printAllLines(pt);
@@ -146,7 +146,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsertAtEnd() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaaaaa");
+        pt.setInitialText("aaaaaa");
         pt.insert(6, "bbb");
 
         printAllLines(pt);
@@ -155,7 +155,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsertMultiple() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("a");
+        pt.setInitialText("a");
         pt.insert(1, "b");
         pt.insert(0, "c");
         pt.insert(3, "d");
@@ -166,7 +166,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsertStartMiddleEnd() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("original");
+        pt.setInitialText("original");
 
         pt.insert(8, "END");
         pt.insert(0, "START");
@@ -181,7 +181,7 @@ public class TestPieceBuffer {
     @Test
     public void testMultipleLinesAndInsert() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("This is a longer line.\nThis is the next line.\nAnd now one last line.");
+        pt.setInitialText("This is a longer line.\nThis is the next line.\nAnd now one last line.");
 
         pt.insert(28, "****");
 
@@ -194,7 +194,7 @@ public class TestPieceBuffer {
     @Test
     public void testInsertReturn() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("aaaaaa");
+        pt.setInitialText("aaaaaa");
         pt.insert(3, "\n");
 
         printAllLines(pt);
@@ -203,7 +203,7 @@ public class TestPieceBuffer {
     @Test
     public void testDeleteCharacter() {
         PieceTableTextBuffer pt = new PieceTableTextBuffer();
-        pt.setInitialtext("123456");
+        pt.setInitialText("123456");
         pt.deleteCharacter(3);
 
         printAllLines(pt);

@@ -21,7 +21,7 @@ public class PieceTableTextBuffer extends TextBuffer {
     }
 
     @Override
-    public void setInitialtext(String text) {
+    public void setInitialText(String text) {
         bufferOriginal = text;
         Node firstNode = new Node(0, bufferOriginal.length(), 0);
         calculateLineStartsForNode(firstNode, true);

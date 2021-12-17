@@ -2,7 +2,7 @@ package com.physmo.buffers;
 
 public abstract class TextBuffer {
 
-    public abstract void setInitialtext(String text);
+    public abstract void setInitialText(String text);
 
     public abstract String getLine(int lineNumber);
 

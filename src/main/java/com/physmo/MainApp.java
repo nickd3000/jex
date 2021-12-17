@@ -202,7 +202,7 @@ public class MainApp {
 
         if (c.type.equals(Commands.FILE_OPEN)) {
             changeState(MainStates.FILE_OPEN);
-            mainFrame.hideMenuBar();
+            mainFrame.hideMenuBarDropdown();
         }
 
         if (c.type.equals(Commands.LOAD_FILE)) {
@@ -213,6 +213,12 @@ public class MainApp {
 
         if (c.type.equals(Commands.CLOSE_FILE_PANEL)) {
             changeState(MainStates.NORMAL);
+        }
+
+        if (c.type.equals(Commands.FILE_NEW)) {
+            createNewViewportFromFile(tg, "createnewfilemagicstring");
+            changeState(MainStates.NORMAL);
+            mainFrame.hideMenuBarDropdown();
         }
     }
 
@@ -230,10 +236,13 @@ public class MainApp {
         // Create text buffer
         textBuffer = new PieceTableTextBuffer();
 
-        if (path != null) {
-            textBuffer.setInitialtext(loadFile(path));
+        if (path=="createnewfilemagicstring") {
+            textBuffer.setInitialText("");
+        }
+        else if (path != null) {
+            textBuffer.setInitialText(loadFile(path));
         } else {
-            textBuffer.setInitialtext(faketextFile());
+            textBuffer.setInitialText(faketextFile());
         }
 
         // Attach text buffer to document

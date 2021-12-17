@@ -31,7 +31,7 @@ public class MenuBar extends Panel {
 
 
         ListPanel fileSubMenu = new ListPanel();
-        fileSubMenu.getList().add(new ListElement("New", "FILE_NEW"));
+        fileSubMenu.getList().add(new ListElement("New", Commands.FILE_NEW));
         fileSubMenu.getList().add(new ListElement("Open...", Commands.FILE_OPEN));
         fileSubMenu.getList().add(new ListElement("Save", "FILE_SAVE"));
         fileSubMenu.getList().add(new ListElement("Save As", "FILE_SAVE_AS"));
@@ -79,15 +79,14 @@ public class MenuBar extends Panel {
         ListElement listElement = (ListElement) object;
         String action = (String) listElement.object;
 
-        //        String action = (String)object;
-
         if (action.equals("FILE_EXIT")) {
-            //mainApp.commandReceiver("FILE_EXIT", null);
             mainApp.getCommandQueue().push(Commands.FILE_EXIT, null);
         }
         if (action.equals(Commands.FILE_OPEN)) {
-            //mainApp.commandReceiver(Commands.FILE_OPEN, null);
             mainApp.getCommandQueue().push(Commands.FILE_OPEN, null);
+        }
+        if (action.equals(Commands.FILE_NEW)) {
+            mainApp.getCommandQueue().push(Commands.FILE_NEW, null);
         }
     }
 

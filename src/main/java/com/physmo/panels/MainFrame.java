@@ -94,7 +94,7 @@ public class MainFrame extends Panel {
         return false;
     }
 
-    public void hideMenuBar() {
+    public void hideMenuBarDropdown() {
         menuBar.setFocus(false);
         mainApp.getActiveViewport().ifPresent(vp -> {
             vp.setFocus(true);

@@ -8,10 +8,6 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 
-
-/**
- * Hello world!
- */
 public class App {
 
     Terminal terminal;
@@ -45,10 +41,8 @@ public class App {
             startingFileName = args[0];
         }
 
-
         App app = new App();
         app.start(startingFileName);
-
     }
 
     public void start(String initialFileName) {
