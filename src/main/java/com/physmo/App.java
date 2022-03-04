@@ -5,6 +5,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.physmo.document.DocumentRepo;
 
 import java.io.IOException;
 
@@ -14,6 +15,9 @@ public class App {
     Screen screen;
     TextGraphics tg;
     MainApp editorFrame;
+    ColorRepo colorRepo;
+    ViewPortRepo viewPortRepo;
+    DocumentRepo documentRepo;
 
     public App() {
         try {
@@ -28,6 +32,9 @@ public class App {
         screen = new TerminalScreen(terminal);
         tg = screen.newTextGraphics();
         screen.startScreen();
+        colorRepo = new ColorRepo();
+        viewPortRepo = new ViewPortRepo();
+        documentRepo = new DocumentRepo();
 
         terminal.addResizeListener((terminal1, terminalSize) -> {
 
@@ -46,7 +53,7 @@ public class App {
     }
 
     public void start(String initialFileName) {
-        editorFrame = new MainApp(terminal, screen, tg, initialFileName);
+        editorFrame = new MainApp(terminal, screen, tg, colorRepo, viewPortRepo, documentRepo, initialFileName);
         terminal.addResizeListener((terminal1, terminalSize) -> {
             editorFrame.queueResize(terminalSize.getColumns(), terminalSize.getRows());
         });

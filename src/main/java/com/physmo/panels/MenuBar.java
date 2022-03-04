@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// this is all too hard-coded...
 public class MenuBar extends Panel {
 
     MainApp mainApp;
@@ -35,6 +36,7 @@ public class MenuBar extends Panel {
         fileSubMenu.getList().add(new ListElement("Open...", Commands.FILE_OPEN));
         fileSubMenu.getList().add(new ListElement("Save", "FILE_SAVE"));
         fileSubMenu.getList().add(new ListElement("Save As", "FILE_SAVE_AS"));
+        fileSubMenu.getList().add(new ListElement("test", Commands.FILE_TEST));
         fileSubMenu.getList().add(new ListElement("Exit", Commands.FILE_EXIT));
         fileSubMenu.setVisible(true);
         fileSubMenu.sizeToContent(10);
@@ -87,6 +89,10 @@ public class MenuBar extends Panel {
         }
         if (action.equals(Commands.FILE_NEW)) {
             mainApp.getCommandQueue().push(Commands.FILE_NEW, null);
+        }
+
+        if (action.equals(Commands.FILE_TEST)) {
+            mainApp.getCommandQueue().push(Commands.FILE_TEST, null);
         }
     }
 

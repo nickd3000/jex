@@ -28,7 +28,7 @@ public class ScrollBar extends Panel {
 
         int documentLines = parentViewport.getTextPanel().getDocumentLineCount();
         int textWindowHeight = parentViewport.getTextPanel().getSize().y;
-        int scrollOffset = parentViewport.getTextPanel().getScrollOffset();
+        int scrollOffset = parentViewport.getTextPanel().getVScrollOffset();
 
         double ratio = (double) textWindowHeight / (double) (documentLines + textWindowHeight);
         int barSize = (int) ((double) textWindowHeight * ratio);

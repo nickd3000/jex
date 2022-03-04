@@ -9,4 +9,6 @@ public class Commands
     public static final String LOAD_FILE = "LOAD_FILE";
 
     public static final String CLOSE_FILE_PANEL = "CLOSE_FILE_PANEL";
+
+    public static final String FILE_TEST = "FILE_TEST";
 }

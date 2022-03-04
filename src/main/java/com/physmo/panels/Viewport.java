@@ -17,19 +17,19 @@ public class Viewport extends Panel {
     int id;
     TextBuffer textBuffer;
     ScrollBar scrollBar;
-    TextPanel textPanel;
+    EditorPanel textPanel;
     MainApp mainApp;
 
     public Viewport(MainApp mainApp) {
         this.mainApp = mainApp;
-        textPanel = new TextPanel(mainApp);
+        textPanel = new EditorPanel(mainApp);
         addChild(textPanel);
 
         scrollBar = new ScrollBar(mainApp, this);
         addChild(scrollBar);
     }
 
-    public TextPanel getTextPanel() {
+    public EditorPanel getTextPanel() {
         return textPanel;
     }
 

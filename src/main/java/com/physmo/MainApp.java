@@ -37,9 +37,9 @@ public class MainApp {
     Settings settings = new Settings();
     boolean running = true;
     int activeViewportId;
-    ColorRepo colorRepo = new ColorRepo();
-    ViewPortRepo viewPortRepo = new ViewPortRepo();
-    DocumentRepo documentRepo = new DocumentRepo();
+    ColorRepo colorRepo;// = new ColorRepo();
+    ViewPortRepo viewPortRepo;// = new ViewPortRepo();
+    DocumentRepo documentRepo;// = new DocumentRepo();
     boolean pendingResize = false;
     int pendingWidth = 0;
     int pendingHeight = 0;
@@ -50,13 +50,19 @@ public class MainApp {
 
     public MainApp(Terminal terminal,
                    Screen screen,
-                   TextGraphics tg, String initialFilePath) {
+                   TextGraphics tg,
+                   ColorRepo colorRepo,
+                   ViewPortRepo viewPortRepo,
+                   DocumentRepo documentRepo,
+                   String initialFilePath) {
 
-        mainFrame = new MainFrame(this, tg.getSize().getColumns(), tg.getSize().getRows());
 
         this.terminal = terminal;
         this.screen = screen;
         this.tg = tg;
+        this.colorRepo = colorRepo;
+        this.viewPortRepo = viewPortRepo;
+        this.documentRepo = documentRepo;
 
         settings.initialFilePath = initialFilePath;
 
@@ -66,6 +72,8 @@ public class MainApp {
         fileOpenPanel = new FilePanel(commandQueue);
         fileOpenPanel.centerPanel(tg.getSize().getColumns(), tg.getSize().getRows());
         fileOpenPanel.doLayout();
+
+        mainFrame = new MainFrame(this, tg.getSize().getColumns(), tg.getSize().getRows());
 
     }
 
@@ -210,7 +218,11 @@ public class MainApp {
             createNewViewportFromFile(tg, fileName);
             changeState(MainStates.NORMAL);
         }
-
+        if (c.type.equals(Commands.FILE_TEST)) {
+            System.out.println("test 1");
+            createNewViewportFromFile(tg, "testfilemagicstring");
+            changeState(MainStates.NORMAL);
+        }
         if (c.type.equals(Commands.CLOSE_FILE_PANEL)) {
             changeState(MainStates.NORMAL);
         }
@@ -222,6 +234,7 @@ public class MainApp {
         }
     }
 
+    // TODO: can we move this out of here?
     public void createNewViewportFromFile(TextGraphics tg, String path) {
         // Create viewport.
         int viewportId = viewPortRepo.createViewport(this);
@@ -236,13 +249,13 @@ public class MainApp {
         // Create text buffer
         textBuffer = new PieceTableTextBuffer();
 
-        if (path=="createnewfilemagicstring") {
+        if (path == "createnewfilemagicstring") {
             textBuffer.setInitialText("");
-        }
-        else if (path != null) {
-            textBuffer.setInitialText(loadFile(path));
-        } else {
+        } else if (path == "testfilemagicstring") {
+            System.out.println("test");
             textBuffer.setInitialText(faketextFile());
+        }else if (path != null) {
+            textBuffer.setInitialText(loadFile(path));
         }
 
         // Attach text buffer to document
@@ -260,13 +273,15 @@ public class MainApp {
                 "following the naming of Microsoft Notepad.\n" +
                 "Text editors are provided with operating systems and software development packages,\n" +
                 "and can be used to change files such as configuration files,\n" +
-                "documentation files and programming language source code.\n";
+                "documentation files and programming language source code.\n"+
+                "This is the start of a long line that will go off screen if we are not in line wrap mode. if we are in line wrap mode it should span multiple lines.";
         str = str + str;
         str = str + str;
         str = str + str;
         return str;
     }
 
+    // TODO: move to file package
     public String loadFile(String path) {
         String content = "";
 
