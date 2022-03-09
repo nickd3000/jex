@@ -22,6 +22,9 @@ public class LineSplitter {
     }
 
     // should we return array of line starts and lengths instead of individual strings?
+    // returns a list of pairs:
+    //   [i]   start of section
+    //   [i+1] length of section
     public int[] split(String str) {
 
         return split_dumb(str);

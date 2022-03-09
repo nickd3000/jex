@@ -7,6 +7,7 @@ import com.physmo.Cursor;
 import com.physmo.MainApp;
 import com.physmo.Point;
 import com.physmo.buffers.TextBuffer;
+import com.physmo.editorpanel.EditorPanel;
 
 // TODO: rename to text viewport?
 // Vieport contains:
@@ -17,26 +18,26 @@ public class Viewport extends Panel {
     int id;
     TextBuffer textBuffer;
     ScrollBar scrollBar;
-    EditorPanel textPanel;
+    EditorPanel editorPanel;
     MainApp mainApp;
 
     public Viewport(MainApp mainApp) {
         this.mainApp = mainApp;
-        textPanel = new EditorPanel(mainApp);
-        addChild(textPanel);
+        editorPanel = new EditorPanel(mainApp);
+        addChild(editorPanel);
 
         scrollBar = new ScrollBar(mainApp, this);
         addChild(scrollBar);
     }
 
-    public EditorPanel getTextPanel() {
-        return textPanel;
+    public EditorPanel getEditorPanel() {
+        return editorPanel;
     }
 
     public void doLayout() {
-        textPanel.setPosition(0, 0);
-        textPanel.setSize(this.size.x - 1, this.size.y);
-        textPanel.setVisible(true);
+        editorPanel.setPosition(0, 0);
+        editorPanel.setSize(this.size.x - 1, this.size.y);
+        editorPanel.setVisible(true);
 
         scrollBar.setPosition(this.size.x - 1, 0);
         scrollBar.setSize(1, this.size.y);
@@ -52,18 +53,18 @@ public class Viewport extends Panel {
     }
 
     public Point getCursorPositionForDisplay() {
-        return textPanel.getCursorPositionForDisplay();
+        return editorPanel.getCursorPositionForDisplay();
     }
 
     public void setTextBuffer(TextBuffer textBuffer) {
         this.textBuffer = textBuffer;
-        textPanel.setTextBuffer(textBuffer);
+        editorPanel.setTextBuffer(textBuffer);
     }
 
     @Override
     public void draw(TextGraphics tg) {
         if (textBuffer == null) return;
-        textPanel.draw(tg);
+        editorPanel.draw(tg);
         //scrollBar.draw(tg);
     }
 
@@ -83,6 +84,7 @@ public class Viewport extends Panel {
             int charPos = getCursor().getDocumentIndex();
             textBuffer.insert(charPos, "\n");
             getCursor().moveRight();
+            getCursor().moveDown(1);
             //testViewport.getCurser().y++;
             getCursor().x = 0;
         }
@@ -127,7 +129,7 @@ public class Viewport extends Panel {
     }
 
     public Cursor getCursor() {
-        return textPanel.getCursor();
+        return editorPanel.getCursor();
     }
 
     public TextBuffer getTextBuffer() {
