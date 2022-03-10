@@ -78,28 +78,33 @@ public class Viewport extends Panel {
             int charPos = getCursor().getDocumentIndex();
             textBuffer.insert(charPos, "" + character);
             getCursor().moveRight();
+            editorPanel.notifyChanged();
         }
         if (keyStroke.getKeyType() == KeyType.Enter) {
             TextBuffer textBuffer = getTextBuffer();
             int charPos = getCursor().getDocumentIndex();
             textBuffer.insert(charPos, "\n");
-            getCursor().moveRight();
+            //getCursor().moveRight();
             getCursor().moveDown(1);
+
             //testViewport.getCurser().y++;
             getCursor().x = 0;
+            getCursor().resetXMemory();
+            editorPanel.notifyChanged();
         }
 
         if (keyStroke.getKeyType() == KeyType.Delete) {
             TextBuffer textBuffer = getTextBuffer();
             int charPos = getCursor().getDocumentIndex();
             textBuffer.deleteCharacter(charPos);
+            editorPanel.notifyChanged();
         }
         if (keyStroke.getKeyType() == KeyType.Backspace) {
             TextBuffer textBuffer = getTextBuffer();
             int charPos = getCursor().getDocumentIndex();
             getCursor().moveLeft();
             textBuffer.deleteCharacter(charPos - 1);
-
+            editorPanel.notifyChanged();
         }
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
             getCursor().moveLeft();

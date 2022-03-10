@@ -15,4 +15,12 @@ public class MiscTests {
         }
     }
 
+    @Test
+    public void t2() {
+        String s1 = "hello";
+        String s2 = "hello\n";
+        System.out.println(s1.length());
+        System.out.println(s2.length());
+
+    }
 }

@@ -31,6 +31,12 @@ public class LineSplitter {
     }
 
     public int[] split_dumb(String str) {
+
+
+        if (str.isEmpty()) {
+            return new int[]{0,0};
+        }
+
         List<Integer> list = new ArrayList<>();
 
         int chunkStart=0;

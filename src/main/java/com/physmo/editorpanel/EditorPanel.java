@@ -31,6 +31,8 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     boolean wrap = true;
 
+    boolean dirty = false;
+
     LineSplitter lineSplitter;
     List<Block> blockList = new ArrayList<>();
 
@@ -38,9 +40,15 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         this.setVisible(false);
         this.mainApp = mainApp;
 
-        int usableWidth = 70; //size.x - leftMarginSize;
-        System.out.println("usable width:" + usableWidth);
-        lineSplitter = new LineSplitter(usableWidth, 0);
+
+    }
+
+    public void notifyChanged() {
+        dirty=true;
+        if (dirty) {
+            refreshBlockList();
+            dirty=false;
+        }
     }
 
     public Cursor getCursor() {
@@ -57,7 +65,10 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     public void setTextBuffer(TextBuffer textBuffer) {
         this.textBuffer = textBuffer;
+        dirty=true;
         cursor = new Cursor(this);
+
+
     }
 
     @Override
@@ -66,7 +77,11 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         if (!visible) return;
 
         // Put this here for now, find a more efficient place to recompute all blocks later.
-        refreshBlockList();
+        if (dirty) {
+            refreshBlockList();
+            dirty=false;
+        }
+
         Map<Integer, String> lineCache = fetchVisibleLineCache(blockList);
 
         // hack
@@ -78,12 +93,6 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         Point panelPos = getCombinedPosition();
         if (size.x > 0 && size.y > 0)
             Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
-
-
-        int usableWidth = size.x - leftMarginSize;
-
-        int lineCount = textBuffer.getLineCount();
-        String lineText;
 
 
         int line = findSubLineInBlockList(blockList, vScrollOffset);
@@ -151,6 +160,10 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
     }
 
     public void refreshBlockList() {
+        int usableWidth = size.x - leftMarginSize;
+        //System.out.println("usable width:" + usableWidth);
+        lineSplitter = new LineSplitter(usableWidth, 0);
+
         blockList.clear();
         BlockProcessor blockProcessor = new BlockProcessor();
         blockList = blockProcessor.processAll(textBuffer, lineSplitter);
@@ -195,7 +208,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         return 0;
     }
 
-    // returns the subline inside the block for the global subline
+    // returns the line offset inside the block for the global subline
     public int findSubLineOffsetInBlockList(List<Block> bl, int subLine) {
         int accumulator = 0;
 
@@ -215,7 +228,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         int subLineInBlockList = findSubLineInBlockList(blockList, lineNumber);
         int subLineOffsetInBlockList = findSubLineOffsetInBlockList(blockList, lineNumber);
         Block block = blockList.get(subLineInBlockList);
-        int length = block.split[(subLineOffsetInBlockList*2)+1];
+        int length = block.split[(subLineOffsetInBlockList * 2) + 1];
         return length;
     }
 
@@ -233,8 +246,8 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         Block block = blockList.get(subLineInBlockList);
 
         // scan through and count chars in each sub line
-        for (int i=0;i<subLineOffsetInBlockList;i++) {
-            charIndex+=block.split[(i*2)+1];
+        for (int i = 0; i < subLineOffsetInBlockList; i++) {
+            charIndex += block.split[(i * 2) + 1];
         }
 
         return charIndex;

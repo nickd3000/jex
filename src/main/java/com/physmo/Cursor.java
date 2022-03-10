@@ -14,6 +14,10 @@ public class Cursor {
         this.cursorMetricSupplier=cursorMetricSupplier;
     }
 
+    public void resetXMemory() {
+        xMemory = x;
+    }
+
     // return absolute character index for coords
     public int getDocumentIndex() {
 
