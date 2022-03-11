@@ -7,6 +7,8 @@ import com.physmo.Point;
 import com.physmo.Utilities;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class InfoBar extends Panel {
     MainApp mainApp;
 
@@ -29,6 +31,10 @@ public class InfoBar extends Panel {
 
         tg.putString(pos.x + 1, pos.y, strCoords);
 
+        char characterAtCursor = getCharacterAtCursor();
+        tg.putString(pos.x + 10, pos.y, ""+(0+characterAtCursor));
+
+
         // node info
         mainApp.getActiveViewport().ifPresent(vp -> {
             int nodeCount = ((PieceTableTextBuffer) vp.getTextBuffer()).getNodes().size();
@@ -46,6 +52,18 @@ public class InfoBar extends Panel {
             vals[1] = vp.getCursor().y;
         });
         return vals;
+    }
+
+    public char getCharacterAtCursor() {
+        AtomicReference<Character> c= new AtomicReference<>(' ');
+        mainApp.getActiveViewport().ifPresent(vp -> {
+            String characterUnderCursor = vp.getEditorPanel().getCharacterUnderCursor();
+            if (characterUnderCursor.length()==1) {
+                c.set(characterUnderCursor.charAt(0));
+            }
+
+        });
+        return c.get();
     }
 
     public int[] getViewportSize() {
