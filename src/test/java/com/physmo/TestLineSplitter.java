@@ -12,12 +12,12 @@ public class TestLineSplitter {
         printPairs(splits);
         Assert.assertTrue(splits[0]==0);
         Assert.assertTrue(splits[1]==10);
-        Assert.assertTrue(splits[2]==10);
         Assert.assertTrue(splits[3]==10);
-        Assert.assertTrue(splits[4]==20);
-        Assert.assertTrue(splits[5]==10);
-        Assert.assertTrue(splits[6]==30);
-        Assert.assertTrue(splits[7]==3);
+        Assert.assertTrue(splits[4]==10);
+        Assert.assertTrue(splits[6]==20);
+        Assert.assertTrue(splits[7]==10);
+        Assert.assertTrue(splits[9]==30);
+        Assert.assertTrue(splits[10]==3);
     }
 
     public static void printPairs(int[] vals) {

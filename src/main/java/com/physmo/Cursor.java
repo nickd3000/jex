@@ -29,6 +29,8 @@ public class Cursor {
     }
 
     public void moveLeft() {
+        if (x==0 && y==0) return;
+
         x--;
         if (x < 0 && y > 0) {
             y--;

@@ -39,6 +39,10 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     int tabSize=8;
 
+    char tabSpecialChar = Symbols.ARROW_RIGHT;
+    char weirdChar = Symbols.CLUB;
+
+
     public EditorPanel(MainApp mainApp) {
         this.setVisible(false);
         this.mainApp = mainApp;
@@ -140,7 +144,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     }
 
-    char tabSpecialChar = Symbols.SINGLE_LINE_CROSS;
+
 
     public String convertTabCharacters(String input, int tabSize) {
         String tabChars=tabSpecialChar+"                   ";
@@ -165,7 +169,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
             input = convertTabCharacters(input, tabSize);
         }
 
-        return input.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", "?");
+        return input.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", ""+weirdChar);
     }
 
     // if cursor goes off screen scroll to show it.
@@ -304,5 +308,11 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         }
 
         return x+tabAdjust;
+    }
+
+    public String getCharacterUnderCursor() {
+
+        String character = textBuffer.getCharacter(cursor.getDocumentIndex());
+        return character;
     }
 }
