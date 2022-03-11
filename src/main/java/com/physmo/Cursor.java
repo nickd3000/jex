@@ -73,6 +73,8 @@ public class Cursor {
     }
 
     public void moveDown(int v) {
+        if (y+v>=cursorMetricSupplier.getTotalLines()-1) return;
+
         y += v;
 
         // Handle xMemory

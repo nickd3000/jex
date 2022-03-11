@@ -24,7 +24,7 @@ public class BlockProcessor {
         Block block = new Block();
         block.lineNumber = lineNumber;
         int[] split = lineSplitter.split(line);
-        block.height = split.length / 2;
+        block.height = split.length / 3;
         block.split = split;
         return block;
     }

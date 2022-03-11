@@ -8,7 +8,8 @@ public class TestEditorPanel {
     @Test
     public void t1() {
         EditorPanel editorPanel = new EditorPanel(null);
-
+        String str = editorPanel.convertTabCharacters("...\t...\t", 8);
+        System.out.println(str);
     }
 
 }

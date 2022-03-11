@@ -1,5 +1,6 @@
 package com.physmo.editorpanel;
 
+import com.googlecode.lanterna.Symbols;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.physmo.ColorRepo;
 import com.physmo.Cursor;
@@ -36,6 +37,8 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
     LineSplitter lineSplitter;
     List<Block> blockList = new ArrayList<>();
 
+    int tabSize=8;
+
     public EditorPanel(MainApp mainApp) {
         this.setVisible(false);
         this.mainApp = mainApp;
@@ -58,7 +61,10 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
     public Point getCursorPositionForDisplay() {
         Point combinedPosition = getCombinedPosition();
         Point cpos = new Point();
-        cpos.x = combinedPosition.x + cursor.x + leftMarginSize;
+
+        int xWithTabs = translateLineXPosition(cursor.y, cursor.x);
+
+        cpos.x = combinedPosition.x + xWithTabs + leftMarginSize;
         cpos.y = combinedPosition.y - vScrollOffset + cursor.y;
         return cpos;
     }
@@ -95,7 +101,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
             Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
 
 
-        int line = findSubLineInBlockList(blockList, vScrollOffset);
+        int line = findLineNumberFromSubLine(blockList, vScrollOffset);
         int subLine = findSubLineOffsetInBlockList(blockList, vScrollOffset);
         boolean good = true;
         int x = panelPos.x + leftMarginSize;
@@ -125,16 +131,40 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         if (line == null) return;
 
         Block block = bl.get(lineNumber);
-        int subLineStart = block.split[subLine * 2];
-        int subLineLength = block.split[(subLine * 2) + 1];
+        int subLineStart = block.split[subLine * 3];
+        int subLineLength = block.split[(subLine * 3) + 1];
         String subText = line.substring(subLineStart, subLineStart + subLineLength);
-        tg.putString(x, y, sanitizeText(subText));
+
+        tg.putString(x, y, sanitizeText(subText, tabSize));
 
 
     }
 
+    char tabSpecialChar = Symbols.SINGLE_LINE_CROSS;
 
-    public String sanitizeText(String input) {
+    public String convertTabCharacters(String input, int tabSize) {
+        String tabChars=tabSpecialChar+"                   ";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i=0;i<input.length();i++) {
+            char c = input.charAt(i);
+            if (c=='\t') {
+                int padSize = tabSize-(stringBuilder.length()%tabSize);
+                stringBuilder.append(tabChars.substring(0,padSize));
+            } else {
+                stringBuilder.append(c);
+            }
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public String sanitizeText(String input, int tabSize) {
+
+        if (input.contains("\t")) {
+            input = convertTabCharacters(input, tabSize);
+        }
+
         return input.replaceAll("[\\p{Cc}\\p{Cf}\\p{Co}\\p{Cn}]", "?");
     }
 
@@ -182,7 +212,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         Map<Integer, String> cache = new HashMap<>();
         // vScrollOffset
         int lineCount = textBuffer.getLineCount();
-        int startingLine = findSubLineInBlockList(bl, vScrollOffset);
+        int startingLine = findLineNumberFromSubLine(bl, vScrollOffset);
 
         // TODO: use the real required height here.
         for (int i = 0; i < 40; i++) {
@@ -196,7 +226,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
     }
 
     // Returns line number that contains the subLine
-    public int findSubLineInBlockList(List<Block> bl, int subLine) {
+    public int findLineNumberFromSubLine(List<Block> bl, int subLine) {
         int accumulator = 0;
 
         // Scan lines to find where the vScrollOffset starts (could be a sub-line)
@@ -225,10 +255,10 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     @Override
     public int getLineLength(int lineNumber) {
-        int subLineInBlockList = findSubLineInBlockList(blockList, lineNumber);
+        int subLineInBlockList = findLineNumberFromSubLine(blockList, lineNumber);
         int subLineOffsetInBlockList = findSubLineOffsetInBlockList(blockList, lineNumber);
         Block block = blockList.get(subLineInBlockList);
-        int length = block.split[(subLineOffsetInBlockList * 2) + 1];
+        int length = block.split[(subLineOffsetInBlockList * 3) + 1]; // expanded length
         return length;
     }
 
@@ -239,7 +269,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     @Override
     public int getStartOfLineIndex(int lineNumber) {
-        int subLineInBlockList = findSubLineInBlockList(blockList, lineNumber); // get the major line number.
+        int subLineInBlockList = findLineNumberFromSubLine(blockList, lineNumber); // get the major line number.
         int charIndex = textBuffer.getStartOfLineIndex(subLineInBlockList);
         int subLineOffsetInBlockList = findSubLineOffsetInBlockList(blockList, lineNumber);
 
@@ -247,9 +277,32 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
         // scan through and count chars in each sub line
         for (int i = 0; i < subLineOffsetInBlockList; i++) {
-            charIndex += block.split[(i * 2) + 1];
+            charIndex += block.split[(i * 3) + 1];
         }
 
         return charIndex;
+    }
+
+    // Take the raw x position on a line and translate it taking
+    // into account expanded tabs if they are active.
+    public int translateLineXPosition(int lineNumber, int x) {
+        int subLineInBlockList = findLineNumberFromSubLine(blockList, lineNumber);
+        int subLineOffsetInBlockList = findSubLineOffsetInBlockList(blockList, lineNumber);
+        Block block = blockList.get(subLineInBlockList);
+        int firstCharInLine = block.split[(subLineOffsetInBlockList * 3) + 0];
+
+        String textBufferLine = textBuffer.getLine(subLineInBlockList);
+        int tabAdjust=0;
+
+        // count tabs in line section before X position
+        for (int i=firstCharInLine;i<firstCharInLine + x;i++) {
+            if (textBufferLine.charAt(i)=='\t') {
+                // calculate how many characters we would need to add to get to the next tab column.
+                int pad = tabSize-((i+tabAdjust)%tabSize);
+                tabAdjust+=pad-1;
+            }
+        }
+
+        return x+tabAdjust;
     }
 }

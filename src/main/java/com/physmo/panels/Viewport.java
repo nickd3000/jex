@@ -80,6 +80,16 @@ public class Viewport extends Panel {
             getCursor().moveRight();
             editorPanel.notifyChanged();
         }
+
+        if (keyStroke.getKeyType() == KeyType.Tab) {
+            TextBuffer textBuffer = getTextBuffer();
+            Character character = '\t';
+            int charPos = getCursor().getDocumentIndex();
+            textBuffer.insert(charPos, "" + character);
+            getCursor().moveRight();
+            editorPanel.notifyChanged();
+        }
+
         if (keyStroke.getKeyType() == KeyType.Enter) {
             TextBuffer textBuffer = getTextBuffer();
             int charPos = getCursor().getDocumentIndex();
