@@ -39,7 +39,7 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
     int tabSize=8;
 
-    char tabSpecialChar = Symbols.ARROW_RIGHT;
+    char tabSpecialChar = Symbols.TRIANGLE_RIGHT_POINTING_BLACK;
     char weirdChar = Symbols.CLUB;
 
 
@@ -193,6 +193,8 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         return totalLineHeight;
     }
 
+    int costlyFunction=0;
+
     public void refreshBlockList() {
         int usableWidth = size.x - leftMarginSize;
         //System.out.println("usable width:" + usableWidth);
@@ -200,9 +202,15 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
 
         blockList.clear();
         BlockProcessor blockProcessor = new BlockProcessor();
-        blockList = blockProcessor.processAll(textBuffer, lineSplitter);
+        blockList = blockProcessor.processAll(textBuffer, lineSplitter, tabSize);
         countTotalLines();
+
+        costlyFunction++;
     }
+
+public int getCostlyFunctionCallCount() {
+        return this.getLineLengthCallCount;
+}
 
     // Add up all sub lines.
     public void countTotalLines() {
@@ -257,8 +265,11 @@ public class EditorPanel extends Panel implements CursorMetricSupplier {
         return 0;
     }
 
+    int getLineLengthCallCount=0;
+
     @Override
     public int getLineLength(int lineNumber) {
+        getLineLengthCallCount++;
         int subLineInBlockList = findLineNumberFromSubLine(blockList, lineNumber);
         int subLineOffsetInBlockList = findSubLineOffsetInBlockList(blockList, lineNumber);
         Block block = blockList.get(subLineInBlockList);

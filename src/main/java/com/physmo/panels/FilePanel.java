@@ -22,7 +22,7 @@ public class FilePanel extends Panel {
     Button okButton;
     Button cancelButton;
     ListPanel listPanel;
-    String currentPath = "/Users/nick";
+    String currentPath = "/Users/nick/dev/datafiles/text";
 
     Panel focusedPanel;
 

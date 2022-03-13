@@ -7,6 +7,7 @@ import com.physmo.Point;
 import com.physmo.Utilities;
 import com.physmo.buffers.piecetable.PieceTableTextBuffer;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class InfoBar extends Panel {
@@ -33,6 +34,8 @@ public class InfoBar extends Panel {
 
         char characterAtCursor = getCharacterAtCursor();
         tg.putString(pos.x + 10, pos.y, ""+(0+characterAtCursor));
+
+        tg.putString(pos.x + 16, pos.y, ""+(getCostlyFunctionCallCount()));
 
 
         // node info
@@ -64,6 +67,14 @@ public class InfoBar extends Panel {
 
         });
         return c.get();
+    }
+
+    public int getCostlyFunctionCallCount() {
+        Optional<Viewport> activeViewport = mainApp.getActiveViewport();
+        if (activeViewport.isPresent()) {
+            return activeViewport.get().getEditorPanel().getCostlyFunctionCallCount();
+        }
+        return 0;
     }
 
     public int[] getViewportSize() {

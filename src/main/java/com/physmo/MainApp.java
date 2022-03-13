@@ -103,7 +103,7 @@ public class MainApp {
             processInput();
 
             getActiveViewport().ifPresent(vp -> {
-                vp.drawChildren(tg, true);
+                vp.drawChildren(tg, false);
             });
 
             //mainFrame.drawChildren(tg, true);
@@ -115,7 +115,7 @@ public class MainApp {
             }
 
             screen.doResizeIfNecessary();
-            screen.refresh();
+            screen.refresh(Screen.RefreshType.AUTOMATIC);
 
             // change to while
             if (commandQueue.hasItem()) {

@@ -8,7 +8,7 @@ public class TestLineSplitter {
     @Test
     public void testBasicSplit() {
         LineSplitter ls = new LineSplitter(10,0);
-        int[] splits = ls.split("111111111122222222223333333333444");
+        int[] splits = ls.split("111111111122222222223333333333444", 8);
         printPairs(splits);
         Assert.assertTrue(splits[0]==0);
         Assert.assertTrue(splits[1]==10);
