@@ -11,6 +11,7 @@ public class PieceTableTextBuffer extends TextBuffer {
     String bufferOriginal = "";
     String buffer1 = "";
     LinkedList<Node> nodes = new LinkedList<>();
+    int newFileSectionSize = 1024;
 
     public PieceTableTextBuffer() {
 
@@ -23,9 +24,28 @@ public class PieceTableTextBuffer extends TextBuffer {
     @Override
     public void setInitialText(String text) {
         bufferOriginal = text;
-        Node firstNode = new Node(0, bufferOriginal.length(), 0);
-        calculateLineStartsForNode(firstNode, true);
-        nodes.add(firstNode);
+        setInitialTextSectioned(newFileSectionSize);
+    }
+
+
+    // bufferOriginal must be set first.
+    public void setInitialTextSectioned(int sectionSize) {
+        int headPosition = 0;
+
+        while (headPosition<bufferOriginal.length()) {
+            int currentSectionSize = bufferOriginal.length() - headPosition;
+            if (currentSectionSize >= sectionSize) currentSectionSize = sectionSize;
+            addNodeFromBufferOriginalTextSection(headPosition, currentSectionSize);
+            headPosition += currentSectionSize;
+        }
+    }
+
+    // bufferOriginal must be set first.
+    public void addNodeFromBufferOriginalTextSection(int start, int length) {
+        System.out.println("Adding section "+start+", "+length);
+        Node newNode = new Node(start, length, 0);
+        calculateLineStartsForNode(newNode, start==0?true:false);
+        nodes.add(newNode);
     }
 
     // linux = \n  windows = \r\n
@@ -62,6 +82,7 @@ public class PieceTableTextBuffer extends TextBuffer {
 
             if (lineNumber >= trackLine && lineNumber < trackLine + node.lineStarts.size()) {
                 lineText = extractLineFromPosition(node, node.lineStarts.get(lineNumber - trackLine));
+                break;
             }
             trackLine += numLinesInNode;
         }
