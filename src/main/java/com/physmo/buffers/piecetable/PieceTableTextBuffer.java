@@ -287,7 +287,7 @@ public class PieceTableTextBuffer extends TextBuffer {
 
         // Insert before located node.
         if (result.offset == 0) {
-            result.node.start++;
+           result.node.start++;
             result.node.length--;
             calculateLineStartsForNode(result.node, false);
         }

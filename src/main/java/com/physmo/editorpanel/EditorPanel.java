@@ -78,7 +78,9 @@ public class EditorPanel extends Panel {
 //            lineProcessor.refreshBlockList();
 //            dirty = false;
 //        }
-
+        // hack
+        scrollToCursor();
+        leftMarginSize = 1+ calculateMarginSizeForTotalLines(lineProcessor.getTotalLines());
         lineProcessor.setVisibleWidth(this.getSize().x - leftMarginSize - 1);
         lineProcessor.setVisibleHeight(this.getSize().y - 1);
         lineProcessor.setVScrollOffset(vScrollOffset);
@@ -86,8 +88,6 @@ public class EditorPanel extends Panel {
 
         //Map<Integer, String> lineCache = lineProcessor.fetchVisibleLineCache2(vScrollOffset);
 
-        // hack
-        scrollToCursor();
 
         // ColorRepo.setNormalTextColor(tg);
         mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
@@ -103,23 +103,15 @@ public class EditorPanel extends Panel {
         int x = panelPos.x + leftMarginSize;
         int y = panelPos.y;
         Map<Integer, String> expandedLineCache = lineProcessor.getExpandedLineCache();
+        Map<Integer, Integer> marginCache = lineProcessor.getMarginCache();
         int visibleHeight = getSize().y;
         for (int i = 0; i < visibleHeight; i++) {
             String text = expandedLineCache.get(vScrollOffset + i);
             if (text == null) continue;
-            tg.putString(x, y + i, text);//sanitizeText(text, tabSize));
+            tg.putString(x, y + i, sanitizeText(text, tabSize));
+            tg.putString(panelPos.x, y + i, buildMarginString(leftMarginSize,marginCache.get(vScrollOffset + i)));
+            //drawMargin2(tg, leftMarginSize,marginCache.get(vScrollOffset + i), 0, y + i);
         }
-
-//        while (good) {
-//            if (line >= blockList.size()) break;
-//            while (subLine < blockList.get(line).height) {
-//                drawMargin(tg, line, subLine, panelPos.x, y);
-//                drawSubLine(tg, blockList, lineCache, line, subLine, x, y++);
-//                subLine++;
-//            }
-//            subLine = 0;
-//            line++;
-//        }
 
     }
 
@@ -127,6 +119,34 @@ public class EditorPanel extends Panel {
         if (subLine == 0) {
             tg.putString(x, y, "" + lineNumber);
         }
+    }
+
+    public String buildMarginString(int marginWidth, int marginNumber) {
+
+        String spaces = "              ";
+
+        if (marginNumber==-1) return spaces.substring(0,marginWidth);
+
+        int n = marginNumber;
+        int count = marginNumber==0?2:1;
+        while (n>0) {
+            n=n/10;
+            count++;
+        }
+
+
+        return spaces.substring(0,marginWidth-count) + marginNumber;
+    }
+
+    // TODO: create test for this.
+    public int calculateMarginSizeForTotalLines(int totalLines) {
+        if (totalLines==0) return 2;
+        int count=0;
+        while (totalLines!=0) {
+            totalLines/=10;
+            count++;
+        }
+        return count;
     }
 
 

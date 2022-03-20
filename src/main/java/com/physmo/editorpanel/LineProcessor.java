@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.SubmissionPublisher;
 
 /*
     line cache
@@ -23,10 +24,14 @@ public class LineProcessor implements CursorMetricSupplier {
     int tabSize=8;
 
     Map<Integer, String> lineCache = new HashMap<>();; // Raw line data
-    Map<Integer, String> expandedLineCache = new HashMap<>(); // Display ready sub lines
+    Map<Integer, String> expandedLineCache = new HashMap<>(); // Raw sub lines - no expanded tabs
+    Map<Integer, Integer> marginCache = new HashMap<>();
 
     public Map<Integer, String> getExpandedLineCache() {
         return expandedLineCache;
+    }
+    public Map<Integer, Integer> getMarginCache() {
+        return marginCache;
     }
 
     boolean dirty = false;
@@ -101,11 +106,14 @@ public class LineProcessor implements CursorMetricSupplier {
             }
         }
 
+
+
         // Pre calculate expanded sub lines.
         for (int i=0;i<visibleHeight;i++) {
-            int lineNumber = startingLine + i;
-            if (lineNumber < lineCount && !expandedLineCache.containsKey(lineNumber)) {
+            int lineNumber = vScrollOffset + i;
+            if (lineNumber < totalLineHeight && !expandedLineCache.containsKey(lineNumber)) {
                 expandedLineCache.put(lineNumber, calculateExpandedSubLine(blockList, lineCache, lineNumber ));
+                marginCache.put(lineNumber, calculateMarginLineNumberForSubLine(lineNumber));
             }
         }
 
@@ -136,6 +144,12 @@ public class LineProcessor implements CursorMetricSupplier {
     }
 
     @Override
+    public int getTotalLines() {
+        return totalLineHeight;
+    }
+
+
+    @Override
     public int getLineLength(int lineNumber) {
 
         int subLineInBlockList = findLineNumberFromSubLine( lineNumber);
@@ -145,10 +159,7 @@ public class LineProcessor implements CursorMetricSupplier {
         return length;
     }
 
-    @Override
-    public int getTotalLines() {
-        return totalLineHeight;
-    }
+
 
     @Override
     public int getStartOfLineIndex(int lineNumber) {
@@ -193,6 +204,13 @@ public class LineProcessor implements CursorMetricSupplier {
         }
 
         return 0;
+    }
+
+    public int calculateMarginLineNumberForSubLine(int subLine) {
+        int lineNumberFromSubLine = findLineNumberFromSubLine(subLine);
+        int subLineOffsetInBlockList = findSubLineOffsetInBlockList(subLine);
+        if (subLineOffsetInBlockList==0) return lineNumberFromSubLine;
+        return -1;
     }
 
     // Take the raw x position on a line and translate it taking
