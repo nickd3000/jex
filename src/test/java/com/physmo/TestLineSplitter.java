@@ -41,10 +41,17 @@ public class TestLineSplitter {
 
     @Test
     public void testLineSplitterSplitOnWords() {
-        LineSplitter ls = new LineSplitter(20,0);
-        String str = "55555 4444 0000000000 333";
-        int[] splits = ls.split_on_words(str, 8);
 
+        //testLineSplitterSplitOnWordsForString("55555 4444 0000000000 333", 20);
+        //testLineSplitterSplitOnWordsForString("Now is the time for all good men to come to the aid of the party.",10);
+
+        testLineSplitterSplitOnWordsForString("333 333 1616161616161616 4444", 8);
+
+    }
+
+    public void testLineSplitterSplitOnWordsForString(String str, int width) {
+        LineSplitter ls = new LineSplitter(width,0);
+        int[] splits = ls.split_on_words(str, 8);
         System.out.println(str);
         printTriples(splits);
         printSubLines(str, splits);

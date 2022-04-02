@@ -39,7 +39,7 @@ public class LineSplitter {
             p++;
         }
 
-        return -1;
+        return maxLength;
     }
 
     public int[] split_on_words(String str, int tabSize) {
@@ -53,10 +53,11 @@ public class LineSplitter {
         int expandedSubLineSize = 0;// sub string size in expanded characters (eg tabs)
         int subLineSize = 0; // sub string size in raw characters
 
+        int maxLength = 50;
 
         for (int i=0;i<str.length();) {
-            int nextWordLength = findLengthOfNextWord(str, i, 50);
-            System.out.println("WL:"+nextWordLength + "\t\t"+i);
+            int nextWordLength = findLengthOfNextWord(str, i, maxLength);
+            //System.out.println("WL:"+nextWordLength + "\t\t"+i);
             // Next word would take us over the limit...
             if (expandedSubLineSize+nextWordLength > usableWidth) {
                 // record it...
