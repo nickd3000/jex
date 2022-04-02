@@ -26,9 +26,9 @@ public class ScrollBar extends Panel {
         mainApp.getColorRepo().setThemeElementColor(tg, ColorRepo.NORMAL_TEXT);
         Utilities.fillRectangle(tg, pos.x, pos.y, size.x, size.y, charTrack);
 
-        int documentLines = parentViewport.getTextPanel().getDocumentLineCount();
-        int textWindowHeight = parentViewport.getTextPanel().getSize().y;
-        int scrollOffset = parentViewport.getTextPanel().getVScrollOffset();
+        int documentLines = parentViewport.getEditorPanel().getDocumentLineCount();
+        int textWindowHeight = parentViewport.getEditorPanel().getSize().y;
+        int scrollOffset = parentViewport.getEditorPanel().getVScrollOffset();
 
         double ratio = (double) textWindowHeight / (double) (documentLines + textWindowHeight);
         int barSize = (int) ((double) textWindowHeight * ratio);

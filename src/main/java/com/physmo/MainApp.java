@@ -103,7 +103,7 @@ public class MainApp {
             processInput();
 
             getActiveViewport().ifPresent(vp -> {
-                vp.drawChildren(tg, true);
+                vp.drawChildren(tg, false);
             });
 
             //mainFrame.drawChildren(tg, true);
@@ -115,7 +115,7 @@ public class MainApp {
             }
 
             screen.doResizeIfNecessary();
-            screen.refresh();
+            screen.refresh(Screen.RefreshType.AUTOMATIC);
 
             // change to while
             if (commandQueue.hasItem()) {
@@ -253,7 +253,7 @@ public class MainApp {
             textBuffer.setInitialText("");
         } else if (path == "testfilemagicstring") {
             System.out.println("test");
-            textBuffer.setInitialText(faketextFile());
+            textBuffer.setInitialText(faketextFile(0));
         }else if (path != null) {
             textBuffer.setInitialText(loadFile(path));
         }
@@ -267,17 +267,25 @@ public class MainApp {
 
     }
 
-    public static String faketextFile() {
-        String str = "A text editor is a type of computer program that edits plain text.\n" +
-                "Such programs are sometimes known as notepad software,\n" +
-                "following the naming of Microsoft Notepad.\n" +
-                "Text editors are provided with operating systems and software development packages,\n" +
-                "and can be used to change files such as configuration files,\n" +
-                "documentation files and programming language source code.\n"+
-                "This is the start of a long line that will go off screen if we are not in line wrap mode. if we are in line wrap mode it should span multiple lines.";
-        str = str + str;
-        str = str + str;
-        str = str + str;
+    public static String faketextFile(int i) {
+
+        String str = "";
+        if (i==0) {
+            str = "A text editor is a type of computer program that edits plain text.\n" +
+                    "Such programs are sometimes known as notepad software,\n" +
+                    "following the naming of Microsoft Notepad.\n" +
+                    "\t\t\t[Tabbed line]\n" +
+                    "Text editors are provided with operating systems and software development packages,\n" +
+                    "and can be used to change files such as configuration files,\n" +
+                    "documentation files and programming language source code.\n" +
+                    "This is the start of a long line that will go off screen if we are not in line wrap mode. if we are in line wrap mode it should span multiple lines.";
+            str = str + str;
+        }
+
+        if (i==1) {
+            str="1\n2\n\n3\n";
+        }
+
         return str;
     }
 

@@ -16,11 +16,11 @@ public abstract class Panel {
 
     // todo change to points
     Point position = new Point(0, 0);
-    Point size = new Point(0, 0);
+    protected Point size = new Point(0, 0);
     Panel parent;
-    boolean dirty = true;
-    boolean visible = true;
-    boolean focus = false;
+    protected boolean dirty = true;
+    protected boolean visible = true;
+    protected boolean focus = false;
     FocusTraverser focusTraverser = new FocusTraverser();
 
     public FocusTraverser getFocusTraverser() {
@@ -75,7 +75,7 @@ public abstract class Panel {
     }
 
 
-    abstract void draw(TextGraphics tg);
+    protected abstract void draw(TextGraphics tg);
 
     public List<Panel> getChildren() {
         return children;

@@ -22,7 +22,7 @@ public class FilePanel extends Panel {
     Button okButton;
     Button cancelButton;
     ListPanel listPanel;
-    String currentPath = "/Users/nick";
+    String currentPath = "/Users/nick/dev/datafiles/text";
 
     Panel focusedPanel;
 
@@ -143,10 +143,23 @@ public class FilePanel extends Panel {
             listPanelList.add(newListElement);
         }
 
+
+        listPanelList.sort((o1, o2) ->  {
+
+            String name1 = getSortingPrefixForFile(o1)+o1.name;
+            String name2 = getSortingPrefixForFile(o2)+o2.name;
+            return name1.compareTo(name2);
+
+        } );
+
         listPanel.setSelectedIndex(0);
     }
 
-
+    public String getSortingPrefixForFile(ListElement listElement) {
+        if (listElement.name.equals("<..>")) return "0";
+        if (((File)listElement.object).isDirectory()) return "1";
+        return "2";
+    }
 
     public File[] getFileList(String path) {
         File f = new File(path);

@@ -6,19 +6,31 @@ public class Cursor {
     public int x = 0;
     public int y = 0;
     public int xMemory = 0;
-    TextBuffer textBuffer;
+    //TextBuffer textBuffer;
+    CursorMetricSupplier cursorMetricSupplier;
 
-    public Cursor(TextBuffer textBuffer) {
-        this.textBuffer = textBuffer;
+    public Cursor(CursorMetricSupplier cursorMetricSupplier) {
+        //this.textBuffer = textBuffer;
+        this.cursorMetricSupplier=cursorMetricSupplier;
     }
 
+    public void resetXMemory() {
+        xMemory = x;
+    }
+
+    // return absolute character index for coords
     public int getDocumentIndex() {
-        //textBuffer.getLine(y);
-        int startOfLineIndex = textBuffer.getStartOfLineIndex(y);
-        return startOfLineIndex + x;
+
+        //int startOfLineIndex = textBuffer.getStartOfLineIndex(y);
+        //return startOfLineIndex + x;
+
+        // todo fix this
+        return cursorMetricSupplier.getStartOfLineIndex(y)+x;
     }
 
     public void moveLeft() {
+        if (x==0 && y==0) return;
+
         x--;
         if (x < 0 && y > 0) {
             y--;
@@ -34,8 +46,9 @@ public class Cursor {
     }
 
     public int getCurrentLineLength() {
-        String line = textBuffer.getLine(y);
-        return line.length();
+        //String line = textBuffer.getLine(y);
+        //return line.length();
+        return cursorMetricSupplier.getLineLength(y);
     }
 
     public void moveRight() {
@@ -62,6 +75,8 @@ public class Cursor {
     }
 
     public void moveDown(int v) {
+        if (y+v>=cursorMetricSupplier.getTotalLines()-1) return;
+
         y += v;
 
         // Handle xMemory
