@@ -90,7 +90,6 @@ public class MenuBar extends Panel {
         if (action.equals(Commands.FILE_NEW)) {
             mainApp.getCommandQueue().push(Commands.FILE_NEW, null);
         }
-
         if (action.equals(Commands.FILE_TEST)) {
             mainApp.getCommandQueue().push(Commands.FILE_TEST, null);
         }

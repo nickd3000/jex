@@ -23,7 +23,65 @@ public class LineSplitter {
     //   [i+1] length of section (in raw chars)
     //   [i+2] length of section (expanded tabs)
     public int[] split(String str, int tabSize) {
-        return split_dumb_tab_aware(str, tabSize);
+        return split_on_words(str, tabSize);
+        //return split_dumb_tab_aware(str, tabSize);
+    }
+
+    // -1 means next word was bigger than maxLength
+    public int findLengthOfNextWord(String str, int position, int maxLength) {
+
+        int p = 0;
+        int strSize = str.length();
+
+        while (p<maxLength) {
+            if (position+p>=strSize) return p;
+            if (str.charAt(position+p)==' ') return p+1;
+            p++;
+        }
+
+        return -1;
+    }
+
+    public int[] split_on_words(String str, int tabSize) {
+        if (str.isEmpty()) {
+            return new int[]{0,0,0};
+        }
+
+        List<Integer> list = new ArrayList<>();
+
+        int chunkStart=0;
+        int expandedSubLineSize = 0;// sub string size in expanded characters (eg tabs)
+        int subLineSize = 0; // sub string size in raw characters
+
+
+        for (int i=0;i<str.length();) {
+            int nextWordLength = findLengthOfNextWord(str, i, 50);
+            System.out.println("WL:"+nextWordLength + "\t\t"+i);
+            // Next word would take us over the limit...
+            if (expandedSubLineSize+nextWordLength > usableWidth) {
+                // record it...
+                list.add(chunkStart);
+                list.add(subLineSize);
+                list.add(expandedSubLineSize);
+
+                chunkStart += subLineSize;
+                expandedSubLineSize=nextWordLength;
+                subLineSize=nextWordLength; // todo handle expanded chars?
+            } else {
+                expandedSubLineSize+=nextWordLength;
+                subLineSize+=nextWordLength;
+            }
+            i+=nextWordLength;
+
+        }
+
+        if (subLineSize>0) {
+            list.add(chunkStart);
+            list.add(subLineSize);
+            list.add(expandedSubLineSize);
+        }
+
+        return list.stream().mapToInt(i -> i).toArray();
     }
 
     public int[] split_dumb_tab_aware(String str, int tabSize) {
