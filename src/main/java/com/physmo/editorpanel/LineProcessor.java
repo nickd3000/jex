@@ -76,9 +76,7 @@ public class LineProcessor implements CursorMetricSupplier {
     }
 
     public void refreshBlockList() {
-        //int usableWidth = size.x - leftMarginSize;
 
-        //System.out.println("usable width:" + usableWidth);
         lineSplitter = new LineSplitter(visibleWidth, 0);
 
         blockList.clear();
@@ -178,16 +176,18 @@ public class LineProcessor implements CursorMetricSupplier {
     }
 
 
-    // Returns line number that contains the subLine
+    // Returns major line number that contains the subLine
     public int findLineNumberFromSubLine(int subLine) {
         int accumulator = 0;
 
-        // Scan lines to find where the vScrollOffset starts (could be a sub-line)
+        // Find what major line this sub line exists in.
         for (Block block : blockList) {
-            if (accumulator > subLine) return block.lineNumber - 1;
+            if (accumulator+block.height > subLine) return block.lineNumber;
             accumulator += block.height;
         }
 
+
+        // would we ever want this to return 0?
         return 0;
     }
 
@@ -195,7 +195,7 @@ public class LineProcessor implements CursorMetricSupplier {
     public int findSubLineOffsetInBlockList( int subLine) {
         int accumulator = 0;
 
-        // Scan lines to find where the vScrollOffset starts (could be a sub-line)
+        // Scan lines to find where subLine lies.
         for (Block block : blockList) {
             if (accumulator + block.height > subLine) {
                 return subLine - (accumulator);

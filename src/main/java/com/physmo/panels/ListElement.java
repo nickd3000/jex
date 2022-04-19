@@ -2,7 +2,7 @@ package com.physmo.panels;
 
 public class ListElement {
     String name;
-    Object object;
+    public Object object;
 
     public ListElement(String name, Object object) {
         this.name = name;

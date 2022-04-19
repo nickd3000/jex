@@ -97,9 +97,9 @@ public class EditorPanel extends Panel {
             Utilities.fillRectangle(tg, panelPos.x, panelPos.y, size.x, size.y, ' ');
 
 
-        int line = lineProcessor.findLineNumberFromSubLine(vScrollOffset);
-        int subLine = lineProcessor.findSubLineOffsetInBlockList(vScrollOffset);
-        boolean good = true;
+        //int line = lineProcessor.findLineNumberFromSubLine(vScrollOffset);
+        //int subLine = lineProcessor.findSubLineOffsetInBlockList(vScrollOffset);
+        //boolean good = true;
         int x = panelPos.x + leftMarginSize;
         int y = panelPos.y;
         Map<Integer, String> expandedLineCache = lineProcessor.getExpandedLineCache();

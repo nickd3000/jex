@@ -286,6 +286,13 @@ public class MainApp {
             str="1\n2\n\n3\n";
         }
 
+        if (i==2) {
+            str="Very simple sample first line 1\n";
+            str+="Very simple sample line 2\n";
+            str+="Very simple sample line 3\n";
+            str+="Very simple sample last line 4\n";
+        }
+
         return str;
     }
 

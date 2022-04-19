@@ -2,6 +2,7 @@ package com.physmo.editorpanel;
 
 import com.physmo.LineSplitter;
 import com.physmo.buffers.TextBuffer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 // Create a list of blocks that represent the metrics of line-wrapped lines.
 public class BlockProcessor {
 
-    public List<Block> processAll(TextBuffer textBuffer, LineSplitter lineSplitter, int tabSize) {
+    public List<Block> processAll(@NotNull TextBuffer textBuffer, LineSplitter lineSplitter, int tabSize) {
         List<Block> blocks = new ArrayList<>();
         int lineCount = textBuffer.getLineCount();
 

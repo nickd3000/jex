@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-// this is all too hard-coded...
+
 public class MenuBar extends Panel {
 
     MainApp mainApp;
@@ -25,75 +25,23 @@ public class MenuBar extends Panel {
     public MenuBar(MainApp mainApp) {
         this.mainApp = mainApp;
         menuList = new MenuItem("root");
-        for (String s : Arrays.asList("File", "Edit", "Search", "Options")) {
-            menuList.getChildren().add(new MenuItem(s));
-        }
+
+//        addMenuHeader("File");
+//        addMenuHeader("Edit");
+//        addMenuHeader("Search");
+//        addMenuHeader("Options");
+
         subMenuList = new ArrayList<>();
-
-
-        ListPanel fileSubMenu = new ListPanel();
-        fileSubMenu.getList().add(new ListElement("New", Commands.FILE_NEW));
-        fileSubMenu.getList().add(new ListElement("Open...", Commands.FILE_OPEN));
-        fileSubMenu.getList().add(new ListElement("Save", "FILE_SAVE"));
-        fileSubMenu.getList().add(new ListElement("Save As", "FILE_SAVE_AS"));
-        fileSubMenu.getList().add(new ListElement("test", Commands.FILE_TEST));
-        fileSubMenu.getList().add(new ListElement("Exit", Commands.FILE_EXIT));
-        fileSubMenu.setVisible(true);
-        fileSubMenu.sizeToContent(10);
-        fileSubMenu.setPosition(getTopLevelMenuItemXPosition(0), 1);
-        fileSubMenu.doLayout();
-        fileSubMenu.addSelectionHandler(this::selectionHandler);
-
-        ListPanel editSubMenu = new ListPanel();
-        editSubMenu.getList().add(new ListElement("Cut", ""));
-        editSubMenu.getList().add(new ListElement("Copy", ""));
-        editSubMenu.getList().add(new ListElement("Paste", ""));
-        editSubMenu.getList().add(new ListElement("Clear", ""));
-        editSubMenu.setVisible(false);
-        editSubMenu.sizeToContent(10);
-        editSubMenu.setPosition(getTopLevelMenuItemXPosition(1), 1);
-        editSubMenu.doLayout();
-        editSubMenu.addSelectionHandler(this::selectionHandler);
-
-        ListPanel searchSubMenu = new ListPanel();
-        searchSubMenu.getList().add(new ListElement("test", ""));
-        searchSubMenu.setVisible(false);
-        searchSubMenu.sizeToContent(10);
-        searchSubMenu.setPosition(getTopLevelMenuItemXPosition(2), 1);
-        searchSubMenu.doLayout();
-        searchSubMenu.addSelectionHandler(this::selectionHandler);
-
-        ListPanel optionsSubMenu = new ListPanel();
-        optionsSubMenu.getList().add(new ListElement("test", ""));
-        optionsSubMenu.setVisible(false);
-        optionsSubMenu.sizeToContent(10);
-        optionsSubMenu.setPosition(getTopLevelMenuItemXPosition(3), 1);
-        optionsSubMenu.doLayout();
-        optionsSubMenu.addSelectionHandler(this::selectionHandler);
-
-        subMenuList.add(0, fileSubMenu);
-        subMenuList.add(1, editSubMenu);
-        subMenuList.add(2, searchSubMenu);
-        subMenuList.add(3, optionsSubMenu);
     }
 
-    public void selectionHandler(int index, Object object) {
-        ListElement listElement = (ListElement) object;
-        String action = (String) listElement.object;
-
-        if (action.equals("FILE_EXIT")) {
-            mainApp.getCommandQueue().push(Commands.FILE_EXIT, null);
-        }
-        if (action.equals(Commands.FILE_OPEN)) {
-            mainApp.getCommandQueue().push(Commands.FILE_OPEN, null);
-        }
-        if (action.equals(Commands.FILE_NEW)) {
-            mainApp.getCommandQueue().push(Commands.FILE_NEW, null);
-        }
-        if (action.equals(Commands.FILE_TEST)) {
-            mainApp.getCommandQueue().push(Commands.FILE_TEST, null);
-        }
+    public void addMenuHeader(String name) {
+        menuList.getChildren().add(new MenuItem(name));
     }
+
+    public void addSubMenuList(int index, ListPanel subMenu) {
+        subMenuList.add(index, subMenu);
+    }
+
 
     public int getTopLevelMenuItemXPosition(int index) {
         int xPos = 0;

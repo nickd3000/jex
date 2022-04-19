@@ -4,6 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.physmo.MainApp;
+import com.physmo.MenuBarManager;
 import com.physmo.Point;
 
 public class MainFrame extends Panel {
@@ -11,6 +12,8 @@ public class MainFrame extends Panel {
     MainApp mainApp;
     InfoBar infoBar;
     MenuBar menuBar;
+
+    MenuBarManager menuBarManager;
 
     public MainFrame(MainApp mainApp, int width, int height) {
         this.mainApp = mainApp;
@@ -20,7 +23,10 @@ public class MainFrame extends Panel {
         infoBar = new InfoBar(mainApp);
         addChild(infoBar);
 
+        menuBarManager = new MenuBarManager(mainApp);
         menuBar = new MenuBar(mainApp);
+        menuBarManager.initMenuBar(menuBar);
+
         addChild(menuBar);
 
         doLayout();
