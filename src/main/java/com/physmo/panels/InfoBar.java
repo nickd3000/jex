@@ -58,6 +58,7 @@ public class InfoBar extends Panel {
     }
 
     public char getCharacterAtCursor() {
+
         AtomicReference<Character> c= new AtomicReference<>(' ');
         mainApp.getActiveViewport().ifPresent(vp -> {
             String characterUnderCursor = vp.getEditorPanel().getCharacterUnderCursor();

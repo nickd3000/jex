@@ -250,7 +250,7 @@ public class MainApp {
         textBuffer = new PieceTableTextBuffer();
 
         if (path == "createnewfilemagicstring") {
-            textBuffer.setInitialText("");
+            textBuffer.setInitialText(" ");
         } else if (path == "testfilemagicstring") {
             System.out.println("test");
             textBuffer.setInitialText(faketextFile(0));

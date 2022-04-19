@@ -26,6 +26,8 @@ public class LineProcessor implements CursorMetricSupplier {
     Map<Integer, String> lineCache = new HashMap<>();; // Raw line data
     Map<Integer, String> expandedLineCache = new HashMap<>(); // Raw sub lines - no expanded tabs
     Map<Integer, Integer> marginCache = new HashMap<>();
+    private int dirtyLineNumber;
+    private boolean lineDirty = false;
 
     public Map<Integer, String> getExpandedLineCache() {
         return expandedLineCache;
@@ -47,13 +49,25 @@ public class LineProcessor implements CursorMetricSupplier {
 
     public void refreshIfDirty() {
         if (dirty) {
+            System.out.println("it's dirty");
             refreshBlockList();
             dirty = false;
+        }
+        if (lineDirty) {
+            System.out.println("it's line dirty");
+            refreshLine(dirtyLineNumber);
+            lineDirty=false;
         }
     }
 
     public void setDirty() {
         dirty=true;
+    }
+
+    public void setDirty(int lineNumber) {
+        lineDirty=true;
+        dirtyLineNumber=lineNumber;
+        refreshIfDirty();
     }
 
     public void setVisibleWidth(int visibleWidth) {
@@ -85,6 +99,27 @@ public class LineProcessor implements CursorMetricSupplier {
         countTotalLines();
         fetchVisibleLineCache(vScrollOffset);
 
+    }
+
+    public void refreshLine(int lineNumber) {
+        lineSplitter = new LineSplitter(visibleWidth, 0);
+
+        //blockList.clear();
+        BlockProcessor blockProcessor = new BlockProcessor();
+
+        //blockList = blockProcessor.processAll(textBuffer, lineSplitter, tabSize);
+        Block newBlock = blockProcessor.createBlockFromLine(lineSplitter, textBuffer, lineNumber, tabSize);
+
+        int blockIndex = -1;
+        for (int i=0;i<blockList.size();i++) {
+            if (blockList.get(i).lineNumber==lineNumber) {
+                blockList.set(i, newBlock);
+                break;
+            }
+        }
+
+        countTotalLines();
+        fetchVisibleLineCache(vScrollOffset);
     }
 
 
@@ -157,10 +192,15 @@ public class LineProcessor implements CursorMetricSupplier {
         return length;
     }
 
-
+    @Override
+    public int getMajorLineNumber(int y) {
+       return findLineNumberFromSubLine(y);
+    }
 
     @Override
     public int getStartOfLineIndex(int lineNumber) {
+        if (blockList.size()==0) return 0;
+
         int subLineInBlockList = findLineNumberFromSubLine( lineNumber); // get the major line number.
         int charIndex = textBuffer.getStartOfLineIndex(subLineInBlockList);
         int subLineOffsetInBlockList = findSubLineOffsetInBlockList(lineNumber);
@@ -174,6 +214,8 @@ public class LineProcessor implements CursorMetricSupplier {
 
         return charIndex;
     }
+
+
 
 
     // Returns major line number that contains the subLine
@@ -235,4 +277,6 @@ public class LineProcessor implements CursorMetricSupplier {
 
         return x+tabAdjust;
     }
+
+
 }

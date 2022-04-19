@@ -8,6 +8,8 @@ import java.util.ListIterator;
 
 public class PieceTableTextBuffer extends TextBuffer {
 
+    boolean isEmpty =true;
+
     String bufferOriginal = "";
     String buffer1 = "";
     LinkedList<Node> nodes = new LinkedList<>();
@@ -25,6 +27,7 @@ public class PieceTableTextBuffer extends TextBuffer {
     public void setInitialText(String text) {
         bufferOriginal = text;
         setInitialTextSectioned(newFileSectionSize);
+        isEmpty=false;
     }
 
 
@@ -126,6 +129,8 @@ public class PieceTableTextBuffer extends TextBuffer {
 
     @Override
     public String getCharacter(int position) {
+        if (isEmpty) return "";
+
         PieceFindResult result = findPieceForPosition(position);
 
         String b = getBufferById(result.node.bufferId);
@@ -292,6 +297,11 @@ public class PieceTableTextBuffer extends TextBuffer {
             calculateLineStartsForNode(result.node, false);
         }
 
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return isEmpty;
     }
 
     // returns first of the pair of nodes that are created

@@ -46,8 +46,8 @@ public class MenuBarManager {
 
         ListPanel searchSubMenu = new ListPanel();
         searchSubMenu.getList().add(new ListElement("Wrap off", ""));
-        searchSubMenu.getList().add(new ListElement("Wrap word", ""));
-        searchSubMenu.getList().add(new ListElement("Wrap split", ""));
+        searchSubMenu.getList().add(new ListElement("Word Wrap", ""));
+        searchSubMenu.getList().add(new ListElement("Length Wrap", ""));
         searchSubMenu.setVisible(false);
         searchSubMenu.sizeToContent(10);
         searchSubMenu.setPosition(menuBar.getTopLevelMenuItemXPosition(2), 1);

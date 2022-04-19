@@ -10,18 +10,19 @@ import java.util.List;
 // Create a list of blocks that represent the metrics of line-wrapped lines.
 public class BlockProcessor {
 
-    public List<Block> processAll(@NotNull TextBuffer textBuffer, LineSplitter lineSplitter, int tabSize) {
+    public List<Block> processAll(TextBuffer textBuffer, LineSplitter lineSplitter, int tabSize) {
         List<Block> blocks = new ArrayList<>();
         int lineCount = textBuffer.getLineCount();
 
         for (int i = 0; i < lineCount; i++) {
-            blocks.add(createBlockFromLine(lineSplitter, textBuffer.getLine(i), i, tabSize));
+            blocks.add(createBlockFromLine(lineSplitter, textBuffer, i, tabSize));
         }
 
         return blocks;
     }
 
-    public Block createBlockFromLine(LineSplitter lineSplitter, String line, int lineNumber, int tabSize) {
+    public Block createBlockFromLine(LineSplitter lineSplitter, TextBuffer textBuffer, int lineNumber, int tabSize) {
+        String line = textBuffer.getLine(lineNumber);
         Block block = new Block();
         block.lineNumber = lineNumber;
         int[] split = lineSplitter.split(line, tabSize);

@@ -92,4 +92,8 @@ public class Cursor {
         x = 0;
         xMemory = x;
     }
+
+    public int getMajorLineNumber() {
+        return cursorMetricSupplier.getMajorLineNumber(y);
+    }
 }

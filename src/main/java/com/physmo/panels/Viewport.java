@@ -77,8 +77,14 @@ public class Viewport extends Panel {
             Character character = keyStroke.getCharacter();
             int charPos = getCursor().getDocumentIndex();
             textBuffer.insert(charPos, "" + character);
+
+            // getCursor includes sub lines, we need to know what major line we are on
+            int majorLine = getCursor().getMajorLineNumber();
+            System.out.println("line "+majorLine);
+            editorPanel.notifyLineChanged(majorLine);
+
             getCursor().moveRight();
-            editorPanel.notifyChanged();
+
         }
 
         if (keyStroke.getKeyType() == KeyType.Tab) {

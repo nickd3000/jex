@@ -15,4 +15,6 @@ public abstract class TextBuffer {
     public abstract int getStartOfLineIndex(int line);
 
     public abstract void deleteCharacter(int position);
+
+    public abstract boolean isEmpty();
 }

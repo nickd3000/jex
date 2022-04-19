@@ -39,9 +39,11 @@ public class EditorPanel extends Panel {
 
     public void notifyChanged() {
         dirty = true;
-
         lineProcessor.setDirty();
-
+    }
+    public void notifyLineChanged(int lineNumber) {
+        dirty = true;
+        lineProcessor.setDirty(lineNumber);
     }
 
     public Cursor getCursor() {
@@ -202,6 +204,7 @@ public class EditorPanel extends Panel {
     }
 
     public String getCharacterUnderCursor() {
+        if (textBuffer.isEmpty()) return "";
 
         String character = textBuffer.getCharacter(cursor.getDocumentIndex());
         return character;
